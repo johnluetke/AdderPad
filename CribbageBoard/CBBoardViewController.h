@@ -28,12 +28,19 @@
 @property (retain) NSMutableArray *greenData;
 @property (retain) NSMutableArray *blueData;
 
+// Progress Bars
+@property (weak, nonatomic) IBOutlet UIProgressView *redProgress;
+@property (weak, nonatomic) IBOutlet UIProgressView *greenProgress;
+@property (weak, nonatomic) IBOutlet UIProgressView *blueProgress;
+
 // Buttons
 - (IBAction)redScoreAdd:(id)sender;
 - (IBAction)greenScoreAdd:(id)sender;
 - (IBAction)blueScoreAdd:(id)sender;
 - (IBAction)resetButton:(id)sender;
 - (IBAction)undoButton:(id)sender;
+
+
 
 // Helper Methods
 - (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data;

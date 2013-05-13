@@ -22,6 +22,7 @@
 @synthesize redScore, greenScore, blueScore;
 @synthesize lastPlayerTag;
 @synthesize redData, greenData, blueData;
+@synthesize redProgress, greenProgress, blueProgress;
 @synthesize pointsEntered, playTo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,6 +65,10 @@
     if (redScore >= playTo) {
         [self winMatch:@"Red"];
     }
+    
+    // Set progress bar
+    float progress = ((float)redScore / (float)playTo);
+    [redProgress setProgress:progress animated:YES];
 }
 
 - (void)greenScoreAdd:(id)sender
@@ -95,6 +100,10 @@
     if (greenScore >= playTo) {
         [self winMatch:@"Green"];
     }
+    
+    // Set progress bar
+    float progress = ((float)greenScore / (float)playTo);
+    [greenProgress setProgress:progress animated:YES];
 }
 
 - (void)blueScoreAdd:(id)sender
@@ -126,6 +135,10 @@
     if (blueScore >= playTo) {
         [self winMatch:@"Blue"];
     }
+    
+    // Set progress bar
+    float progress = ((float)blueScore / (float)playTo);
+    [blueProgress setProgress:progress animated:YES];
 }
 
 - (void)resetButton:(id)sender
@@ -155,6 +168,8 @@
         [self writeToPlist:@"/CurrentScores" playerColor:@"RedScore" withData:redData];
         redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
         [redScoreLabel setNeedsDisplay];
+        float progress = ((float)redScore / (float)playTo);
+        [redProgress setProgress:progress animated:YES];
         
     } else if (lastPlayerTag == 2) {
         
@@ -168,6 +183,8 @@
         [self writeToPlist:@"/CurrentScores" playerColor:@"GreenScore" withData:greenData];
         greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
         [greenScoreLabel setNeedsDisplay];
+        float progress = ((float)greenScore / (float)playTo);
+        [greenProgress setProgress:progress animated:YES];
         
     } else if (lastPlayerTag == 3) {
         
@@ -181,6 +198,8 @@
         [self writeToPlist:@"/CurrentScores" playerColor:@"BlueScore" withData:blueData];
         blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
         [blueScoreLabel setNeedsDisplay];
+        float progress = ((float)blueScore / (float)playTo);
+        [blueProgress setProgress:progress animated:YES];
         
     }
 }
@@ -237,6 +256,14 @@
         
         blueData = [[NSMutableArray alloc] initWithObjects:[[plistDict objectForKey:@"BlueScore"] objectAtIndex:0], [[plistDict objectForKey:@"BlueScore"] objectAtIndex:1], nil];
         blueScore = [[blueData objectAtIndex:1] intValue];
+        
+        // Initialize progress bars
+        float rProgress = ((float)redScore / (float)playTo);
+        float gProgress = ((float)greenScore / (float)playTo);
+        float bProgress = ((float)blueScore / (float)playTo);
+        [redProgress setProgress:rProgress animated:NO];
+        [greenProgress setProgress:gProgress animated:NO];
+        [blueProgress setProgress:bProgress animated:NO];
     } else {
         // Doesn't exist, start with an empty dictionary
         NSLog(@"plist didn't exist");
@@ -251,6 +278,11 @@
         
         blueData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
         blueScore = 0;
+        
+        // Initialize progress bars
+        [redProgress setProgress:0.0 animated:NO];
+        [greenProgress setProgress:0.0 animated:NO];
+        [blueProgress setProgress:0.0 animated:NO];
     }
 
 }
@@ -291,6 +323,10 @@
     [redScoreLabel setNeedsDisplay];
     [greenScoreLabel setNeedsDisplay];
     [blueScoreLabel setNeedsDisplay];
+    
+    [redProgress setProgress:0.0 animated:NO];
+    [greenProgress setProgress:0.0 animated:NO];
+    [blueProgress setProgress:0.0 animated:NO];
 }
 
 # pragma mark - Delegate methods
@@ -335,6 +371,14 @@
     [redScoreLabel setNeedsDisplay];
     [greenScoreLabel setNeedsDisplay];
     [blueScoreLabel setNeedsDisplay];
+    
+    float rProgress = ((float)redScore / (float)playTo);
+    float gProgress = ((float)greenScore / (float)playTo);
+    float bProgress = ((float)blueScore / (float)playTo);
+    [redProgress setProgress:rProgress animated:NO];
+    [greenProgress setProgress:gProgress animated:NO];
+    [blueProgress setProgress:bProgress animated:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning
