@@ -20,10 +20,12 @@
 		2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2219E173A0004008A1D02 /* Default-568h@2x.png */; };
 		2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */; };
 		2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */; };
-		2DC221AC173A05C6008A1D02 /* CBBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC221AA173A05C6008A1D02 /* CBBoardViewController.xib */; };
+		2DC221AC173A05C6008A1D02 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */; };
 		2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C124173C2D5B00E694AC /* CurrentScores.plist */; };
 		2DC8C128173E0E4B00E694AC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C126173E0E4B00E694AC /* Icon.png */; };
 		2DC8C129173E0E4B00E694AC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C127173E0E4B00E694AC /* Icon@2x.png */; };
+		2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */; };
+		2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +47,13 @@
 		2DC221A1173A0004008A1D02 /* CribbageBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CribbageBoard.xcdatamodel; sourceTree = "<group>"; };
 		2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBoardViewController.h; sourceTree = "<group>"; };
 		2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBoardViewController.m; sourceTree = "<group>"; };
-		2DC221AA173A05C6008A1D02 /* CBBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBBoardViewController.xib; sourceTree = "<group>"; };
+		2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2DC8C124173C2D5B00E694AC /* CurrentScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentScores.plist; sourceTree = "<group>"; };
 		2DC8C126173E0E4B00E694AC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../CAHGenerator/Icon.png; sourceTree = "<group>"; };
 		2DC8C127173E0E4B00E694AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../CAHGenerator/Icon@2x.png"; sourceTree = "<group>"; };
+		2DFC20B01741AEC9009AE1FC /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNNumberpad.h; sourceTree = "<group>"; };
+		2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNNumberpad.m; sourceTree = "<group>"; };
+		2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LNNumberpadiPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +105,12 @@
 		2DC2218E173A0004008A1D02 /* CribbageBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2DFC20AF1741AE85009AE1FC /* Numberpad */,
 				2DC22197173A0004008A1D02 /* CBAppDelegate.h */,
 				2DC22198173A0004008A1D02 /* CBAppDelegate.m */,
 				2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */,
 				2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */,
-				2DC221AA173A05C6008A1D02 /* CBBoardViewController.xib */,
+				2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */,
 				2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */,
 				2DC2218F173A0004008A1D02 /* Supporting Files */,
 			);
@@ -124,6 +130,16 @@
 				2DC2219E173A0004008A1D02 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DFC20AF1741AE85009AE1FC /* Numberpad */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20B01741AEC9009AE1FC /* LNNumberpad.h */,
+				2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */,
+				2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */,
+			);
+			name = Numberpad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +198,12 @@
 				2DC2219B173A0004008A1D02 /* Default.png in Resources */,
 				2DC2219D173A0004008A1D02 /* Default@2x.png in Resources */,
 				2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */,
-				2DC221AC173A05C6008A1D02 /* CBBoardViewController.xib in Resources */,
+				2DC221AC173A05C6008A1D02 /* CBBoardViewController-5.xib in Resources */,
 				2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */,
 				2DC8C128173E0E4B00E694AC /* Icon.png in Resources */,
 				2DC8C129173E0E4B00E694AC /* Icon@2x.png in Resources */,
 				2D941D6D17401F9C00D0426D /* .gitignore in Resources */,
+				2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +218,7 @@
 				2DC22199173A0004008A1D02 /* CBAppDelegate.m in Sources */,
 				2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */,
 				2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */,
+				2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

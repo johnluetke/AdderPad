@@ -11,6 +11,7 @@
 //
 
 #import "CBBoardViewController.h"
+#import "LNNumberpad.h"
 
 @interface CBBoardViewController ()
 
@@ -357,6 +358,7 @@
 {
     [super viewWillAppear:animated];
     [addToScoreField selectAll:addToScoreField];
+    self->addToScoreField.inputView  = [LNNumberpad defaultLNNumberpad];
     [addToScoreField becomeFirstResponder];
     
 }
