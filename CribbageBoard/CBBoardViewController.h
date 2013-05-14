@@ -39,8 +39,7 @@
 - (IBAction)blueScoreAdd:(id)sender;
 - (IBAction)resetButton:(id)sender;
 - (IBAction)undoButton:(id)sender;
-
-
+- (IBAction)showInfoView:(id)sender;
 
 // Helper Methods
 - (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data;

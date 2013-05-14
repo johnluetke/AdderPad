@@ -12,6 +12,7 @@
 
 #import "CBBoardViewController.h"
 #import "LNNumberpad.h"
+#import "CBSwitchViewController.h"
 
 @interface CBBoardViewController ()
 
@@ -28,7 +29,21 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    // self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        CGSize result = [[UIScreen mainScreen] bounds].size;
+        if(result.height == 480)
+        {
+            // iPhone Classic
+            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController" owner:self options:nil];
+        }
+        if(result.height == 568)
+        {
+            // iPhone 5
+            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
+        }
+    }
     if (self) {
         // Custom initialization
         playTo = 121;
@@ -205,6 +220,11 @@
     }
 }
 
+- (IBAction)showInfoView:(id)sender
+{
+    [CBSwitchViewController switchToInfo];
+}
+
 # pragma mark - Helper Methods
 
 // TODO: Currently not working, need to this to be saved whenever the game goes into background
@@ -357,16 +377,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [addToScoreField selectAll:addToScoreField];
     self->addToScoreField.inputView  = [LNNumberpad defaultLNNumberpad];
     [addToScoreField becomeFirstResponder];
-    
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Refresh current scores
     redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
     greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
     blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
@@ -380,7 +392,11 @@
     [redProgress setProgress:rProgress animated:NO];
     [greenProgress setProgress:gProgress animated:NO];
     [blueProgress setProgress:bProgress animated:NO];
-    
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning

@@ -24,8 +24,16 @@
 		2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C124173C2D5B00E694AC /* CurrentScores.plist */; };
 		2DC8C128173E0E4B00E694AC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C126173E0E4B00E694AC /* Icon.png */; };
 		2DC8C129173E0E4B00E694AC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C127173E0E4B00E694AC /* Icon@2x.png */; };
+		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
+		2DE670831742943E008C44DF /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 2DE670821742943E008C44DF /* README.MD */; };
 		2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */; };
 		2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */; };
+		2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */; };
+		2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */; };
+		2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */; };
+		2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */; };
+		2DFC20CE1741F66C009AE1FC /* CBInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */; };
+		2DFC20D21741F705009AE1FC /* CBScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20D11741F705009AE1FC /* CBScore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +59,20 @@
 		2DC8C124173C2D5B00E694AC /* CurrentScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentScores.plist; sourceTree = "<group>"; };
 		2DC8C126173E0E4B00E694AC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../CAHGenerator/Icon.png; sourceTree = "<group>"; };
 		2DC8C127173E0E4B00E694AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../CAHGenerator/Icon@2x.png"; sourceTree = "<group>"; };
+		2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBInfoViewController-5.xib"; sourceTree = "<group>"; };
+		2DE670821742943E008C44DF /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.MD; path = CribbageBoard/README.MD; sourceTree = "<group>"; };
 		2DFC20B01741AEC9009AE1FC /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNNumberpad.h; sourceTree = "<group>"; };
 		2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNNumberpad.m; sourceTree = "<group>"; };
 		2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LNNumberpadiPhone.xib; sourceTree = "<group>"; };
+		2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBBoardViewController.xib; sourceTree = "<group>"; };
+		2DFC20BC1741F1D1009AE1FC /* CBSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSwitchViewController.h; sourceTree = "<group>"; };
+		2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSwitchViewController.m; sourceTree = "<group>"; };
+		2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSwitchViewController.xib; sourceTree = "<group>"; };
+		2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInfoViewController.h; sourceTree = "<group>"; };
+		2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBInfoViewController.m; sourceTree = "<group>"; };
+		2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBInfoViewController.xib; sourceTree = "<group>"; };
+		2DFC20D01741F705009AE1FC /* CBScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBScore.h; sourceTree = "<group>"; };
+		2DFC20D11741F705009AE1FC /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +96,7 @@
 				2D941D6C17401F9C00D0426D /* .gitignore */,
 				2DC8C126173E0E4B00E694AC /* Icon.png */,
 				2DC8C127173E0E4B00E694AC /* Icon@2x.png */,
+				2DE670821742943E008C44DF /* README.MD */,
 				2DC2218E173A0004008A1D02 /* CribbageBoard */,
 				2DC22185173A0004008A1D02 /* Frameworks */,
 				2DC22184173A0004008A1D02 /* Products */,
@@ -105,12 +125,13 @@
 		2DC2218E173A0004008A1D02 /* CribbageBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2DFC20CF1741F6B3009AE1FC /* CBScore */,
+				2DFC20C21741F5F6009AE1FC /* BoardView */,
+				2DFC20C11741F5BB009AE1FC /* InfoView */,
+				2DFC20BB1741F19E009AE1FC /* SwitchView */,
 				2DFC20AF1741AE85009AE1FC /* Numberpad */,
 				2DC22197173A0004008A1D02 /* CBAppDelegate.h */,
 				2DC22198173A0004008A1D02 /* CBAppDelegate.m */,
-				2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */,
-				2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */,
-				2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */,
 				2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */,
 				2DC2218F173A0004008A1D02 /* Supporting Files */,
 			);
@@ -140,6 +161,47 @@
 				2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */,
 			);
 			name = Numberpad;
+			sourceTree = "<group>";
+		};
+		2DFC20BB1741F19E009AE1FC /* SwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20BC1741F1D1009AE1FC /* CBSwitchViewController.h */,
+				2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */,
+				2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */,
+			);
+			name = SwitchView;
+			sourceTree = "<group>";
+		};
+		2DFC20C11741F5BB009AE1FC /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */,
+				2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */,
+				2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */,
+				2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */,
+			);
+			name = InfoView;
+			sourceTree = "<group>";
+		};
+		2DFC20C21741F5F6009AE1FC /* BoardView */ = {
+			isa = PBXGroup;
+			children = (
+				2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */,
+				2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */,
+				2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */,
+				2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */,
+			);
+			name = BoardView;
+			sourceTree = "<group>";
+		};
+		2DFC20CF1741F6B3009AE1FC /* CBScore */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20D01741F705009AE1FC /* CBScore.h */,
+				2DFC20D11741F705009AE1FC /* CBScore.m */,
+			);
+			name = CBScore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +266,11 @@
 				2DC8C129173E0E4B00E694AC /* Icon@2x.png in Resources */,
 				2D941D6D17401F9C00D0426D /* .gitignore in Resources */,
 				2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */,
+				2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */,
+				2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */,
+				2DFC20CE1741F66C009AE1FC /* CBInfoViewController.xib in Resources */,
+				2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */,
+				2DE670831742943E008C44DF /* README.MD in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +286,9 @@
 				2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */,
 				2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */,
 				2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */,
+				2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */,
+				2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */,
+				2DFC20D21741F705009AE1FC /* CBScore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "CBAppDelegate.h"
 #import "CBBoardViewController.h"
+#import "CBSwitchViewController.h"
 
 @implementation CBAppDelegate
 
@@ -19,9 +20,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    CBBoardViewController *bvc = [[CBBoardViewController alloc] init];
-    
-    [[self window] setRootViewController:bvc];
+//    CBBoardViewController *bvc = [[CBBoardViewController alloc] init];
+//    [[self window] setRootViewController:bvc];
+
+    CBSwitchViewController *svc = [[CBSwitchViewController alloc] initWithNibName:@"CBSwitchViewController" bundle:nil];
+    self.window.rootViewController = svc;
     [self createEditableCopyOfPlistIfNeeded];
     
     self.window.backgroundColor = [UIColor whiteColor];
