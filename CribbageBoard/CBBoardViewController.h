@@ -23,6 +23,7 @@
 @property (assign) int32_t blueScore;
 @property (assign) int32_t pointsEntered;
 @property (assign) int32_t playTo;
+
 @property (assign) int lastPlayerTag;  // 0=red, 1=green, 2=blue
 @property (retain) NSMutableArray *redData;
 @property (retain) NSMutableArray *greenData;

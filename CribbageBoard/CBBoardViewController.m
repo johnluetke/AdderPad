@@ -168,7 +168,6 @@
     [resetAlert show];
 }
 
-// TODO:  Shouldn't have to go into plist here, just use the arrays (redData, etc...)
 - (void)undoButton:(id)sender
 {
     if (lastPlayerTag == 1) {
@@ -227,7 +226,6 @@
 
 # pragma mark - Helper Methods
 
-// TODO: Currently not working, need to this to be saved whenever the game goes into background
 - (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data
 {
     NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
