@@ -11,6 +11,7 @@
 		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
 		2D941D6D17401F9C00D0426D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2D941D6C17401F9C00D0426D /* .gitignore */; };
+		2DAE6277174B038F002EF0A6 /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 2DAE6276174B038F002EF0A6 /* README.MD */; };
 		2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22186173A0004008A1D02 /* UIKit.framework */; };
 		2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22188173A0004008A1D02 /* Foundation.framework */; };
 		2DC2218B173A0004008A1D02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC2218A173A0004008A1D02 /* CoreGraphics.framework */; };
@@ -29,7 +30,6 @@
 		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
 		2DE1C261174AECB1009DFAFA /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE1C260174AECB1009DFAFA /* CBBoardViewController-5.xib */; };
 		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
-		2DE670831742943E008C44DF /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 2DE670821742943E008C44DF /* README.MD */; };
 		2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */; };
 		2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */; };
 		2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */; };
@@ -44,6 +44,7 @@
 		2D5D7F081746EC3A008B562E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2DAE6276174B038F002EF0A6 /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.MD; sourceTree = "<group>"; };
 		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2DC22188173A0004008A1D02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,7 +70,6 @@
 		2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		2DE1C260174AECB1009DFAFA /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBInfoViewController-5.xib"; sourceTree = "<group>"; };
-		2DE670821742943E008C44DF /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.MD; path = CribbageBoard/README.MD; sourceTree = "<group>"; };
 		2DFC20B01741AEC9009AE1FC /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNNumberpad.h; sourceTree = "<group>"; };
 		2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNNumberpad.m; sourceTree = "<group>"; };
 		2DFC20B21741AEC9009AE1FC /* LNNumberpadiPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LNNumberpadiPhone.xib; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2D941D6C17401F9C00D0426D /* .gitignore */,
-				2DE670821742943E008C44DF /* README.MD */,
+				2DAE6276174B038F002EF0A6 /* README.MD */,
 				2D5D7F071746EC39008B562E /* Icon.png */,
 				2D5D7F081746EC3A008B562E /* Icon@2x.png */,
 				2DC2218E173A0004008A1D02 /* CribbageBoard */,
@@ -280,10 +280,10 @@
 				2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */,
 				2DFC20CE1741F66C009AE1FC /* CBInfoViewController.xib in Resources */,
 				2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */,
-				2DE670831742943E008C44DF /* README.MD in Resources */,
 				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
 				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
 				2DE1C261174AECB1009DFAFA /* CBBoardViewController-5.xib in Resources */,
+				2DAE6277174B038F002EF0A6 /* README.MD in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
