@@ -409,18 +409,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
-//    UIColor *tintColor = [UIColor redColor];
-//    [[CERoundProgressView appearance] setTintColor:tintColor];
-//    
-//    self.redProgress.trackColor = [UIColor colorWithWhite:0.80 alpha:1.0];
-//    self.redProgress.startAngle = (4.0*M_PI)/2.0;
-//    
-//    self.greenProgress.trackColor = [UIColor colorWithWhite:0.80 alpha:1.0];
-//    self.greenProgress.startAngle = (4.0*M_PI)/2.0;
-//    
-//    self.blueProgress.trackColor = [UIColor colorWithWhite:0.80 alpha:1.0];
-//    self.blueProgress.startAngle = (4.0*M_PI)/2.0;
 }
 
 - (void)didReceiveMemoryWarning

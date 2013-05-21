@@ -11,7 +11,17 @@
 		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
 		2D941D6D17401F9C00D0426D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2D941D6C17401F9C00D0426D /* .gitignore */; };
-		2DAE6277174B038F002EF0A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2DAE6276174B038F002EF0A6 /* README.md */; };
+		2DB225AE174BEBD3008CDC86 /* BoardViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225AD174BEBD3008CDC86 /* BoardViewBackground.png */; };
+		2DB225B9174BFBD9008CDC86 /* ResetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225B7174BFBD9008CDC86 /* ResetButton.png */; };
+		2DB225BA174BFBD9008CDC86 /* ResetButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225B8174BFBD9008CDC86 /* ResetButtonHighlight.png */; };
+		2DB225BD174BFD2E008CDC86 /* UndoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225BB174BFD2E008CDC86 /* UndoButton.png */; };
+		2DB225BE174BFD2E008CDC86 /* UndoButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225BC174BFD2E008CDC86 /* UndoButtonHighlight.png */; };
+		2DB225C6174C0449008CDC86 /* BlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225C0174C0449008CDC86 /* BlueButton.png */; };
+		2DB225C7174C0449008CDC86 /* BlueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225C1174C0449008CDC86 /* BlueButtonHighlight.png */; };
+		2DB225CA174C0449008CDC86 /* RedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225C4174C0449008CDC86 /* RedButton.png */; };
+		2DB225CB174C0449008CDC86 /* RedButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225C5174C0449008CDC86 /* RedButtonHighlight.png */; };
+		2DB225CE174C059C008CDC86 /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225CC174C059C008CDC86 /* GreenButton.png */; };
+		2DB225CF174C059C008CDC86 /* GreenButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DB225CD174C059C008CDC86 /* GreenButtonHighlight.png */; };
 		2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22186173A0004008A1D02 /* UIKit.framework */; };
 		2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22188173A0004008A1D02 /* Foundation.framework */; };
 		2DC2218B173A0004008A1D02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC2218A173A0004008A1D02 /* CoreGraphics.framework */; };
@@ -44,7 +54,17 @@
 		2D5D7F081746EC3A008B562E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2DAE6276174B038F002EF0A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		2DB225AD174BEBD3008CDC86 /* BoardViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardViewBackground.png; sourceTree = "<group>"; };
+		2DB225B7174BFBD9008CDC86 /* ResetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResetButton.png; sourceTree = "<group>"; };
+		2DB225B8174BFBD9008CDC86 /* ResetButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResetButtonHighlight.png; sourceTree = "<group>"; };
+		2DB225BB174BFD2E008CDC86 /* UndoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UndoButton.png; sourceTree = "<group>"; };
+		2DB225BC174BFD2E008CDC86 /* UndoButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UndoButtonHighlight.png; sourceTree = "<group>"; };
+		2DB225C0174C0449008CDC86 /* BlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton.png; sourceTree = "<group>"; };
+		2DB225C1174C0449008CDC86 /* BlueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButtonHighlight.png; sourceTree = "<group>"; };
+		2DB225C4174C0449008CDC86 /* RedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButton.png; sourceTree = "<group>"; };
+		2DB225C5174C0449008CDC86 /* RedButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonHighlight.png; sourceTree = "<group>"; };
+		2DB225CC174C059C008CDC86 /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenButton.png; sourceTree = "<group>"; };
+		2DB225CD174C059C008CDC86 /* GreenButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenButtonHighlight.png; sourceTree = "<group>"; };
 		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2DC22188173A0004008A1D02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,11 +118,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DB225BF174C0407008CDC86 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2DB225CC174C059C008CDC86 /* GreenButton.png */,
+				2DB225CD174C059C008CDC86 /* GreenButtonHighlight.png */,
+				2DB225C0174C0449008CDC86 /* BlueButton.png */,
+				2DB225C1174C0449008CDC86 /* BlueButtonHighlight.png */,
+				2DB225C4174C0449008CDC86 /* RedButton.png */,
+				2DB225C5174C0449008CDC86 /* RedButtonHighlight.png */,
+				2DB225BB174BFD2E008CDC86 /* UndoButton.png */,
+				2DB225BC174BFD2E008CDC86 /* UndoButtonHighlight.png */,
+				2DB225B7174BFBD9008CDC86 /* ResetButton.png */,
+				2DB225B8174BFBD9008CDC86 /* ResetButtonHighlight.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		2DC2217A173A0004008A1D02 = {
 			isa = PBXGroup;
 			children = (
 				2D941D6C17401F9C00D0426D /* .gitignore */,
-				2DAE6276174B038F002EF0A6 /* README.md */,
 				2D5D7F071746EC39008B562E /* Icon.png */,
 				2D5D7F081746EC3A008B562E /* Icon@2x.png */,
 				2DC2218E173A0004008A1D02 /* CribbageBoard */,
@@ -150,6 +186,8 @@
 		2DC2218F173A0004008A1D02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DB225BF174C0407008CDC86 /* Buttons */,
+				2DB225AD174BEBD3008CDC86 /* BoardViewBackground.png */,
 				2DC22190173A0004008A1D02 /* CribbageBoard-Info.plist */,
 				2DC8C124173C2D5B00E694AC /* CurrentScores.plist */,
 				2DC22191173A0004008A1D02 /* InfoPlist.strings */,
@@ -283,7 +321,17 @@
 				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
 				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
 				2DE1C261174AECB1009DFAFA /* CBBoardViewController-5.xib in Resources */,
-				2DAE6277174B038F002EF0A6 /* README.md in Resources */,
+				2DB225AE174BEBD3008CDC86 /* BoardViewBackground.png in Resources */,
+				2DB225B9174BFBD9008CDC86 /* ResetButton.png in Resources */,
+				2DB225BA174BFBD9008CDC86 /* ResetButtonHighlight.png in Resources */,
+				2DB225BD174BFD2E008CDC86 /* UndoButton.png in Resources */,
+				2DB225BE174BFD2E008CDC86 /* UndoButtonHighlight.png in Resources */,
+				2DB225C6174C0449008CDC86 /* BlueButton.png in Resources */,
+				2DB225C7174C0449008CDC86 /* BlueButtonHighlight.png in Resources */,
+				2DB225CA174C0449008CDC86 /* RedButton.png in Resources */,
+				2DB225CB174C0449008CDC86 /* RedButtonHighlight.png in Resources */,
+				2DB225CE174C059C008CDC86 /* GreenButton.png in Resources */,
+				2DB225CF174C059C008CDC86 /* GreenButtonHighlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
