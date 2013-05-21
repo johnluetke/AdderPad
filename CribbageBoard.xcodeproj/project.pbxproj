@@ -23,8 +23,11 @@
 		2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2219E173A0004008A1D02 /* Default-568h@2x.png */; };
 		2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */; };
 		2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */; };
-		2DC221AC173A05C6008A1D02 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */; };
+		2DC221AC173A05C6008A1D02 /* CBBoardViewController-5bars.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC221AA173A05C6008A1D02 /* CBBoardViewController-5bars.xib */; };
 		2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C124173C2D5B00E694AC /* CurrentScores.plist */; };
+		2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */; };
+		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
+		2DE1C261174AECB1009DFAFA /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE1C260174AECB1009DFAFA /* CBBoardViewController-5.xib */; };
 		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
 		2DE670831742943E008C44DF /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 2DE670821742943E008C44DF /* README.MD */; };
 		2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20B11741AEC9009AE1FC /* LNNumberpad.m */; };
@@ -58,8 +61,13 @@
 		2DC221A1173A0004008A1D02 /* CribbageBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CribbageBoard.xcdatamodel; sourceTree = "<group>"; };
 		2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBoardViewController.h; sourceTree = "<group>"; };
 		2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBoardViewController.m; sourceTree = "<group>"; };
-		2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
+		2DC221AA173A05C6008A1D02 /* CBBoardViewController-5bars.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5bars.xib"; sourceTree = "<group>"; };
 		2DC8C124173C2D5B00E694AC /* CurrentScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentScores.plist; sourceTree = "<group>"; };
+		2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
+		2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
+		2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
+		2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
+		2DE1C260174AECB1009DFAFA /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBInfoViewController-5.xib"; sourceTree = "<group>"; };
 		2DE670821742943E008C44DF /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.MD; path = CribbageBoard/README.MD; sourceTree = "<group>"; };
 		2DFC20B01741AEC9009AE1FC /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNNumberpad.h; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 		2DC2218E173A0004008A1D02 /* CribbageBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2DE1C259174AEB95009DFAFA /* RoundProgressBar */,
 				2DFC20C21741F5F6009AE1FC /* BoardView */,
 				2DFC20C11741F5BB009AE1FC /* InfoView */,
 				2DFC20BB1741F19E009AE1FC /* SwitchView */,
@@ -151,6 +160,17 @@
 				2DC2219E173A0004008A1D02 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DE1C259174AEB95009DFAFA /* RoundProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */,
+				2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */,
+				2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */,
+				2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */,
+			);
+			name = RoundProgressBar;
 			sourceTree = "<group>";
 		};
 		2DFC20AF1741AE85009AE1FC /* Numberpad */ = {
@@ -190,7 +210,8 @@
 				2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */,
 				2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */,
 				2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */,
-				2DC221AA173A05C6008A1D02 /* CBBoardViewController-5.xib */,
+				2DC221AA173A05C6008A1D02 /* CBBoardViewController-5bars.xib */,
+				2DE1C260174AECB1009DFAFA /* CBBoardViewController-5.xib */,
 			);
 			name = BoardView;
 			sourceTree = "<group>";
@@ -251,7 +272,7 @@
 				2DC2219B173A0004008A1D02 /* Default.png in Resources */,
 				2DC2219D173A0004008A1D02 /* Default@2x.png in Resources */,
 				2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */,
-				2DC221AC173A05C6008A1D02 /* CBBoardViewController-5.xib in Resources */,
+				2DC221AC173A05C6008A1D02 /* CBBoardViewController-5bars.xib in Resources */,
 				2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */,
 				2D941D6D17401F9C00D0426D /* .gitignore in Resources */,
 				2DFC20B41741AEC9009AE1FC /* LNNumberpadiPhone.xib in Resources */,
@@ -262,6 +283,7 @@
 				2DE670831742943E008C44DF /* README.MD in Resources */,
 				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
 				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
+				2DE1C261174AECB1009DFAFA /* CBBoardViewController-5.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +301,8 @@
 				2DFC20B31741AEC9009AE1FC /* LNNumberpad.m in Sources */,
 				2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */,
 				2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */,
+				2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */,
+				2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

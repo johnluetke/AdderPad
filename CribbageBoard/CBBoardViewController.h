@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CERoundProgressView.h"
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
@@ -30,9 +31,9 @@
 @property (retain) NSMutableArray *blueData;
 
 // Progress Bars
-@property (weak, nonatomic) IBOutlet UIProgressView *redProgress;
-@property (weak, nonatomic) IBOutlet UIProgressView *greenProgress;
-@property (weak, nonatomic) IBOutlet UIProgressView *blueProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *redProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *greenProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *blueProgress;
 
 // Buttons
 - (IBAction)redScoreAdd:(id)sender;
