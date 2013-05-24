@@ -8,15 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "CERoundProgressView.h"
+#import "CBNumberpad.h"
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
-    __weak IBOutlet UITextField *addToScoreField;
+    //__weak IBOutlet UITextField *addToScoreField;
+    CBNumberpad *numberpad;
+    UITextField *addToScoreField;
+    
+    @private
+    int charMax;
 }
+
+@property (nonatomic) IBOutlet id addToScoreField;
+
 // Labels
 @property (nonatomic, weak) IBOutlet UILabel *redScoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *greenScoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *blueScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *yellowScoreLabel;
 
 // Data
 @property (assign) int32_t redScore;
@@ -43,7 +53,11 @@
 - (IBAction)undoButton:(id)sender;
 - (IBAction)showInfoView:(id)sender;
 
+// Numberpad Input
+- (IBAction) press:(id)sender;
+
 // Helper Methods
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 - (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data;
 - (void)initializeScoresFromPlist;
 - (void)winMatch:(NSString *)winner;

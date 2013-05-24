@@ -8,10 +8,11 @@
 //  TODO list:
 //      - Only have it write to the plist when the view goes into background.
 //          I have arrays (redData, etc...) that have all of the info I need.
+//      - Consider changing the text field to just a label.  Then users can't
+//          copy/paste into the field.
 //
 
 #import "CBBoardViewController.h"
-#import "LNNumberpad.h"
 #import "CBSwitchViewController.h"
 
 @interface CBBoardViewController ()
@@ -20,7 +21,8 @@
 
 @implementation CBBoardViewController
 
-@synthesize redScoreLabel, greenScoreLabel, blueScoreLabel;
+@synthesize addToScoreField;
+@synthesize redScoreLabel, greenScoreLabel, blueScoreLabel, yellowScoreLabel;
 @synthesize redScore, greenScore, blueScore;
 @synthesize lastPlayerTag;
 @synthesize redData, greenData, blueData;
@@ -47,7 +49,10 @@
     if (self) {
         // Custom initialization
         playTo = 121;
+        numberpad = [[CBNumberpad alloc] init];
+        charMax = numberpad.maxCharAllowed;
         [self initializeScoresFromPlist];
+        addToScoreField.delegate = self;
         
         self.redProgress.tintColor = [UIColor redColor];
         self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
@@ -80,7 +85,9 @@
     redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
     
     [redScoreLabel setNeedsDisplay];
+    
     addToScoreField.text = nil;
+        [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
     
@@ -116,6 +123,7 @@
     
     [greenScoreLabel setNeedsDisplay];
     addToScoreField.text = nil;
+    [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
     
@@ -151,6 +159,7 @@
     
     [blueScoreLabel setNeedsDisplay];
     addToScoreField.text = nil;
+    [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
     
@@ -361,6 +370,14 @@
     [blueProgress setProgress:0.0 animated:NO];
 }
 
+#pragma mark - Numberpad IBAction's
+
+- (IBAction) press:(id)sender {
+    [numberpad input:[sender titleForState:UIControlStateNormal]];
+    [addToScoreField setText:[numberpad displayValue]];
+}
+
+
 # pragma mark - Delegate methods
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -378,9 +395,14 @@
     }
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+// Prevents pasting of text larger than character limit
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
     NSUInteger newLength = [textField.text length] + [string length] - range.length;
-    return (newLength > 2) ? NO : YES;  // Max score on a hand is 29, so limit to just two characters
+    NSLog(@"In the text field delegate method");
+    NSLog(@"Max chars: %d", charMax);
+    NSLog(@"newLength chars: %lu", (unsigned long)newLength);
+    return (newLength > charMax ) ? NO : YES;
 }
 
 # pragma View handling
@@ -388,8 +410,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self->addToScoreField.inputView  = [LNNumberpad defaultLNNumberpad];
+    // Display a blinking cursor in the text field
     [addToScoreField becomeFirstResponder];
+    
+    // Rotate the text labels to conform with the corresponding buttons
+    redScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
+    greenScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
+    blueScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
+    yellowScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
+    
+    // Set the text labels to their respective colors
+    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67/255.0 alpha:1.0];
+    redScoreLabel.textColor = labelColor;
+    greenScoreLabel.textColor = labelColor;
+    blueScoreLabel.textColor = labelColor;
+    yellowScoreLabel.textColor = labelColor;
+
+//    redScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
+//    greenScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
+//    blueScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
+//    yellowScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
+    
+    
     redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
     greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
     blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
@@ -403,6 +445,10 @@
     [redProgress setProgress:rProgress animated:NO];
     [greenProgress setProgress:gProgress animated:NO];
     [blueProgress setProgress:bProgress animated:NO];
+    
+    // This prevents a keyboard from popping up, and still allows for typing in textfield
+    UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    addToScoreField.inputView = hideKeyboardView; // Hide keyboard, but show blinking cursor
 }
 
 - (void)viewDidLoad
