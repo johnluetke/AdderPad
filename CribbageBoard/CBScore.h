@@ -37,6 +37,7 @@
 
 - (void)resetScores;
 - (BOOL)undoLastAdd;
+- (NSString *)lastPlayerName;
 
 
 @end

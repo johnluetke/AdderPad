@@ -56,27 +56,6 @@
         
         addToScoreField.delegate = self;
 
-        UIColor *rShade = [UIColor colorWithRed:214.0/255.0 green:24.0/255.0 blue:27.0/255.0 alpha:1.0];
-        UIColor *gShade = [UIColor colorWithRed:67.0/255.0 green:174.0/255.0 blue:36.0/255.0 alpha:1.0];
-        UIColor *bShade = [UIColor colorWithRed:70.0/255.0 green:126.0/255.0 blue:200.0/255.0 alpha:1.0];
-        UIColor *yShade = [UIColor colorWithRed:251.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
-        
-        self.redProgress.tintColor = rShade;
-        self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-        self.redProgress.startAngle = (3.0*M_PI)/2.0;
-        
-        self.greenProgress.tintColor = gShade;
-        self.greenProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-        self.greenProgress.startAngle = (3.0*M_PI)/2.0;
-        
-        self.blueProgress.tintColor = bShade;
-        self.blueProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-        self.blueProgress.startAngle = (3.0*M_PI)/2.0;
-        
-        self.yellowProgress.tintColor = yShade;
-        self.yellowProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-        self.yellowProgress.startAngle = (3.0*M_PI)/2.0;
-
     }
     return self;
 }
@@ -87,9 +66,8 @@
     NSLog(@"Points to add to red score: %d", pointsEntered);
     [scores addToRed:pointsEntered];
     
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", scores.redScore];
-    
-    [redScoreLabel setNeedsDisplay];
+    [self updateScoreLabels];
+    [self updateProgress];
     
     addToScoreField.text = nil;
         [numberpad input:@"C"];     // Clears the text field for new input
@@ -100,10 +78,6 @@
     if (scores.redScore >= playTo) {
         [self winMatch:@"Red"];
     }
-    
-    // Set progress bar
-    float rProgress = ((float)scores.redScore / (float)playTo);
-    [redProgress setProgress:rProgress animated:YES];
 }
 
 - (void)greenScoreAdd:(id)sender
@@ -112,9 +86,8 @@
     NSLog(@"Points to add to green score: %d", pointsEntered);
     [scores addToGreen:pointsEntered];
     
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", scores.greenScore];
-    
-    [greenScoreLabel setNeedsDisplay];
+    [self updateScoreLabels];
+    [self updateProgress];
     
     addToScoreField.text = nil;
     [numberpad input:@"C"];     // Clears the text field for new input
@@ -125,10 +98,6 @@
     if (scores.greenScore >= playTo) {
         [self winMatch:@"Green"];
     }
-    
-    // Set progress bar
-    float gProgress = ((float)scores.greenScore / (float)playTo);
-    [greenProgress setProgress:gProgress animated:YES];
 }
 
 - (void)blueScoreAdd:(id)sender
@@ -137,9 +106,8 @@
     NSLog(@"Points to add to blue score: %d", pointsEntered);
     [scores addToBlue:pointsEntered];
     
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", scores.blueScore];
-    
-    [blueScoreLabel setNeedsDisplay];
+    [self updateScoreLabels];
+    [self updateProgress];
     
     addToScoreField.text = nil;
     [numberpad input:@"C"];     // Clears the text field for new input
@@ -150,10 +118,6 @@
     if (scores.blueScore >= playTo) {
         [self winMatch:@"Blue"];
     }
-    
-    // Set progress bar
-    float bProgress = ((float)scores.blueScore / (float)playTo);
-    [blueProgress setProgress:bProgress animated:YES];
 }
 
 - (void)yellowScoreAdd:(id)sender
@@ -162,9 +126,8 @@
     NSLog(@"Points to add to yellow score: %d", pointsEntered);
     [scores addToYellow:pointsEntered];
     
-    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", scores.yellowScore];
-    
-    [yellowScoreLabel setNeedsDisplay];
+    [self updateScoreLabels];
+    [self updateProgress];
     
     addToScoreField.text = nil;
     [numberpad input:@"C"];     // Clears the text field for new input
@@ -175,10 +138,6 @@
     if (scores.yellowScore >= playTo) {
         [self winMatch:@"Yellow"];
     }
-    
-    // Set progress bar
-    float yProgress = ((float)scores.yellowScore / (float)playTo);
-    [yellowProgress setProgress:yProgress animated:YES];
 }
 
 - (void)resetButton:(id)sender
@@ -276,12 +235,15 @@
     [self updateProgress];
 }
 
-// TODO: Consider writing this method to play special music, or display alternate message,
-// when a player wins by a certain margin.
+// Displays a win message with score recap, then resets the scores
 - (void)winMatch:(NSString *)winner
 {
-    UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:@"We have a winner!"
-                                                         message:[winner stringByAppendingString:@" is the winner!"]
+    NSString *winTitle = [winner stringByAppendingString:@" is the winner"];
+    NSString *winMessage = [NSString stringWithFormat:@"Red: %d\nGreen: %d\nBlue: %d\nYellow: %d",
+                            scores.redScore, scores.greenScore, scores.blueScore, scores.yellowScore];
+    
+    UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:winTitle
+                                                         message:winMessage
                                                         delegate:self
                                                cancelButtonTitle:@"Reset Scores"
                                                otherButtonTitles:nil];
@@ -306,10 +268,10 @@
     float gProgress = ((float)scores.greenScore / (float)playTo);
     float bProgress = ((float)scores.blueScore / (float)playTo);
     float yProgress = ((float)scores.yellowScore / (float)playTo);
-    [redProgress setProgress:rProgress animated:NO];
-    [greenProgress setProgress:gProgress animated:NO];
-    [blueProgress setProgress:bProgress animated:NO];
-    [yellowProgress setProgress:yProgress animated:NO];
+    [redProgress setProgress:rProgress animated:YES];
+    [greenProgress setProgress:gProgress animated:YES];
+    [blueProgress setProgress:bProgress animated:YES];
+    [yellowProgress setProgress:yProgress animated:YES];
 }
 
 - (void)updateScoreLabels
@@ -323,6 +285,14 @@
     [greenScoreLabel setNeedsDisplay];
     [blueScoreLabel setNeedsDisplay];
     [yellowScoreLabel setNeedsDisplay];
+    
+    // Last action label
+    if (scores.lastPlayerName) {
+        lastActionLabel.text = [NSString stringWithFormat:@"%d to %@", scores.lastPoints, scores.lastPlayerName];
+    } else {
+        lastActionLabel.text = [NSString stringWithFormat:@"--"];
+    }
+    
 }
 
 #pragma mark - Numberpad IBAction's
@@ -383,6 +353,27 @@
     
     [self updateScoreLabels];
     /////////// End of label setting
+    
+    UIColor *rShade = [UIColor colorWithRed:214.0/255.0 green:24.0/255.0 blue:27.0/255.0 alpha:1.0];
+    UIColor *gShade = [UIColor colorWithRed:67.0/255.0 green:174.0/255.0 blue:36.0/255.0 alpha:1.0];
+    UIColor *bShade = [UIColor colorWithRed:70.0/255.0 green:126.0/255.0 blue:200.0/255.0 alpha:1.0];
+    UIColor *yShade = [UIColor colorWithRed:251.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
+    
+    self.redProgress.tintColor = rShade;
+    self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.redProgress.startAngle = (3.0*M_PI)/2.0;
+    
+    self.greenProgress.tintColor = gShade;
+    self.greenProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.greenProgress.startAngle = (3.0*M_PI)/2.0;
+    
+    self.blueProgress.tintColor = bShade;
+    self.blueProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.blueProgress.startAngle = (3.0*M_PI)/2.0;
+    
+    self.yellowProgress.tintColor = yShade;
+    self.yellowProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.yellowProgress.startAngle = (3.0*M_PI)/2.0;
     
     [self updateProgress];
     

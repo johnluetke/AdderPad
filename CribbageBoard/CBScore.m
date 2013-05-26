@@ -88,24 +88,28 @@
         // red
         redScore = redScore - lastPoints;
         lastPoints = 0;
+        lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 2) {
         // green
         greenScore = greenScore - lastPoints;
         lastPoints = 0;
+        lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 3) {
         // blue
         blueScore = blueScore - lastPoints;
         lastPoints = 0;
+        lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 4) {
         // yellow
         yellowScore = yellowScore - lastPoints;
         lastPoints = 0;
+        lastPlayerTag = 0;
         return YES;
     }
     return NO;
@@ -120,6 +124,29 @@
     yellowScore = 0;
     lastPoints = 0;
     lastPlayerTag = 0;
+}
+
+// Returns the last players name (color)
+// If no one went last (undo or no score), returns nil
+- (NSString *)lastPlayerName
+{
+    if (lastPlayerTag == 1) {
+        // red
+        return @"Red";
+        
+    } else if (lastPlayerTag == 2) {
+        // green
+        return @"Green";
+        
+    } else if (lastPlayerTag == 3) {
+        // blue
+        return @"Blue";
+        
+    } else if (lastPlayerTag == 4) {
+        // yellow
+        return @"Yellow";
+    }
+    return nil;
 }
 
 #pragma mark - Getter Methods
