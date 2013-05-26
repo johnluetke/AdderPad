@@ -24,6 +24,9 @@
 		2D5D7F091746EC3A008B562E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F071746EC39008B562E /* Icon.png */; };
 		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
+		2D70A52317500A900052877C /* CBScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A52217500A900052877C /* CBScore.m */; };
+		2D70A52517500B420052877C /* CBScoreList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A52417500B420052877C /* CBScoreList.plist */; };
+		2D70A52A175281EE0052877C /* BoardViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A529175281EE0052877C /* BoardViewBackground-5.png */; };
 		2D941D6D17401F9C00D0426D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2D941D6C17401F9C00D0426D /* .gitignore */; };
 		2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22186173A0004008A1D02 /* UIKit.framework */; };
 		2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22188173A0004008A1D02 /* Foundation.framework */; };
@@ -67,6 +70,10 @@
 		2D5D7F071746EC39008B562E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2D5D7F081746EC3A008B562E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2D70A52117500A900052877C /* CBScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBScore.h; sourceTree = "<group>"; };
+		2D70A52217500A900052877C /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
+		2D70A52417500B420052877C /* CBScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBScoreList.plist; sourceTree = "<group>"; };
+		2D70A529175281EE0052877C /* BoardViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5.png"; sourceTree = "<group>"; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -152,6 +159,23 @@
 			name = "Numberpad Class";
 			sourceTree = "<group>";
 		};
+		2D70A52017500A720052877C /* Score Class */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A52117500A900052877C /* CBScore.h */,
+				2D70A52217500A900052877C /* CBScore.m */,
+			);
+			name = "Score Class";
+			sourceTree = "<group>";
+		};
+		2D70A52617527E3C0052877C /* UI Version 4 */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A529175281EE0052877C /* BoardViewBackground-5.png */,
+			);
+			name = "UI Version 4";
+			sourceTree = "<group>";
+		};
 		2DC2217A173A0004008A1D02 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +211,7 @@
 		2DC2218E173A0004008A1D02 /* CribbageBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2D70A52017500A720052877C /* Score Class */,
 				2D362C0E174F40560066B7C5 /* Numberpad Class */,
 				2DE1C259174AEB95009DFAFA /* RoundProgressBar */,
 				2DFC20C21741F5F6009AE1FC /* BoardView */,
@@ -203,9 +228,11 @@
 		2DC2218F173A0004008A1D02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2D70A52617527E3C0052877C /* UI Version 4 */,
 				2D362BF0174EBB510066B7C5 /* UI Version 3 */,
 				2DC22190173A0004008A1D02 /* CribbageBoard-Info.plist */,
 				2DC8C124173C2D5B00E694AC /* CurrentScores.plist */,
+				2D70A52417500B420052877C /* CBScoreList.plist */,
 				2DC22191173A0004008A1D02 /* InfoPlist.strings */,
 				2DC22194173A0004008A1D02 /* main.m */,
 				2DC22196173A0004008A1D02 /* CribbageBoard-Prefix.pch */,
@@ -336,6 +363,8 @@
 				2D362C0B174EC8CB0066B7C5 /* RedTouch.png in Resources */,
 				2D362C0C174EC8CB0066B7C5 /* Yellow.png in Resources */,
 				2D362C0D174EC8CB0066B7C5 /* YellowTouch.png in Resources */,
+				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
+				2D70A52A175281EE0052877C /* BoardViewBackground-5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +384,7 @@
 				2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */,
 				2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */,
 				2D362C11174F409E0066B7C5 /* CBNumberpad.m in Sources */,
+				2D70A52317500A900052877C /* CBScore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

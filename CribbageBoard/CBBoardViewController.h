@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CERoundProgressView.h"
 #import "CBNumberpad.h"
+#import "CBScore.h"
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
     //__weak IBOutlet UITextField *addToScoreField;
     CBNumberpad *numberpad;
+    CBScore *scores;
     UITextField *addToScoreField;
     
     @private
@@ -27,28 +29,24 @@
 @property (nonatomic, weak) IBOutlet UILabel *greenScoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *blueScoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *yellowScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *lastActionLabel;
 
 // Data
-@property (assign) int32_t redScore;
-@property (assign) int32_t greenScore;
-@property (assign) int32_t blueScore;
-@property (assign) int32_t pointsEntered;
-@property (assign) int32_t playTo;
+@property (assign) int pointsEntered;
+@property (assign) int playTo;
 
-@property (assign) int lastPlayerTag;  // 0=red, 1=green, 2=blue
-@property (retain) NSMutableArray *redData;
-@property (retain) NSMutableArray *greenData;
-@property (retain) NSMutableArray *blueData;
 
 // Progress Bars
 @property (weak, nonatomic) IBOutlet CERoundProgressView *redProgress;
 @property (weak, nonatomic) IBOutlet CERoundProgressView *greenProgress;
 @property (weak, nonatomic) IBOutlet CERoundProgressView *blueProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *yellowProgress;
 
 // Buttons
 - (IBAction)redScoreAdd:(id)sender;
 - (IBAction)greenScoreAdd:(id)sender;
 - (IBAction)blueScoreAdd:(id)sender;
+- (IBAction)yellowScoreAdd:(id)sender;
 - (IBAction)resetButton:(id)sender;
 - (IBAction)undoButton:(id)sender;
 - (IBAction)showInfoView:(id)sender;
@@ -58,9 +56,11 @@
 
 // Helper Methods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
-- (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data;
+- (BOOL)writeScoresToPlist;
 - (void)initializeScoresFromPlist;
 - (void)winMatch:(NSString *)winner;
 - (void)resetScores;
+- (void)updateProgress;
+- (void)updateScoreLabels;
 
 @end

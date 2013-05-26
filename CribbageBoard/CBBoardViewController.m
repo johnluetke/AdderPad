@@ -22,11 +22,8 @@
 @implementation CBBoardViewController
 
 @synthesize addToScoreField;
-@synthesize redScoreLabel, greenScoreLabel, blueScoreLabel, yellowScoreLabel;
-@synthesize redScore, greenScore, blueScore;
-@synthesize lastPlayerTag;
-@synthesize redData, greenData, blueData;
-@synthesize redProgress, greenProgress, blueProgress;
+@synthesize redScoreLabel, greenScoreLabel, blueScoreLabel, yellowScoreLabel, lastActionLabel;
+@synthesize redProgress, greenProgress, blueProgress, yellowProgress;
 @synthesize pointsEntered, playTo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,23 +45,37 @@
     }
     if (self) {
         // Custom initialization
-        playTo = 121;
+        playTo = 121;   // TODO: Need this to be something the user can change in settings
+        
+        //Numberpad init
         numberpad = [[CBNumberpad alloc] init];
         charMax = numberpad.maxCharAllowed;
-        [self initializeScoresFromPlist];
-        addToScoreField.delegate = self;
         
-        self.redProgress.tintColor = [UIColor redColor];
+        // Set up scores...
+        [self initializeScoresFromPlist];
+        
+        addToScoreField.delegate = self;
+
+        UIColor *rShade = [UIColor colorWithRed:214.0/255.0 green:24.0/255.0 blue:27.0/255.0 alpha:1.0];
+        UIColor *gShade = [UIColor colorWithRed:67.0/255.0 green:174.0/255.0 blue:36.0/255.0 alpha:1.0];
+        UIColor *bShade = [UIColor colorWithRed:70.0/255.0 green:126.0/255.0 blue:200.0/255.0 alpha:1.0];
+        UIColor *yShade = [UIColor colorWithRed:251.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
+        
+        self.redProgress.tintColor = rShade;
         self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
         self.redProgress.startAngle = (3.0*M_PI)/2.0;
         
-        self.greenProgress.tintColor = [UIColor greenColor];
+        self.greenProgress.tintColor = gShade;
         self.greenProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
         self.greenProgress.startAngle = (3.0*M_PI)/2.0;
         
-        self.blueProgress.tintColor = [UIColor blueColor];
+        self.blueProgress.tintColor = bShade;
         self.blueProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
         self.blueProgress.startAngle = (3.0*M_PI)/2.0;
+        
+        self.yellowProgress.tintColor = yShade;
+        self.yellowProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+        self.yellowProgress.startAngle = (3.0*M_PI)/2.0;
 
     }
     return self;
@@ -72,17 +83,11 @@
 
 - (void)redScoreAdd:(id)sender
 {
-    lastPlayerTag = 1;
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to red score: %d", pointsEntered);
+    [scores addToRed:pointsEntered];
     
-    if (!pointsEntered) {
-        redScore += 1;  // no value entered (TODO: adds 1 when 0 is entered)
-        pointsEntered = 1;
-    } else {
-        redScore += pointsEntered;
-    }
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
+    redScoreLabel.text = [NSString stringWithFormat:@"%d", scores.redScore];
     
     [redScoreLabel setNeedsDisplay];
     
@@ -90,93 +95,90 @@
         [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
+    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    NSNumber *points = [NSNumber numberWithInt:pointsEntered];
-    NSNumber *total = [NSNumber numberWithInt:redScore];
-    [redData replaceObjectAtIndex:0 withObject:points];
-    [redData replaceObjectAtIndex:1 withObject:total];
-    
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"RedScore" withData:redData];
-    
-    if (redScore >= playTo) {
+    if (scores.redScore >= playTo) {
         [self winMatch:@"Red"];
     }
     
     // Set progress bar
-    float progress = ((float)redScore / (float)playTo);
-    [redProgress setProgress:progress animated:YES];
+    float rProgress = ((float)scores.redScore / (float)playTo);
+    [redProgress setProgress:rProgress animated:YES];
 }
 
 - (void)greenScoreAdd:(id)sender
 {
-    lastPlayerTag = 2;
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to green score: %d", pointsEntered);
+    [scores addToGreen:pointsEntered];
     
-    if (!pointsEntered) {
-        greenScore += 1;  // no value entered (TODO: adds 1 when 0 is entered)
-        pointsEntered = 1;
-    } else {
-        greenScore += pointsEntered;
-    }
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
+    greenScoreLabel.text = [NSString stringWithFormat:@"%d", scores.greenScore];
     
     [greenScoreLabel setNeedsDisplay];
+    
     addToScoreField.text = nil;
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
+    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    NSNumber *points = [NSNumber numberWithInt:pointsEntered];
-    NSNumber *total = [NSNumber numberWithInt:greenScore];
-    [greenData replaceObjectAtIndex:0 withObject:points];
-    [greenData replaceObjectAtIndex:1 withObject:total];
-    
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"GreenScore" withData:greenData];
-    
-    if (greenScore >= playTo) {
+    if (scores.greenScore >= playTo) {
         [self winMatch:@"Green"];
     }
     
     // Set progress bar
-    float progress = ((float)greenScore / (float)playTo);
-    [greenProgress setProgress:progress animated:YES];
+    float gProgress = ((float)scores.greenScore / (float)playTo);
+    [greenProgress setProgress:gProgress animated:YES];
 }
 
 - (void)blueScoreAdd:(id)sender
 {
-    lastPlayerTag = 3;
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to blue score: %d", pointsEntered);
+    [scores addToBlue:pointsEntered];
     
-    if (!pointsEntered) {
-        blueScore += 1;  // no value entered (TODO: adds 1 when 0 is entered)
-        pointsEntered = 1;
-    } else {
-        blueScore += pointsEntered;
-    }
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
+    blueScoreLabel.text = [NSString stringWithFormat:@"%d", scores.blueScore];
     
     [blueScoreLabel setNeedsDisplay];
+    
     addToScoreField.text = nil;
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
+    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    NSNumber *points = [NSNumber numberWithInt:pointsEntered];
-    NSNumber *total = [NSNumber numberWithInt:blueScore];
-    [blueData replaceObjectAtIndex:0 withObject:points];
-    [blueData replaceObjectAtIndex:1 withObject:total];
-    
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"BlueScore" withData:blueData];
-
-    if (blueScore >= playTo) {
+    if (scores.blueScore >= playTo) {
         [self winMatch:@"Blue"];
     }
     
     // Set progress bar
-    float progress = ((float)blueScore / (float)playTo);
-    [blueProgress setProgress:progress animated:YES];
+    float bProgress = ((float)scores.blueScore / (float)playTo);
+    [blueProgress setProgress:bProgress animated:YES];
+}
+
+- (void)yellowScoreAdd:(id)sender
+{
+    pointsEntered = [[addToScoreField text] integerValue];
+    NSLog(@"Points to add to yellow score: %d", pointsEntered);
+    [scores addToYellow:pointsEntered];
+    
+    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", scores.yellowScore];
+    
+    [yellowScoreLabel setNeedsDisplay];
+    
+    addToScoreField.text = nil;
+    [numberpad input:@"C"];     // Clears the text field for new input
+    
+    // Add data to plist
+    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+    
+    if (scores.yellowScore >= playTo) {
+        [self winMatch:@"Yellow"];
+    }
+    
+    // Set progress bar
+    float yProgress = ((float)scores.yellowScore / (float)playTo);
+    [yellowProgress setProgress:yProgress animated:YES];
 }
 
 - (void)resetButton:(id)sender
@@ -192,52 +194,15 @@
 
 - (void)undoButton:(id)sender
 {
-    if (lastPlayerTag == 1) {
+    if ([scores undoLastAdd]) {
+        // Refresh score labels...
+        [self updateScoreLabels];
         
-        // red
-        int lastPoints = [[redData objectAtIndex:0] integerValue];
-        int prevScore = [[redData objectAtIndex:1] integerValue];
+        // Refresh progress views...
+        [self updateProgress];
         
-        NSNumber *afterUndoScore = [[NSNumber alloc] initWithInt:(prevScore - lastPoints)];
-        NSNumber *temp = [[NSNumber alloc] initWithInt:0];
-        redData = [[NSMutableArray alloc] initWithObjects:temp, afterUndoScore, nil];
-        redScore = (prevScore - lastPoints);
-        [self writeToPlist:@"/CurrentScores" playerColor:@"RedScore" withData:redData];
-        redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
-        [redScoreLabel setNeedsDisplay];
-        float progress = ((float)redScore / (float)playTo);
-        [redProgress setProgress:progress animated:YES];
-        
-    } else if (lastPlayerTag == 2) {
-        
-        // green
-        int lastPoints = [[greenData objectAtIndex:0] integerValue];
-        int prevScore = [[greenData objectAtIndex:1] integerValue];
-        NSNumber *afterUndoScore = [[NSNumber alloc] initWithInt:(prevScore - lastPoints)];
-        NSNumber *temp = [[NSNumber alloc] initWithInt:0];
-        greenData = [[NSMutableArray alloc] initWithObjects:temp, afterUndoScore, nil];
-        greenScore = (prevScore - lastPoints);
-        [self writeToPlist:@"/CurrentScores" playerColor:@"GreenScore" withData:greenData];
-        greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
-        [greenScoreLabel setNeedsDisplay];
-        float progress = ((float)greenScore / (float)playTo);
-        [greenProgress setProgress:progress animated:YES];
-        
-    } else if (lastPlayerTag == 3) {
-        
-        // blue
-        int lastPoints = [[blueData objectAtIndex:0] integerValue];
-        int prevScore = [[blueData objectAtIndex:1] integerValue];
-        NSNumber *afterUndoScore = [[NSNumber alloc] initWithInt:(prevScore - lastPoints)];
-        NSNumber *temp = [[NSNumber alloc] initWithInt:0];
-        blueData = [[NSMutableArray alloc] initWithObjects:temp, afterUndoScore, nil];
-        blueScore = (prevScore - lastPoints);
-        [self writeToPlist:@"/CurrentScores" playerColor:@"BlueScore" withData:blueData];
-        blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
-        [blueScoreLabel setNeedsDisplay];
-        float progress = ((float)blueScore / (float)playTo);
-        [blueProgress setProgress:progress animated:YES];
-        
+        // Add data to plist
+        [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     }
 }
 
@@ -248,26 +213,31 @@
 
 # pragma mark - Helper Methods
 
-- (BOOL)writeToPlist:(NSString *)fileName playerColor:(NSString *)player withData:(NSMutableArray *)data
+- (BOOL)writeScoresToPlist
 {
     NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
     NSString *documentsDirectory = [sysPaths objectAtIndex:0];
-    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:fileName];
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"/CBScoreList.plist"];
     
-    NSMutableDictionary *plistDict;
+    // Create array to be saved
+    NSMutableArray *plistArray;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+        plistArray = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
     } else {
-        // Doesn't exist, start with an empty dictionary
+        // Doesn't exist, start with an empty array
         NSLog(@"plist didn't exist");
-        plistDict = [[NSMutableDictionary alloc] init];
+        NSNumber *zero = [[NSNumber alloc] initWithInt:0];
+        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
     }
         
-    [plistDict setValue:data forKey:player];
+    [plistArray replaceObjectAtIndex:0 withObject:[[NSNumber alloc] initWithInt:scores.redScore]];
+    [plistArray replaceObjectAtIndex:1 withObject:[[NSNumber alloc] initWithInt:scores.greenScore]];
+    [plistArray replaceObjectAtIndex:2 withObject:[[NSNumber alloc] initWithInt:scores.blueScore]];
+    [plistArray replaceObjectAtIndex:3 withObject:[[NSNumber alloc] initWithInt:scores.yellowScore]];
     
-    NSLog(@"Current plist: %@", [plistDict description]);
+    NSLog(@"Current plist: %@", [plistArray description]);
     
-    BOOL didWriteToFile = [plistDict writeToFile:filePath atomically:YES];
+    BOOL didWriteToFile = [plistArray writeToFile:filePath atomically:YES];
     if (didWriteToFile) {
         NSLog(@"Write to file a SUCCESS!");
         return TRUE;
@@ -281,51 +251,29 @@
 {
     NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
     NSString *documentsDirectory = [sysPaths objectAtIndex:0];
-    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"/CurrentScores.plist"];
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"/CBScoreList.plist"];
     
     NSLog(@"File Path: %@", filePath);
     
-    NSMutableDictionary *plistDict;
+    NSMutableArray *plistArray;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-        // Initialize with previous scores
-        redData = [[NSMutableArray alloc] initWithObjects:[[plistDict objectForKey:@"RedScore"] objectAtIndex:0], [[plistDict objectForKey:@"RedScore"] objectAtIndex:1], nil];
-        redScore = [[redData objectAtIndex:1] intValue];
+        plistArray = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
         
-        greenData = [[NSMutableArray alloc] initWithObjects:[[plistDict objectForKey:@"GreenScore"] objectAtIndex:0], [[plistDict objectForKey:@"GreenScore"] objectAtIndex:1], nil];
-        greenScore = [[greenData objectAtIndex:1] intValue];
-        
-        blueData = [[NSMutableArray alloc] initWithObjects:[[plistDict objectForKey:@"BlueScore"] objectAtIndex:0], [[plistDict objectForKey:@"BlueScore"] objectAtIndex:1], nil];
-        blueScore = [[blueData objectAtIndex:1] intValue];
-        
-        // Initialize progress bars
-        float rProgress = ((float)redScore / (float)playTo);
-        float gProgress = ((float)greenScore / (float)playTo);
-        float bProgress = ((float)blueScore / (float)playTo);
-        [redProgress setProgress:rProgress animated:NO];
-        [greenProgress setProgress:gProgress animated:NO];
-        [blueProgress setProgress:bProgress animated:NO];
+        // // Initialize the CBScore data class with previous scores
+        scores = [[CBScore alloc] initWithArray:plistArray];
+    
     } else {
         // Doesn't exist, start with an empty dictionary
         NSLog(@"plist didn't exist");
-        plistDict = [[NSMutableDictionary alloc] init];
         
-        NSNumber *temp = [[NSNumber alloc] initWithInt:0];
-        redData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-        redScore = 0;
+        NSNumber *zero = [[NSNumber alloc] initWithInt:0];
+        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
         
-        greenData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-        greenScore = 0;
-        
-        blueData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-        blueScore = 0;
-        
-        // Initialize progress bars
-        [redProgress setProgress:0.0 animated:NO];
-        [greenProgress setProgress:0.0 animated:NO];
-        [blueProgress setProgress:0.0 animated:NO];
+        // Initialize the CBScore data class with scores at zero
+        scores = [[CBScore alloc] initWithArray:plistArray];
     }
-
+    
+    [self updateProgress];
 }
 
 // TODO: Consider writing this method to play special music, or display alternate message,
@@ -343,31 +291,38 @@
 
 - (void)resetScores
 {
-    NSNumber *temp = [[NSNumber alloc] initWithInt:0];
+    [scores resetScores];
+    [self writeScoresToPlist];
     
-    redData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-    redScore = 0;
-    
-    greenData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-    greenScore = 0;
-    
-    blueData = [[NSMutableArray alloc] initWithObjects:temp, temp, nil];
-    blueScore = 0;
-    
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"RedScore" withData:redData];
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"GreenScore" withData:redData];
-    [self writeToPlist:@"/CurrentScores.plist" playerColor:@"BlueScore" withData:redData];
-    
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
+    // Refresh score labels...
+    [self updateScoreLabels];
+    [self updateProgress];
+}
+
+- (void)updateProgress
+{
+    // Refresh progress bars
+    float rProgress = ((float)scores.redScore / (float)playTo);
+    float gProgress = ((float)scores.greenScore / (float)playTo);
+    float bProgress = ((float)scores.blueScore / (float)playTo);
+    float yProgress = ((float)scores.yellowScore / (float)playTo);
+    [redProgress setProgress:rProgress animated:NO];
+    [greenProgress setProgress:gProgress animated:NO];
+    [blueProgress setProgress:bProgress animated:NO];
+    [yellowProgress setProgress:yProgress animated:NO];
+}
+
+- (void)updateScoreLabels
+{
+    // Refresh score labels...
+    redScoreLabel.text = [NSString stringWithFormat:@"%d", scores.redScore];
+    greenScoreLabel.text = [NSString stringWithFormat:@"%d", scores.greenScore];
+    blueScoreLabel.text = [NSString stringWithFormat:@"%d", scores.blueScore];
+    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", scores.yellowScore];
     [redScoreLabel setNeedsDisplay];
     [greenScoreLabel setNeedsDisplay];
     [blueScoreLabel setNeedsDisplay];
-    
-    [redProgress setProgress:0.0 animated:NO];
-    [greenProgress setProgress:0.0 animated:NO];
-    [blueProgress setProgress:0.0 animated:NO];
+    [yellowScoreLabel setNeedsDisplay];
 }
 
 #pragma mark - Numberpad IBAction's
@@ -420,31 +375,16 @@
     yellowScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
     
     // Set the text labels to their respective colors
-    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67/255.0 alpha:1.0];
+    UIColor *labelColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
     redScoreLabel.textColor = labelColor;
     greenScoreLabel.textColor = labelColor;
     blueScoreLabel.textColor = labelColor;
     yellowScoreLabel.textColor = labelColor;
-
-//    redScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
-//    greenScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
-//    blueScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
-//    yellowScoreLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.7f];
     
+    [self updateScoreLabels];
+    /////////// End of label setting
     
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", redScore];
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", greenScore];
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", blueScore];
-    [redScoreLabel setNeedsDisplay];
-    [greenScoreLabel setNeedsDisplay];
-    [blueScoreLabel setNeedsDisplay];
-    
-    float rProgress = ((float)redScore / (float)playTo);
-    float gProgress = ((float)greenScore / (float)playTo);
-    float bProgress = ((float)blueScore / (float)playTo);
-    [redProgress setProgress:rProgress animated:NO];
-    [greenProgress setProgress:gProgress animated:NO];
-    [blueProgress setProgress:bProgress animated:NO];
+    [self updateProgress];
     
     // This prevents a keyboard from popping up, and still allows for typing in textfield
     UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
