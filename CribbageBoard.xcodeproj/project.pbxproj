@@ -8,25 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */; };
-		2D362BF7174EBF6B0066B7C5 /* BoardViewBackgroundVer3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF6174EBF6B0066B7C5 /* BoardViewBackgroundVer3.png */; };
 		2D362BFB174EC0B90066B7C5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF8174EC0B90066B7C5 /* info.png */; };
 		2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF9174EC0B90066B7C5 /* Reset.png */; };
 		2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BFA174EC0B90066B7C5 /* Undo.png */; };
-		2D362C06174EC8CB0066B7C5 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BFE174EC8CB0066B7C5 /* Blue.png */; };
-		2D362C07174EC8CB0066B7C5 /* BlueTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BFF174EC8CB0066B7C5 /* BlueTouch.png */; };
-		2D362C08174EC8CB0066B7C5 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C00174EC8CB0066B7C5 /* Green.png */; };
-		2D362C09174EC8CB0066B7C5 /* GreenTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C01174EC8CB0066B7C5 /* GreenTouch.png */; };
-		2D362C0A174EC8CB0066B7C5 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C02174EC8CB0066B7C5 /* Red.png */; };
-		2D362C0B174EC8CB0066B7C5 /* RedTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C03174EC8CB0066B7C5 /* RedTouch.png */; };
-		2D362C0C174EC8CB0066B7C5 /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C04174EC8CB0066B7C5 /* Yellow.png */; };
-		2D362C0D174EC8CB0066B7C5 /* YellowTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362C05174EC8CB0066B7C5 /* YellowTouch.png */; };
 		2D362C11174F409E0066B7C5 /* CBNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D362C10174F409E0066B7C5 /* CBNumberpad.m */; };
 		2D5D7F091746EC3A008B562E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F071746EC39008B562E /* Icon.png */; };
 		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
 		2D70A52317500A900052877C /* CBScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A52217500A900052877C /* CBScore.m */; };
 		2D70A52517500B420052877C /* CBScoreList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A52417500B420052877C /* CBScoreList.plist */; };
-		2D70A52A175281EE0052877C /* BoardViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A529175281EE0052877C /* BoardViewBackground-5.png */; };
 		2D941D6D17401F9C00D0426D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2D941D6C17401F9C00D0426D /* .gitignore */; };
 		2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22186173A0004008A1D02 /* UIKit.framework */; };
 		2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22188173A0004008A1D02 /* Foundation.framework */; };
@@ -41,6 +31,11 @@
 		2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */; };
 		2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */; };
 		2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C124173C2D5B00E694AC /* CurrentScores.plist */; };
+		2DD5B9AC175287470095CA26 /* BoardViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9AB175287470095CA26 /* BoardViewBackground-5.png */; };
+		2DD5B9B2175288490095CA26 /* Four.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9AE175288490095CA26 /* Four.png */; };
+		2DD5B9B3175288490095CA26 /* One.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9AF175288490095CA26 /* One.png */; };
+		2DD5B9B4175288490095CA26 /* Three.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9B0175288490095CA26 /* Three.png */; };
+		2DD5B9B5175288490095CA26 /* Two.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9B1175288490095CA26 /* Two.png */; };
 		2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */; };
 		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
 		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
@@ -53,18 +48,9 @@
 
 /* Begin PBXFileReference section */
 		2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
-		2D362BF6174EBF6B0066B7C5 /* BoardViewBackgroundVer3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardViewBackgroundVer3.png; sourceTree = "<group>"; };
 		2D362BF8174EC0B90066B7C5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2D362BF9174EC0B90066B7C5 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
 		2D362BFA174EC0B90066B7C5 /* Undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Undo.png; sourceTree = "<group>"; };
-		2D362BFE174EC8CB0066B7C5 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
-		2D362BFF174EC8CB0066B7C5 /* BlueTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueTouch.png; sourceTree = "<group>"; };
-		2D362C00174EC8CB0066B7C5 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
-		2D362C01174EC8CB0066B7C5 /* GreenTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenTouch.png; sourceTree = "<group>"; };
-		2D362C02174EC8CB0066B7C5 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
-		2D362C03174EC8CB0066B7C5 /* RedTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedTouch.png; sourceTree = "<group>"; };
-		2D362C04174EC8CB0066B7C5 /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
-		2D362C05174EC8CB0066B7C5 /* YellowTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowTouch.png; sourceTree = "<group>"; };
 		2D362C0F174F409E0066B7C5 /* CBNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNumberpad.h; sourceTree = "<group>"; };
 		2D362C10174F409E0066B7C5 /* CBNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNumberpad.m; sourceTree = "<group>"; };
 		2D5D7F071746EC39008B562E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -73,7 +59,6 @@
 		2D70A52117500A900052877C /* CBScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBScore.h; sourceTree = "<group>"; };
 		2D70A52217500A900052877C /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
 		2D70A52417500B420052877C /* CBScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBScoreList.plist; sourceTree = "<group>"; };
-		2D70A529175281EE0052877C /* BoardViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5.png"; sourceTree = "<group>"; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -93,6 +78,11 @@
 		2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBoardViewController.h; sourceTree = "<group>"; };
 		2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBoardViewController.m; sourceTree = "<group>"; };
 		2DC8C124173C2D5B00E694AC /* CurrentScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentScores.plist; sourceTree = "<group>"; };
+		2DD5B9AB175287470095CA26 /* BoardViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5.png"; sourceTree = "<group>"; };
+		2DD5B9AE175288490095CA26 /* Four.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Four.png; sourceTree = "<group>"; };
+		2DD5B9AF175288490095CA26 /* One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = One.png; sourceTree = "<group>"; };
+		2DD5B9B0175288490095CA26 /* Three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Three.png; sourceTree = "<group>"; };
+		2DD5B9B1175288490095CA26 /* Two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Two.png; sourceTree = "<group>"; };
 		2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
 		2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
 		2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
@@ -123,33 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D362BF0174EBB510066B7C5 /* UI Version 3 */ = {
-			isa = PBXGroup;
-			children = (
-				2D362BF6174EBF6B0066B7C5 /* BoardViewBackgroundVer3.png */,
-				2D362BF1174EBB640066B7C5 /* Buttons Ver 3 */,
-			);
-			name = "UI Version 3";
-			sourceTree = "<group>";
-		};
-		2D362BF1174EBB640066B7C5 /* Buttons Ver 3 */ = {
-			isa = PBXGroup;
-			children = (
-				2D362BFE174EC8CB0066B7C5 /* Blue.png */,
-				2D362BFF174EC8CB0066B7C5 /* BlueTouch.png */,
-				2D362C00174EC8CB0066B7C5 /* Green.png */,
-				2D362C01174EC8CB0066B7C5 /* GreenTouch.png */,
-				2D362C02174EC8CB0066B7C5 /* Red.png */,
-				2D362C03174EC8CB0066B7C5 /* RedTouch.png */,
-				2D362C04174EC8CB0066B7C5 /* Yellow.png */,
-				2D362C05174EC8CB0066B7C5 /* YellowTouch.png */,
-				2D362BF8174EC0B90066B7C5 /* info.png */,
-				2D362BF9174EC0B90066B7C5 /* Reset.png */,
-				2D362BFA174EC0B90066B7C5 /* Undo.png */,
-			);
-			name = "Buttons Ver 3";
-			sourceTree = "<group>";
-		};
 		2D362C0E174F40560066B7C5 /* Numberpad Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +134,8 @@
 		2D70A52617527E3C0052877C /* UI Version 4 */ = {
 			isa = PBXGroup;
 			children = (
-				2D70A529175281EE0052877C /* BoardViewBackground-5.png */,
+				2DD5B9AB175287470095CA26 /* BoardViewBackground-5.png */,
+				2DD5B9AD175288350095CA26 /* Buttons */,
 			);
 			name = "UI Version 4";
 			sourceTree = "<group>";
@@ -229,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				2D70A52617527E3C0052877C /* UI Version 4 */,
-				2D362BF0174EBB510066B7C5 /* UI Version 3 */,
 				2DC22190173A0004008A1D02 /* CribbageBoard-Info.plist */,
 				2DC8C124173C2D5B00E694AC /* CurrentScores.plist */,
 				2D70A52417500B420052877C /* CBScoreList.plist */,
@@ -241,6 +204,20 @@
 				2DC2219E173A0004008A1D02 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DD5B9AD175288350095CA26 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2D362BF8174EC0B90066B7C5 /* info.png */,
+				2D362BF9174EC0B90066B7C5 /* Reset.png */,
+				2D362BFA174EC0B90066B7C5 /* Undo.png */,
+				2DD5B9AE175288490095CA26 /* Four.png */,
+				2DD5B9AF175288490095CA26 /* One.png */,
+				2DD5B9B0175288490095CA26 /* Three.png */,
+				2DD5B9B1175288490095CA26 /* Two.png */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		2DE1C259174AEB95009DFAFA /* RoundProgressBar */ = {
@@ -351,20 +328,15 @@
 				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
 				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
 				2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */,
-				2D362BF7174EBF6B0066B7C5 /* BoardViewBackgroundVer3.png in Resources */,
 				2D362BFB174EC0B90066B7C5 /* info.png in Resources */,
 				2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */,
 				2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */,
-				2D362C06174EC8CB0066B7C5 /* Blue.png in Resources */,
-				2D362C07174EC8CB0066B7C5 /* BlueTouch.png in Resources */,
-				2D362C08174EC8CB0066B7C5 /* Green.png in Resources */,
-				2D362C09174EC8CB0066B7C5 /* GreenTouch.png in Resources */,
-				2D362C0A174EC8CB0066B7C5 /* Red.png in Resources */,
-				2D362C0B174EC8CB0066B7C5 /* RedTouch.png in Resources */,
-				2D362C0C174EC8CB0066B7C5 /* Yellow.png in Resources */,
-				2D362C0D174EC8CB0066B7C5 /* YellowTouch.png in Resources */,
 				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
-				2D70A52A175281EE0052877C /* BoardViewBackground-5.png in Resources */,
+				2DD5B9AC175287470095CA26 /* BoardViewBackground-5.png in Resources */,
+				2DD5B9B2175288490095CA26 /* Four.png in Resources */,
+				2DD5B9B3175288490095CA26 /* One.png in Resources */,
+				2DD5B9B4175288490095CA26 /* Three.png in Resources */,
+				2DD5B9B5175288490095CA26 /* Two.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
