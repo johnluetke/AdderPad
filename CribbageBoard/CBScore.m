@@ -10,21 +10,21 @@
 
 @implementation CBScore
 
-@synthesize redScore, greenScore, blueScore, yellowScore, lastPoints;
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
+@synthesize redScore, greenScore, blueScore, yellowScore, maxScore, lastPoints;
 
 #pragma mark - Initializaton Methods
 
-- (CBScore *)initWithArray:(NSMutableArray *)scoreArray
+- (void)initWithArray:(NSMutableArray *)scoreArray
 {
     lastPlayerTag = 0;
     lastPoints = 0;
+    maxScore = 121;     // Default score is for Cribbage games
     
     redScore = [[scoreArray objectAtIndex:0] integerValue];
     greenScore = [[scoreArray objectAtIndex:1] integerValue];
     blueScore = [[scoreArray objectAtIndex:2] integerValue];
     yellowScore = [[scoreArray objectAtIndex:3] integerValue];
-    
-    return self;
 }
 
 #pragma mark - Value Change Mehods
@@ -169,6 +169,18 @@
 - (int)lastPoints
 {
     return lastPoints;
+}
+
+- (int)maxScore
+{
+    return maxScore;
+}
+
+#pragma mark - Setter Methods
+
+- (void)setMaxScore:(int)score
+{
+    maxScore = score;
 }
 
 

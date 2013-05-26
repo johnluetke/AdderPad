@@ -15,14 +15,14 @@
 {
     //__weak IBOutlet UITextField *addToScoreField;
     CBNumberpad *numberpad;
-    CBScore *scores;
-    UITextField *addToScoreField;
+    //CBScore *scores;
+    __weak UITextField *addToScoreField;
     
     @private
     int charMax;
 }
 
-@property (nonatomic) IBOutlet id addToScoreField;
+@property (nonatomic, weak) IBOutlet id addToScoreField;
 
 // Labels
 @property (nonatomic, weak) IBOutlet UILabel *redScoreLabel;

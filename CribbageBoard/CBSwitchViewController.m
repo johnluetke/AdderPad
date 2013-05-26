@@ -38,7 +38,7 @@ static CBSwitchViewController *instance = NULL;
         }
         UIViewAnimationOptions animation;
         float transitionTime = 0.5;
-        animation = UIViewAnimationOptionTransitionFlipFromBottom;
+        animation = UIViewAnimationOptionTransitionFlipFromRight;
         
         [UIView transitionWithView:instance.view
                           duration:transitionTime
@@ -68,7 +68,7 @@ static CBSwitchViewController *instance = NULL;
         
         [UIView transitionWithView:instance.view
                           duration:0.5
-                           options: UIViewAnimationOptionTransitionFlipFromTop
+                           options: UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{
                             [instance.infoVC viewWillAppear:YES];
                             [instance.boardVC viewWillDisappear:YES];

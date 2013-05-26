@@ -17,8 +17,8 @@
     CBBoardViewController *boardVC;
     CBInfoViewController *infoVC;
 }
-@property (retain, nonatomic) CBBoardViewController *boardVC;
-@property (retain, nonatomic) CBInfoViewController *infoVC;
+@property (nonatomic) CBBoardViewController *boardVC;
+@property (nonatomic) CBInfoViewController *infoVC;
 
 + (void)switchToBoard;
 + (void)switchToInfo;

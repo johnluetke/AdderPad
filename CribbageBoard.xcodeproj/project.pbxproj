@@ -36,6 +36,7 @@
 		2DD5B9B3175288490095CA26 /* One.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9AF175288490095CA26 /* One.png */; };
 		2DD5B9B4175288490095CA26 /* Three.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9B0175288490095CA26 /* Three.png */; };
 		2DD5B9B5175288490095CA26 /* Two.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9B1175288490095CA26 /* Two.png */; };
+		2DD5B9B91752B4690095CA26 /* InfoViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD5B9B81752B4690095CA26 /* InfoViewBackground-5.png */; };
 		2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */; };
 		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
 		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
@@ -83,6 +84,8 @@
 		2DD5B9AF175288490095CA26 /* One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = One.png; sourceTree = "<group>"; };
 		2DD5B9B0175288490095CA26 /* Three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Three.png; sourceTree = "<group>"; };
 		2DD5B9B1175288490095CA26 /* Two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Two.png; sourceTree = "<group>"; };
+		2DD5B9B81752B4690095CA26 /* InfoViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-5.png"; sourceTree = "<group>"; };
+		2DD5B9BA1752C2B50095CA26 /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
 		2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
 		2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
 		2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 		2D70A52617527E3C0052877C /* UI Version 4 */ = {
 			isa = PBXGroup;
 			children = (
+				2DD5B9B81752B4690095CA26 /* InfoViewBackground-5.png */,
 				2DD5B9AB175287470095CA26 /* BoardViewBackground-5.png */,
 				2DD5B9AD175288350095CA26 /* Buttons */,
 			);
@@ -183,6 +187,7 @@
 				2DFC20BB1741F19E009AE1FC /* SwitchView */,
 				2DC22197173A0004008A1D02 /* CBAppDelegate.h */,
 				2DC22198173A0004008A1D02 /* CBAppDelegate.m */,
+				2DD5B9BA1752C2B50095CA26 /* CWLSynthesizeSingleton.h */,
 				2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */,
 				2DC2218F173A0004008A1D02 /* Supporting Files */,
 			);
@@ -337,6 +342,7 @@
 				2DD5B9B3175288490095CA26 /* One.png in Resources */,
 				2DD5B9B4175288490095CA26 /* Three.png in Resources */,
 				2DD5B9B5175288490095CA26 /* Two.png in Resources */,
+				2DD5B9B91752B4690095CA26 /* InfoViewBackground-5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
