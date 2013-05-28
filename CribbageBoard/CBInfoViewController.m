@@ -51,6 +51,33 @@
     [CBSwitchViewController switchToBoard];
 }
 
+- (IBAction)saveMaxScore:(id)sender
+{
+    UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Change Winning Score?"
+                                                                  message:@"This will reset scores.\nAre you sure?"
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Yes"
+                                                        otherButtonTitles:@"No", nil];
+    changeMaxScoreAlert.tag = 1;
+    [changeMaxScoreAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if(buttonIndex == 0) {
+            int newMaxScore = [[maxScoreField text] integerValue];
+            NSLog(@"Changing new max score to: %d", newMaxScore);
+            [[CBScore sharedCBScore] setMaxScore:newMaxScore];
+            maxScoreField.text = nil;
+            [numberpad input:@"C"];     // Clears the text field for new input
+            [[CBScore sharedCBScore] resetScores];
+        } else {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
+    }
+}
+
 #pragma mark - Numberpad IBAction's
 
 - (IBAction) press:(id)sender {

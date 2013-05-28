@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CBNumberpad.h"
 
-@interface CBInfoViewController : UIViewController <UITextFieldDelegate>
+@interface CBInfoViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
     CBNumberpad *numberpad;
     UITextField *maxScoreField;
@@ -21,6 +21,8 @@
 @property (nonatomic) IBOutlet id maxScoreField;
 
 - (IBAction)backToBoard:(id)sender;
+- (IBAction)saveMaxScore:(id)sender;
+
 
 // Numberpad Input
 - (IBAction) press:(id)sender;

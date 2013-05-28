@@ -11,25 +11,28 @@
 @implementation CBScore
 
 CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
-@synthesize redScore, greenScore, blueScore, yellowScore, maxScore, lastPoints;
+@synthesize pOneScore, pTwoScore, pThreeScore, pFourScore, maxScore, lastPoints, lastPlayerTag;
 
 #pragma mark - Initializaton Methods
 
 - (void)initWithArray:(NSMutableArray *)scoreArray
 {
-    lastPlayerTag = 0;
-    lastPoints = 0;
-    maxScore = 121;     // Default score is for Cribbage games
+//    lastPlayerTag = 0;
+//    lastPoints = 0;
+//    maxScore = 121;     // Default score is for Cribbage games
     
-    redScore = [[scoreArray objectAtIndex:0] integerValue];
-    greenScore = [[scoreArray objectAtIndex:1] integerValue];
-    blueScore = [[scoreArray objectAtIndex:2] integerValue];
-    yellowScore = [[scoreArray objectAtIndex:3] integerValue];
+    pOneScore = [[scoreArray objectAtIndex:0] integerValue];
+    pTwoScore = [[scoreArray objectAtIndex:1] integerValue];
+    pThreeScore = [[scoreArray objectAtIndex:2] integerValue];
+    pFourScore = [[scoreArray objectAtIndex:3] integerValue];
+    maxScore = [[scoreArray objectAtIndex:4] integerValue];
+    lastPoints = [[scoreArray objectAtIndex:5] integerValue];
+    lastPlayerTag = [[scoreArray objectAtIndex:6] integerValue];
 }
 
 #pragma mark - Value Change Mehods
 
-- (void)addToRed:(int)points
+- (void)addToPlayerOne:(int)points
 {
     lastPlayerTag = 1;
     
@@ -38,11 +41,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         points = 1;
     }
     
-    redScore += points;
+    pOneScore += points;
     lastPoints = points;
 }
 
-- (void)addToGreen:(int)points
+- (void)addToPlayerTwo:(int)points
 {
     lastPlayerTag = 2;
     
@@ -51,11 +54,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         points = 1;
     }
     
-    greenScore += points;
+    pTwoScore += points;
     lastPoints = points;
 }
 
-- (void)addToBlue:(int)points
+- (void)addToPlayerThree:(int)points
 {
     lastPlayerTag = 3;
     
@@ -64,11 +67,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         points = 1;
     }
     
-    blueScore += points;
+    pThreeScore += points;
     lastPoints = points;
 }
 
-- (void)addToYellow:(int)points
+- (void)addToPlayerFour:(int)points
 {
     lastPlayerTag = 4;
     
@@ -77,7 +80,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         points = 1;
     }
     
-    yellowScore += points;
+    pFourScore += points;
     lastPoints = points;
 }
 
@@ -86,28 +89,28 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
 {
     if (lastPlayerTag == 1) {
         // red
-        redScore = redScore - lastPoints;
+        pOneScore = pOneScore - lastPoints;
         lastPoints = 0;
         lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 2) {
         // green
-        greenScore = greenScore - lastPoints;
+        pTwoScore = pTwoScore - lastPoints;
         lastPoints = 0;
         lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 3) {
         // blue
-        blueScore = blueScore - lastPoints;
+        pThreeScore = pThreeScore - lastPoints;
         lastPoints = 0;
         lastPlayerTag = 0;
         return YES;
         
     } else if (lastPlayerTag == 4) {
         // yellow
-        yellowScore = yellowScore - lastPoints;
+        pFourScore = pFourScore - lastPoints;
         lastPoints = 0;
         lastPlayerTag = 0;
         return YES;
@@ -115,55 +118,31 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     return NO;
 }
 
-// Returns YES if reset was needed
 - (void)resetScores
 {
-    redScore = 0;
-    greenScore = 0;
-    blueScore = 0;
-    yellowScore = 0;
+    pOneScore = 0;
+    pTwoScore = 0;
+    pThreeScore = 0;
+    pFourScore = 0;
     lastPoints = 0;
     lastPlayerTag = 0;
 }
 
-// Returns the last players name (color)
-// If no one went last (undo or no score), returns nil
-- (NSString *)lastPlayerName
-{
-    if (lastPlayerTag == 1) {
-        // red
-        return @"Red";
-        
-    } else if (lastPlayerTag == 2) {
-        // green
-        return @"Green";
-        
-    } else if (lastPlayerTag == 3) {
-        // blue
-        return @"Blue";
-        
-    } else if (lastPlayerTag == 4) {
-        // yellow
-        return @"Yellow";
-    }
-    return nil;
-}
-
 #pragma mark - Getter Methods
 
-- (int)redScore
+- (int)pOneScore
 {
-    return redScore;
+    return pOneScore;
 }
 
-- (int)greenScore
+- (int)pTwoScore
 {
-    return greenScore;
+    return pTwoScore;
 }
 
-- (int)blueScore
+- (int)pThreeScore
 {
-    return blueScore;
+    return pThreeScore;
 }
 
 - (int)lastPoints
@@ -174,6 +153,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
 - (int)maxScore
 {
     return maxScore;
+}
+
+// Returns the number of the last player to go
+- (int)lastPlayerTag
+{
+    return lastPlayerTag;
 }
 
 #pragma mark - Setter Methods

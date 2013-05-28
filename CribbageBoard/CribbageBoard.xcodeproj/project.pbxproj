@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */; };
+		2D362BFB174EC0B90066B7C5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF8174EC0B90066B7C5 /* info.png */; };
+		2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF9174EC0B90066B7C5 /* Reset.png */; };
+		2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BFA174EC0B90066B7C5 /* Undo.png */; };
+		2D362C11174F409E0066B7C5 /* CBNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D362C10174F409E0066B7C5 /* CBNumberpad.m */; };
+		2D5D7F091746EC3A008B562E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F071746EC39008B562E /* Icon.png */; };
+		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
+		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
+		2D6A8F181754FAFA00495FA5 /* InfoViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */; };
+		2D6A8F1D1754FF9700495FA5 /* pFour.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F191754FF9700495FA5 /* pFour.png */; };
+		2D6A8F1E1754FF9700495FA5 /* pOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1A1754FF9700495FA5 /* pOne.png */; };
+		2D6A8F1F1754FF9700495FA5 /* pThree.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1B1754FF9700495FA5 /* pThree.png */; };
+		2D6A8F201754FF9700495FA5 /* pTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1C1754FF9700495FA5 /* pTwo.png */; };
+		2D6A8F22175500DD00495FA5 /* BoardViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F21175500DD00495FA5 /* BoardViewBackground-5.png */; };
+		2D70A52317500A900052877C /* CBScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A52217500A900052877C /* CBScore.m */; };
+		2D70A52517500B420052877C /* CBScoreList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A52417500B420052877C /* CBScoreList.plist */; };
+		2D941D6D17401F9C00D0426D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2D941D6C17401F9C00D0426D /* .gitignore */; };
+		2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22186173A0004008A1D02 /* UIKit.framework */; };
+		2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC22188173A0004008A1D02 /* Foundation.framework */; };
+		2DC2218B173A0004008A1D02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC2218A173A0004008A1D02 /* CoreGraphics.framework */; };
+		2DC2218D173A0004008A1D02 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC2218C173A0004008A1D02 /* CoreData.framework */; };
+		2DC22193173A0004008A1D02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DC22191173A0004008A1D02 /* InfoPlist.strings */; };
+		2DC22195173A0004008A1D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC22194173A0004008A1D02 /* main.m */; };
+		2DC22199173A0004008A1D02 /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC22198173A0004008A1D02 /* CBAppDelegate.m */; };
+		2DC2219B173A0004008A1D02 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2219A173A0004008A1D02 /* Default.png */; };
+		2DC2219D173A0004008A1D02 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2219C173A0004008A1D02 /* Default@2x.png */; };
+		2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2219E173A0004008A1D02 /* Default-568h@2x.png */; };
+		2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */; };
+		2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */; };
+		2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8C124173C2D5B00E694AC /* CurrentScores.plist */; };
+		2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */; };
+		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
+		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
+		2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */; };
+		2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */; };
+		2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */; };
+		2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */; };
+		2DFC20CE1741F66C009AE1FC /* CBInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
+		2D362BF8174EC0B90066B7C5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		2D362BF9174EC0B90066B7C5 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
+		2D362BFA174EC0B90066B7C5 /* Undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Undo.png; sourceTree = "<group>"; };
+		2D362C0F174F409E0066B7C5 /* CBNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNumberpad.h; sourceTree = "<group>"; };
+		2D362C10174F409E0066B7C5 /* CBNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNumberpad.m; sourceTree = "<group>"; };
+		2D5D7F071746EC39008B562E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		2D5D7F081746EC3A008B562E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-5.png"; sourceTree = "<group>"; };
+		2D6A8F191754FF9700495FA5 /* pFour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pFour.png; sourceTree = "<group>"; };
+		2D6A8F1A1754FF9700495FA5 /* pOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pOne.png; sourceTree = "<group>"; };
+		2D6A8F1B1754FF9700495FA5 /* pThree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pThree.png; sourceTree = "<group>"; };
+		2D6A8F1C1754FF9700495FA5 /* pTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pTwo.png; sourceTree = "<group>"; };
+		2D6A8F21175500DD00495FA5 /* BoardViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5.png"; sourceTree = "<group>"; };
+		2D70A52117500A900052877C /* CBScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBScore.h; sourceTree = "<group>"; };
+		2D70A52217500A900052877C /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
+		2D70A52417500B420052877C /* CBScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBScoreList.plist; sourceTree = "<group>"; };
+		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2DC22188173A0004008A1D02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2DC2218A173A0004008A1D02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2DC2218C173A0004008A1D02 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2DC22190173A0004008A1D02 /* CribbageBoard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CribbageBoard-Info.plist"; sourceTree = "<group>"; };
+		2DC22192173A0004008A1D02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DC22194173A0004008A1D02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DC22196173A0004008A1D02 /* CribbageBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CribbageBoard-Prefix.pch"; sourceTree = "<group>"; };
+		2DC22197173A0004008A1D02 /* CBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAppDelegate.h; sourceTree = "<group>"; };
+		2DC22198173A0004008A1D02 /* CBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAppDelegate.m; sourceTree = "<group>"; };
+		2DC2219A173A0004008A1D02 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2DC2219C173A0004008A1D02 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2DC2219E173A0004008A1D02 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2DC221A1173A0004008A1D02 /* CribbageBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CribbageBoard.xcdatamodel; sourceTree = "<group>"; };
+		2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBoardViewController.h; sourceTree = "<group>"; };
+		2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBoardViewController.m; sourceTree = "<group>"; };
+		2DC8C124173C2D5B00E694AC /* CurrentScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentScores.plist; sourceTree = "<group>"; };
+		2DD5B9BA1752C2B50095CA26 /* CWLSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLSynthesizeSingleton.h; sourceTree = "<group>"; };
+		2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
+		2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
+		2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
+		2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
+		2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBInfoViewController-5.xib"; sourceTree = "<group>"; };
+		2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBBoardViewController.xib; sourceTree = "<group>"; };
+		2DFC20BC1741F1D1009AE1FC /* CBSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSwitchViewController.h; sourceTree = "<group>"; };
+		2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSwitchViewController.m; sourceTree = "<group>"; };
+		2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSwitchViewController.xib; sourceTree = "<group>"; };
+		2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInfoViewController.h; sourceTree = "<group>"; };
+		2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBInfoViewController.m; sourceTree = "<group>"; };
+		2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBInfoViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DC22180173A0004008A1D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */,
+				2DC22187173A0004008A1D02 /* UIKit.framework in Frameworks */,
+				2DC22189173A0004008A1D02 /* Foundation.framework in Frameworks */,
+				2DC2218B173A0004008A1D02 /* CoreGraphics.framework in Frameworks */,
+				2DC2218D173A0004008A1D02 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D362C0E174F40560066B7C5 /* Numberpad Class */ = {
+			isa = PBXGroup;
+			children = (
+				2D362C0F174F409E0066B7C5 /* CBNumberpad.h */,
+				2D362C10174F409E0066B7C5 /* CBNumberpad.m */,
+			);
+			name = "Numberpad Class";
+			sourceTree = "<group>";
+		};
+		2D70A52017500A720052877C /* Score Class */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A52117500A900052877C /* CBScore.h */,
+				2D70A52217500A900052877C /* CBScore.m */,
+			);
+			name = "Score Class";
+			sourceTree = "<group>";
+		};
+		2D70A52617527E3C0052877C /* UI Version 4 */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */,
+				2DD5B9AD175288350095CA26 /* Buttons */,
+			);
+			name = "UI Version 4";
+			sourceTree = "<group>";
+		};
+		2DC2217A173A0004008A1D02 = {
+			isa = PBXGroup;
+			children = (
+				2D6A8F21175500DD00495FA5 /* BoardViewBackground-5.png */,
+				2D941D6C17401F9C00D0426D /* .gitignore */,
+				2D5D7F071746EC39008B562E /* Icon.png */,
+				2D5D7F081746EC3A008B562E /* Icon@2x.png */,
+				2DC2218E173A0004008A1D02 /* CribbageBoard */,
+				2DC22185173A0004008A1D02 /* Frameworks */,
+				2DC22184173A0004008A1D02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DC22184173A0004008A1D02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DC22183173A0004008A1D02 /* CribbageBoard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DC22185173A0004008A1D02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D5D7F101746F132008B562E /* QuartzCore.framework */,
+				2DC22186173A0004008A1D02 /* UIKit.framework */,
+				2DC22188173A0004008A1D02 /* Foundation.framework */,
+				2DC2218A173A0004008A1D02 /* CoreGraphics.framework */,
+				2DC2218C173A0004008A1D02 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DC2218E173A0004008A1D02 /* CribbageBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A52017500A720052877C /* Score Class */,
+				2D362C0E174F40560066B7C5 /* Numberpad Class */,
+				2DE1C259174AEB95009DFAFA /* RoundProgressBar */,
+				2DFC20C21741F5F6009AE1FC /* BoardView */,
+				2DFC20C11741F5BB009AE1FC /* InfoView */,
+				2DFC20BB1741F19E009AE1FC /* SwitchView */,
+				2DC22197173A0004008A1D02 /* CBAppDelegate.h */,
+				2DC22198173A0004008A1D02 /* CBAppDelegate.m */,
+				2DD5B9BA1752C2B50095CA26 /* CWLSynthesizeSingleton.h */,
+				2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */,
+				2DC2218F173A0004008A1D02 /* Supporting Files */,
+			);
+			path = CribbageBoard;
+			sourceTree = "<group>";
+		};
+		2DC2218F173A0004008A1D02 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A52617527E3C0052877C /* UI Version 4 */,
+				2DC22190173A0004008A1D02 /* CribbageBoard-Info.plist */,
+				2DC8C124173C2D5B00E694AC /* CurrentScores.plist */,
+				2D70A52417500B420052877C /* CBScoreList.plist */,
+				2DC22191173A0004008A1D02 /* InfoPlist.strings */,
+				2DC22194173A0004008A1D02 /* main.m */,
+				2DC22196173A0004008A1D02 /* CribbageBoard-Prefix.pch */,
+				2DC2219A173A0004008A1D02 /* Default.png */,
+				2DC2219C173A0004008A1D02 /* Default@2x.png */,
+				2DC2219E173A0004008A1D02 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DD5B9AD175288350095CA26 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8F191754FF9700495FA5 /* pFour.png */,
+				2D6A8F1A1754FF9700495FA5 /* pOne.png */,
+				2D6A8F1B1754FF9700495FA5 /* pThree.png */,
+				2D6A8F1C1754FF9700495FA5 /* pTwo.png */,
+				2D362BF8174EC0B90066B7C5 /* info.png */,
+				2D362BF9174EC0B90066B7C5 /* Reset.png */,
+				2D362BFA174EC0B90066B7C5 /* Undo.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		2DE1C259174AEB95009DFAFA /* RoundProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				2DE1C25A174AEBCD009DFAFA /* CERoundProgressLayer.h */,
+				2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */,
+				2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */,
+				2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */,
+			);
+			name = RoundProgressBar;
+			sourceTree = "<group>";
+		};
+		2DFC20BB1741F19E009AE1FC /* SwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20BC1741F1D1009AE1FC /* CBSwitchViewController.h */,
+				2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */,
+				2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */,
+			);
+			name = SwitchView;
+			sourceTree = "<group>";
+		};
+		2DFC20C11741F5BB009AE1FC /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */,
+				2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */,
+				2DFC20CC1741F66C009AE1FC /* CBInfoViewController.xib */,
+				2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */,
+			);
+			name = InfoView;
+			sourceTree = "<group>";
+		};
+		2DFC20C21741F5F6009AE1FC /* BoardView */ = {
+			isa = PBXGroup;
+			children = (
+				2DC221A8173A05C6008A1D02 /* CBBoardViewController.h */,
+				2DC221A9173A05C6008A1D02 /* CBBoardViewController.m */,
+				2DFC20B91741C9B5009AE1FC /* CBBoardViewController.xib */,
+				2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */,
+			);
+			name = BoardView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DC22182173A0004008A1D02 /* CribbageBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC221A5173A0004008A1D02 /* Build configuration list for PBXNativeTarget "CribbageBoard" */;
+			buildPhases = (
+				2DC2217F173A0004008A1D02 /* Sources */,
+				2DC22180173A0004008A1D02 /* Frameworks */,
+				2DC22181173A0004008A1D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CribbageBoard;
+			productName = CribbageBoard;
+			productReference = 2DC22183173A0004008A1D02 /* CribbageBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DC2217B173A0004008A1D02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CB;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tim G Carlson";
+			};
+			buildConfigurationList = 2DC2217E173A0004008A1D02 /* Build configuration list for PBXProject "CribbageBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2DC2217A173A0004008A1D02;
+			productRefGroup = 2DC22184173A0004008A1D02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DC22182173A0004008A1D02 /* CribbageBoard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DC22181173A0004008A1D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC22193173A0004008A1D02 /* InfoPlist.strings in Resources */,
+				2DC2219B173A0004008A1D02 /* Default.png in Resources */,
+				2DC2219D173A0004008A1D02 /* Default@2x.png in Resources */,
+				2DC2219F173A0004008A1D02 /* Default-568h@2x.png in Resources */,
+				2DC8C125173C2D5B00E694AC /* CurrentScores.plist in Resources */,
+				2D941D6D17401F9C00D0426D /* .gitignore in Resources */,
+				2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */,
+				2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */,
+				2DFC20CE1741F66C009AE1FC /* CBInfoViewController.xib in Resources */,
+				2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */,
+				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
+				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
+				2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */,
+				2D362BFB174EC0B90066B7C5 /* info.png in Resources */,
+				2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */,
+				2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */,
+				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
+				2D6A8F181754FAFA00495FA5 /* InfoViewBackground-5.png in Resources */,
+				2D6A8F1D1754FF9700495FA5 /* pFour.png in Resources */,
+				2D6A8F1E1754FF9700495FA5 /* pOne.png in Resources */,
+				2D6A8F1F1754FF9700495FA5 /* pThree.png in Resources */,
+				2D6A8F201754FF9700495FA5 /* pTwo.png in Resources */,
+				2D6A8F22175500DD00495FA5 /* BoardViewBackground-5.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DC2217F173A0004008A1D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC22195173A0004008A1D02 /* main.m in Sources */,
+				2DC22199173A0004008A1D02 /* CBAppDelegate.m in Sources */,
+				2DC221A2173A0004008A1D02 /* CribbageBoard.xcdatamodeld in Sources */,
+				2DC221AB173A05C6008A1D02 /* CBBoardViewController.m in Sources */,
+				2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */,
+				2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */,
+				2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */,
+				2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */,
+				2D362C11174F409E0066B7C5 /* CBNumberpad.m in Sources */,
+				2D70A52317500A900052877C /* CBScore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2DC22191173A0004008A1D02 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DC22192173A0004008A1D02 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DC221A3173A0004008A1D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DC221A4173A0004008A1D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DC221A6173A0004008A1D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
+				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2DC221A7173A0004008A1D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
+				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DC2217E173A0004008A1D02 /* Build configuration list for PBXProject "CribbageBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC221A3173A0004008A1D02 /* Debug */,
+				2DC221A4173A0004008A1D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC221A5173A0004008A1D02 /* Build configuration list for PBXNativeTarget "CribbageBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC221A6173A0004008A1D02 /* Debug */,
+				2DC221A7173A0004008A1D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2DC221A0173A0004008A1D02 /* CribbageBoard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2DC221A1173A0004008A1D02 /* CribbageBoard.xcdatamodel */,
+			);
+			currentVersion = 2DC221A1173A0004008A1D02 /* CribbageBoard.xcdatamodel */;
+			path = CribbageBoard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2DC2217B173A0004008A1D02 /* Project object */;
+}

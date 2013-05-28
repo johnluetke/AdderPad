@@ -17,6 +17,8 @@
 #import "CBBoardViewController.h"
 #import "CBSwitchViewController.h"
 
+const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbage)
+
 @interface CBBoardViewController ()
 
 @end
@@ -65,7 +67,7 @@
 {
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to red score: %d", pointsEntered);
-    [[CBScore sharedCBScore] addToRed:pointsEntered];
+    [[CBScore sharedCBScore] addToPlayerOne:pointsEntered];
     
     [self updateScoreLabels];
     [self updateProgress];
@@ -76,7 +78,7 @@
     // Add data to plist
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    if ([CBScore sharedCBScore].redScore >= [CBScore sharedCBScore].maxScore) {
+    if ([CBScore sharedCBScore].pOneScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch:@"Red"];
     }
 }
@@ -85,7 +87,7 @@
 {
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to green score: %d", pointsEntered);
-    [[CBScore sharedCBScore] addToGreen:pointsEntered];
+    [[CBScore sharedCBScore] addToPlayerTwo:pointsEntered];
     
     [self updateScoreLabels];
     [self updateProgress];
@@ -96,7 +98,7 @@
     // Add data to plist
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    if ([CBScore sharedCBScore].greenScore >= [CBScore sharedCBScore].maxScore) {
+    if ([CBScore sharedCBScore].pTwoScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch:@"Green"];
     }
 }
@@ -105,7 +107,7 @@
 {
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to blue score: %d", pointsEntered);
-    [[CBScore sharedCBScore] addToBlue:pointsEntered];
+    [[CBScore sharedCBScore] addToPlayerThree:pointsEntered];
     
     [self updateScoreLabels];
     [self updateProgress];
@@ -116,7 +118,7 @@
     // Add data to plist
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    if ([CBScore sharedCBScore].blueScore >= [CBScore sharedCBScore].maxScore) {
+    if ([CBScore sharedCBScore].pThreeScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch:@"Blue"];
     }
 }
@@ -125,7 +127,7 @@
 {
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to yellow score: %d", pointsEntered);
-    [[CBScore sharedCBScore] addToYellow:pointsEntered];
+    [[CBScore sharedCBScore] addToPlayerFour:pointsEntered];
     
     [self updateScoreLabels];
     [self updateProgress];
@@ -136,7 +138,7 @@
     // Add data to plist
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
-    if ([CBScore sharedCBScore].yellowScore >= [CBScore sharedCBScore].maxScore) {
+    if ([CBScore sharedCBScore].pFourScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch:@"Yellow"];
     }
 }
@@ -187,13 +189,22 @@
         // Doesn't exist, start with an empty array
         NSLog(@"plist didn't exist");
         NSNumber *zero = [[NSNumber alloc] initWithInt:0];
-        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
+        NSNumber *maxPlayTo = [NSNumber numberWithInt:DEFAULT_GAME_SCORE];
+        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, maxPlayTo, zero, zero, nil];
     }
-        
-    [plistArray replaceObjectAtIndex:0 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].redScore]];
-    [plistArray replaceObjectAtIndex:1 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].greenScore]];
-    [plistArray replaceObjectAtIndex:2 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].blueScore]];
-    [plistArray replaceObjectAtIndex:3 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].yellowScore]];
+    
+    // Scores...
+    [plistArray replaceObjectAtIndex:0 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].pOneScore]];
+    [plistArray replaceObjectAtIndex:1 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].pTwoScore]];
+    [plistArray replaceObjectAtIndex:2 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].pThreeScore]];
+    [plistArray replaceObjectAtIndex:3 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].pFourScore]];
+    
+    // Max play to score...
+    [plistArray replaceObjectAtIndex:4 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].maxScore]];
+    
+    // Undo Data...
+    [plistArray replaceObjectAtIndex:5 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].lastPoints]];
+    [plistArray replaceObjectAtIndex:6 withObject:[[NSNumber alloc] initWithInt:[CBScore sharedCBScore].lastPlayerTag]];
     
     NSLog(@"Current plist: %@", [plistArray description]);
     
@@ -207,6 +218,7 @@
     }
 }
 
+// New plist storage for a Dictionary
 - (void)initializeScoresFromPlist
 {
     NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
@@ -225,9 +237,17 @@
     } else {
         // Doesn't exist, start with an empty dictionary
         NSLog(@"plist didn't exist");
-        
+
         NSNumber *zero = [[NSNumber alloc] initWithInt:0];
-        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
+        NSNumber *maxPlayTo = [NSNumber numberWithInt:DEFAULT_GAME_SCORE];
+        plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, maxPlayTo, zero, zero, nil];
+        
+//        NSMutableArray *zeroScore = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
+//        NSMutableArray *scoresArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
+//        NSMutableArray *infoArray = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:DEFAULT_GAME_SCORE], zero, nil];
+//        NSMutableArray *undoArray = [[NSMutableArray alloc] initWithObjects:zeroScore, nil];
+//        plistDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+//                     scoresArray, @"Scores", infoArray, @"Info", undoArray, @"Undos", nil];
         
         // Initialize the CBScore data class with scores at zero
         [[CBScore sharedCBScore] initWithArray:plistArray];
@@ -240,11 +260,15 @@
 - (void)winMatch:(NSString *)winner
 {
     NSString *winTitle = [winner stringByAppendingString:@" is the winner"];
-    NSString *winMessage = [NSString stringWithFormat:@"Red: %d\nGreen: %d\nBlue: %d\nYellow: %d",
-                            [CBScore sharedCBScore].redScore,
-                            [CBScore sharedCBScore].greenScore,
-                            [CBScore sharedCBScore].blueScore,
-                            [CBScore sharedCBScore].yellowScore];
+    NSString *winMessage = [NSString stringWithFormat:@"%@: %d\n%@: %d\n%@: %d\n%@: %d",
+                            [self lastPlayerColor:1],
+                            [CBScore sharedCBScore].pOneScore,
+                            [self lastPlayerColor:2],
+                            [CBScore sharedCBScore].pTwoScore,
+                            [self lastPlayerColor:3],
+                            [CBScore sharedCBScore].pThreeScore,
+                            [self lastPlayerColor:4],
+                            [CBScore sharedCBScore].pFourScore];
     
     UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:winTitle
                                                          message:winMessage
@@ -268,10 +292,10 @@
 - (void)updateProgress
 {
     // Refresh progress bars
-    float rProgress = ((float)[CBScore sharedCBScore].redScore / (float)[CBScore sharedCBScore].maxScore);
-    float gProgress = ((float)[CBScore sharedCBScore].greenScore / (float)[CBScore sharedCBScore].maxScore);
-    float bProgress = ((float)[CBScore sharedCBScore].blueScore / (float)[CBScore sharedCBScore].maxScore);
-    float yProgress = ((float)[CBScore sharedCBScore].yellowScore / (float)[CBScore sharedCBScore].maxScore);
+    float rProgress = ((float)[CBScore sharedCBScore].pOneScore / (float)[CBScore sharedCBScore].maxScore);
+    float gProgress = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
+    float bProgress = ((float)[CBScore sharedCBScore].pThreeScore / (float)[CBScore sharedCBScore].maxScore);
+    float yProgress = ((float)[CBScore sharedCBScore].pFourScore / (float)[CBScore sharedCBScore].maxScore);
     [redProgress setProgress:rProgress animated:YES];
     [greenProgress setProgress:gProgress animated:YES];
     [blueProgress setProgress:bProgress animated:YES];
@@ -281,24 +305,39 @@
 - (void)updateScoreLabels
 {
     // Refresh score labels...
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].redScore];
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].greenScore];
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].blueScore];
-    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].yellowScore];
+    redScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pOneScore];
+    greenScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pTwoScore];
+    blueScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pThreeScore];
+    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pFourScore];
     [redScoreLabel setNeedsDisplay];
     [greenScoreLabel setNeedsDisplay];
     [blueScoreLabel setNeedsDisplay];
     [yellowScoreLabel setNeedsDisplay];
     
+    int playerTag = [CBScore sharedCBScore].lastPlayerTag;
+    
     // Last action label
-    if ([CBScore sharedCBScore].lastPlayerName) {
+    if (!playerTag) {
+        lastActionLabel.text = [NSString stringWithFormat:@"--"];
+    } else {
         lastActionLabel.text = [NSString stringWithFormat:@"%d to %@",
                                 [CBScore sharedCBScore].lastPoints,
-                                [CBScore sharedCBScore].lastPlayerName];
-    } else {
-        lastActionLabel.text = [NSString stringWithFormat:@"--"];
+                                [self lastPlayerColor:playerTag]];
+    }    
+}
+
+- (NSString *)lastPlayerColor:(int)pTag
+{
+    if (pTag == 1) {
+        return @"Green";
+    } else if (pTag == 2) {
+        return @"Orange";
+    } else if (pTag == 3) {
+        return @"Yellow";
+    } else if (pTag == 4) {
+        return @"Blue";
     }
-    
+    return nil;
 }
 
 #pragma mark - Numberpad IBAction's
@@ -360,10 +399,10 @@
     [self updateScoreLabels];
     /////////// End of label setting
     
-    UIColor *rShade = [UIColor colorWithRed:214.0/255.0 green:24.0/255.0 blue:27.0/255.0 alpha:1.0];
-    UIColor *gShade = [UIColor colorWithRed:67.0/255.0 green:174.0/255.0 blue:36.0/255.0 alpha:1.0];
-    UIColor *bShade = [UIColor colorWithRed:70.0/255.0 green:126.0/255.0 blue:200.0/255.0 alpha:1.0];
-    UIColor *yShade = [UIColor colorWithRed:251.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
+    UIColor *rShade = [UIColor colorWithRed:68.0/255.0 green:202.0/255.0 blue:55.0/255.0 alpha:1.0];
+    UIColor *gShade = [UIColor colorWithRed:255.0/255.0 green:139.0/255.0 blue:58.0/255.0 alpha:1.0];
+    UIColor *bShade = [UIColor colorWithRed:248.0/255.0 green:208.0/255.0 blue:55.0/255.0 alpha:1.0];
+    UIColor *yShade = [UIColor colorWithRed:94.0/255.0 green:196.0/255.0 blue:231.0/255.0 alpha:1.0];
     
     self.redProgress.tintColor = rShade;
     self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
