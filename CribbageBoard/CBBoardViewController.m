@@ -31,7 +31,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     // self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         // iPhone 5
-        [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController" owner:self options:nil];
         NSLog(@"iPhone 5 xib file loaded");
         
     } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -40,7 +40,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         if(result.height == 480)
         {
             // iPhone Classic
-            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
+            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController" owner:self options:nil];
+            NSLog(@"iPhone Retina 3.5 xib file Loaded");
         }
         if(result.height == 568)
         {
