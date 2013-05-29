@@ -54,13 +54,23 @@
 
 - (IBAction)saveMaxScore:(id)sender
 {
-    UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Change Winning Score?"
-                                                                  message:@"This will reset scores.\nAre you sure?"
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"Yes"
-                                                        otherButtonTitles:@"No", nil];
-    changeMaxScoreAlert.tag = 1;
-    [changeMaxScoreAlert show];
+    if ([[maxScoreField text] integerValue] != 0) {
+        UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Change Winning Score?"
+                                                                      message:@"This will reset scores.\nAre you sure?"
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Yes"
+                                                            otherButtonTitles:@"No", nil];
+        changeMaxScoreAlert.tag = 1;
+        [changeMaxScoreAlert show];
+    } else {
+        UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Enter a Valid Score"
+                                                                      message:@"Please enter a value greater than zero."
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Ok"
+                                                            otherButtonTitles:nil];
+        changeMaxScoreAlert.tag = 2;
+        [changeMaxScoreAlert show];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -76,6 +86,12 @@
             [self updateLabels];
         } else {
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
+    } else if (alertView.tag == 2) {
+        if (buttonIndex == 0) {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            maxScoreField.text = nil;
+            [numberpad input:@"C"];     // Clears the text field for new input
         }
     }
 }

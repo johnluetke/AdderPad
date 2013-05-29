@@ -26,8 +26,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 @implementation CBBoardViewController
 
 @synthesize addToScoreField;
-@synthesize redScoreLabel, greenScoreLabel, blueScoreLabel, yellowScoreLabel, lastActionLabel;
-@synthesize redProgress, greenProgress, blueProgress, yellowProgress;
+@synthesize pOneScoreLabel, pTwoScoreLabel, pThreeScoreLabel, pFourScoreLabel, lastActionLabel;
+@synthesize pOneProgress, pTwoProgress, pThreeProgress, pFourProgress;
 @synthesize pointsEntered;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -63,17 +63,17 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     return self;
 }
 
-- (void)redScoreAdd:(id)sender
+- (void)pOneAdd:(id)sender
 {
     pointsEntered = [[addToScoreField text] integerValue];
-    NSLog(@"Points to add to red score: %d", pointsEntered);
+    NSLog(@"Points to add to player ONE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerOne:pointsEntered];
     
     [self updateScoreLabels];
     [self updateProgress];
     
     addToScoreField.text = nil;
-        [numberpad input:@"C"];     // Clears the text field for new input
+    [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
@@ -83,10 +83,10 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)greenScoreAdd:(id)sender
+- (void)pTwoAdd:(id)sender
 {
     pointsEntered = [[addToScoreField text] integerValue];
-    NSLog(@"Points to add to green score: %d", pointsEntered);
+    NSLog(@"Points to add to player TWO score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerTwo:pointsEntered];
     
     [self updateScoreLabels];
@@ -103,10 +103,10 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)blueScoreAdd:(id)sender
+- (void)pThreeAdd:(id)sender
 {
     pointsEntered = [[addToScoreField text] integerValue];
-    NSLog(@"Points to add to blue score: %d", pointsEntered);
+    NSLog(@"Points to add to player THREE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerThree:pointsEntered];
     
     [self updateScoreLabels];
@@ -123,10 +123,10 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)yellowScoreAdd:(id)sender
+- (void)pFourAdd:(id)sender
 {
     pointsEntered = [[addToScoreField text] integerValue];
-    NSLog(@"Points to add to yellow score: %d", pointsEntered);
+    NSLog(@"Points to add to player FOUR score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerFour:pointsEntered];
     
     [self updateScoreLabels];
@@ -242,13 +242,6 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         NSNumber *maxPlayTo = [NSNumber numberWithInt:DEFAULT_GAME_SCORE];
         plistArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, maxPlayTo, zero, zero, nil];
         
-//        NSMutableArray *zeroScore = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
-//        NSMutableArray *scoresArray = [[NSMutableArray alloc] initWithObjects:zero, zero, zero, zero, nil];
-//        NSMutableArray *infoArray = [[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:DEFAULT_GAME_SCORE], zero, nil];
-//        NSMutableArray *undoArray = [[NSMutableArray alloc] initWithObjects:zeroScore, nil];
-//        plistDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-//                     scoresArray, @"Scores", infoArray, @"Info", undoArray, @"Undos", nil];
-        
         // Initialize the CBScore data class with scores at zero
         [[CBScore sharedCBScore] initWithArray:plistArray];
     }
@@ -308,27 +301,27 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (void)updateProgress
 {
     // Refresh progress bars
-    float rProgress = ((float)[CBScore sharedCBScore].pOneScore / (float)[CBScore sharedCBScore].maxScore);
-    float gProgress = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
-    float bProgress = ((float)[CBScore sharedCBScore].pThreeScore / (float)[CBScore sharedCBScore].maxScore);
-    float yProgress = ((float)[CBScore sharedCBScore].pFourScore / (float)[CBScore sharedCBScore].maxScore);
-    [redProgress setProgress:rProgress animated:YES];
-    [greenProgress setProgress:gProgress animated:YES];
-    [blueProgress setProgress:bProgress animated:YES];
-    [yellowProgress setProgress:yProgress animated:YES];
+    float oneProgressPer = ((float)[CBScore sharedCBScore].pOneScore / (float)[CBScore sharedCBScore].maxScore);
+    float twpProgressPer = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
+    float threeProgressPer = ((float)[CBScore sharedCBScore].pThreeScore / (float)[CBScore sharedCBScore].maxScore);
+    float fourProgressPer = ((float)[CBScore sharedCBScore].pFourScore / (float)[CBScore sharedCBScore].maxScore);
+    [pOneProgress setProgress:oneProgressPer animated:YES];
+    [pTwoProgress setProgress:twpProgressPer animated:YES];
+    [pThreeProgress setProgress:threeProgressPer animated:YES];
+    [pFourProgress setProgress:fourProgressPer animated:YES];
 }
 
 - (void)updateScoreLabels
 {
     // Refresh score labels...
-    redScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pOneScore];
-    greenScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pTwoScore];
-    blueScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pThreeScore];
-    yellowScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pFourScore];
-    [redScoreLabel setNeedsDisplay];
-    [greenScoreLabel setNeedsDisplay];
-    [blueScoreLabel setNeedsDisplay];
-    [yellowScoreLabel setNeedsDisplay];
+    pOneScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pOneScore];
+    pTwoScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pTwoScore];
+    pThreeScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pThreeScore];
+    pFourScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pFourScore];
+    [pOneScoreLabel setNeedsDisplay];
+    [pTwoScoreLabel setNeedsDisplay];
+    [pThreeScoreLabel setNeedsDisplay];
+    [pFourScoreLabel setNeedsDisplay];
     
     int playerTag = [CBScore sharedCBScore].lastPlayerTag;
     
@@ -343,6 +336,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 }
 
 // Returns the NSString of the player's corresponding color
+// Needs to be updated along with changes to XIB file
 - (NSString *)getPlayerColor:(int)pTag
 {
     if (pTag == 1) {
@@ -407,43 +401,43 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [addToScoreField becomeFirstResponder];
     
     // Rotate the text labels to conform with the corresponding buttons
-    redScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
-    greenScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
-    blueScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
-    yellowScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
+    pOneScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
+    pTwoScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
+    pThreeScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
+    pFourScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
     
     // Set the text labels and fields to their respective colors
     UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
-    redScoreLabel.textColor = labelColor;
-    greenScoreLabel.textColor = labelColor;
-    blueScoreLabel.textColor = labelColor;
-    yellowScoreLabel.textColor = labelColor;
+    pOneScoreLabel.textColor = labelColor;
+    pTwoScoreLabel.textColor = labelColor;
+    pThreeScoreLabel.textColor = labelColor;
+    pFourScoreLabel.textColor = labelColor;
     addToScoreField.textColor = labelColor;
     lastActionLabel.textColor = labelColor;
     
     [self updateScoreLabels];
     /////////// End of label setting
     
-    UIColor *rShade = [UIColor colorWithRed:68.0/255.0 green:202.0/255.0 blue:55.0/255.0 alpha:1.0];
-    UIColor *gShade = [UIColor colorWithRed:255.0/255.0 green:139.0/255.0 blue:58.0/255.0 alpha:1.0];
-    UIColor *bShade = [UIColor colorWithRed:248.0/255.0 green:208.0/255.0 blue:55.0/255.0 alpha:1.0];
-    UIColor *yShade = [UIColor colorWithRed:94.0/255.0 green:196.0/255.0 blue:231.0/255.0 alpha:1.0];
+    UIColor *oneShade = [UIColor colorWithRed:68.0/255.0 green:202.0/255.0 blue:55.0/255.0 alpha:1.0];
+    UIColor *twoShade = [UIColor colorWithRed:255.0/255.0 green:139.0/255.0 blue:58.0/255.0 alpha:1.0];
+    UIColor *threeShade = [UIColor colorWithRed:248.0/255.0 green:208.0/255.0 blue:55.0/255.0 alpha:1.0];
+    UIColor *fourShade = [UIColor colorWithRed:94.0/255.0 green:196.0/255.0 blue:231.0/255.0 alpha:1.0];
     
-    self.redProgress.tintColor = rShade;
-    self.redProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-    self.redProgress.startAngle = (3.0*M_PI)/2.0;
+    self.pOneProgress.tintColor = oneShade;
+    self.pOneProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.pOneProgress.startAngle = (3.0*M_PI)/2.0;
     
-    self.greenProgress.tintColor = gShade;
-    self.greenProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-    self.greenProgress.startAngle = (3.0*M_PI)/2.0;
+    self.pTwoProgress.tintColor = twoShade;
+    self.pTwoProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.pTwoProgress.startAngle = (3.0*M_PI)/2.0;
     
-    self.blueProgress.tintColor = bShade;
-    self.blueProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-    self.blueProgress.startAngle = (3.0*M_PI)/2.0;
+    self.pThreeProgress.tintColor = threeShade;
+    self.pThreeProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.pThreeProgress.startAngle = (3.0*M_PI)/2.0;
     
-    self.yellowProgress.tintColor = yShade;
-    self.yellowProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
-    self.yellowProgress.startAngle = (3.0*M_PI)/2.0;
+    self.pFourProgress.tintColor = fourShade;
+    self.pFourProgress.trackColor = [UIColor colorWithWhite:0.00 alpha:0.0];
+    self.pFourProgress.startAngle = (3.0*M_PI)/2.0;
     
     [self updateProgress];
     

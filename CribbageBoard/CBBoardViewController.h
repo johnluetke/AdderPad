@@ -13,21 +13,20 @@
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
-    //__weak IBOutlet UITextField *addToScoreField;
     CBNumberpad *numberpad;
     __weak UITextField *addToScoreField;
     
     @private
-    int charMax;
+        int charMax;    // Max number of characters that can be entered in text fields
 }
 
 @property (nonatomic, weak) IBOutlet id addToScoreField;
 
 // Labels
-@property (nonatomic, weak) IBOutlet UILabel *redScoreLabel;
-@property (nonatomic, weak) IBOutlet UILabel *greenScoreLabel;
-@property (nonatomic, weak) IBOutlet UILabel *blueScoreLabel;
-@property (nonatomic, weak) IBOutlet UILabel *yellowScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *pOneScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *pTwoScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *pThreeScoreLabel;
+@property (nonatomic, weak) IBOutlet UILabel *pFourScoreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *lastActionLabel;
 
 // Data
@@ -36,16 +35,16 @@
 
 
 // Progress Bars
-@property (weak, nonatomic) IBOutlet CERoundProgressView *redProgress;
-@property (weak, nonatomic) IBOutlet CERoundProgressView *greenProgress;
-@property (weak, nonatomic) IBOutlet CERoundProgressView *blueProgress;
-@property (weak, nonatomic) IBOutlet CERoundProgressView *yellowProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *pOneProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *pTwoProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *pThreeProgress;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *pFourProgress;
 
 // Buttons
-- (IBAction)redScoreAdd:(id)sender;
-- (IBAction)greenScoreAdd:(id)sender;
-- (IBAction)blueScoreAdd:(id)sender;
-- (IBAction)yellowScoreAdd:(id)sender;
+- (IBAction)pOneAdd:(id)sender;
+- (IBAction)pTwoAdd:(id)sender;
+- (IBAction)pThreeAdd:(id)sender;
+- (IBAction)pFourAdd:(id)sender;
 - (IBAction)resetButton:(id)sender;
 - (IBAction)undoButton:(id)sender;
 - (IBAction)showInfoView:(id)sender;
@@ -61,6 +60,6 @@
 - (void)resetScores;
 - (void)updateProgress;
 - (void)updateScoreLabels;
-- (NSString *)getPlayerColor:(int)playerTag;
+- (NSString *)getPlayerColor:(int)playerTag;    // Needs to reflect the colors in the XIB file
 
 @end
