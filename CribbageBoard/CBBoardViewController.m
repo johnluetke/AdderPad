@@ -79,7 +79,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
     if ([CBScore sharedCBScore].pOneScore >= [CBScore sharedCBScore].maxScore) {
-        [self winMatch:@"Red"];
+        [self winMatch];
     }
 }
 
@@ -99,7 +99,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
     if ([CBScore sharedCBScore].pTwoScore >= [CBScore sharedCBScore].maxScore) {
-        [self winMatch:@"Green"];
+        [self winMatch];
     }
 }
 
@@ -119,7 +119,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
     if ([CBScore sharedCBScore].pThreeScore >= [CBScore sharedCBScore].maxScore) {
-        [self winMatch:@"Blue"];
+        [self winMatch];
     }
 }
 
@@ -139,7 +139,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
     
     if ([CBScore sharedCBScore].pFourScore >= [CBScore sharedCBScore].maxScore) {
-        [self winMatch:@"Yellow"];
+        [self winMatch];
     }
 }
 
@@ -257,24 +257,27 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 }
 
 // Displays a win message with score recap, then resets the scores
-- (void)winMatch:(NSString *)winner
+- (void)winMatch
 {
-    NSString *winTitle = [winner stringByAppendingString:@" is the winner"];
+    NSString *lastPlayer = [self getPlayerColor:[CBScore sharedCBScore].lastPlayerTag];
+    NSString *winTitle = [NSString stringWithFormat:@"%@ has reached %d",
+                          lastPlayer,
+                          [CBScore sharedCBScore].maxScore];
     NSString *winMessage = [NSString stringWithFormat:@"%@: %d\n%@: %d\n%@: %d\n%@: %d",
-                            [self lastPlayerColor:1],
+                            [self getPlayerColor:1],
                             [CBScore sharedCBScore].pOneScore,
-                            [self lastPlayerColor:2],
+                            [self getPlayerColor:2],
                             [CBScore sharedCBScore].pTwoScore,
-                            [self lastPlayerColor:3],
+                            [self getPlayerColor:3],
                             [CBScore sharedCBScore].pThreeScore,
-                            [self lastPlayerColor:4],
+                            [self getPlayerColor:4],
                             [CBScore sharedCBScore].pFourScore];
     
     UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:winTitle
                                                          message:winMessage
                                                         delegate:self
                                                cancelButtonTitle:@"Reset Scores"
-                                               otherButtonTitles:nil];
+                                               otherButtonTitles:@"Continue Scoring", nil];
     winAlert.tag = 2;
     [winAlert show];
 }
@@ -322,11 +325,12 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     } else {
         lastActionLabel.text = [NSString stringWithFormat:@"%d to %@",
                                 [CBScore sharedCBScore].lastPoints,
-                                [self lastPlayerColor:playerTag]];
+                                [self getPlayerColor:playerTag]];
     }    
 }
 
-- (NSString *)lastPlayerColor:(int)pTag
+// Returns the NSString of the player's corresponding color
+- (NSString *)getPlayerColor:(int)pTag
 {
     if (pTag == 1) {
         return @"Green";
@@ -361,6 +365,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     } else if (alertView.tag == 2) {
         if (buttonIndex == 0) {
             [self resetScores];
+        } else {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
         }
     }
 }

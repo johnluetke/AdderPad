@@ -20,11 +20,17 @@
 
 @property (nonatomic) IBOutlet id maxScoreField;
 
+// Labels
+@property (nonatomic, weak) IBOutlet UILabel *maxScoreLabel;
+
 - (IBAction)backToBoard:(id)sender;
 - (IBAction)saveMaxScore:(id)sender;
 
 
 // Numberpad Input
-- (IBAction) press:(id)sender;
+- (IBAction)press:(id)sender;
+
+// Helper Methods
+- (void)updateLabels;
 
 @end

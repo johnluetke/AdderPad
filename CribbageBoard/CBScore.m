@@ -34,54 +34,58 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
 
 - (void)addToPlayerOne:(int)points
 {
-    lastPlayerTag = 1;
-    
-    if (!points) {
-        // no value entered (TODO: adds 1 when 0 is entered)
-        points = 1;
+    if (pOneScore < maxScore) {
+        lastPlayerTag = 1;
+        if (!points) {
+            // no value entered (TODO: adds 1 when 0 is entered)
+            points = 1;
+        }
+        
+        pOneScore += points;
+        lastPoints = points;
     }
-    
-    pOneScore += points;
-    lastPoints = points;
 }
 
 - (void)addToPlayerTwo:(int)points
 {
-    lastPlayerTag = 2;
-    
-    if (!points) {
-        // no value entered (TODO: adds 1 when 0 is entered)
-        points = 1;
+    if (pTwoScore < maxScore) {
+        lastPlayerTag = 2;
+        if (!points) {
+            // no value entered (TODO: adds 1 when 0 is entered)
+            points = 1;
+        }
+        
+        pTwoScore += points;
+        lastPoints = points;
     }
-    
-    pTwoScore += points;
-    lastPoints = points;
 }
 
 - (void)addToPlayerThree:(int)points
 {
-    lastPlayerTag = 3;
-    
-    if (!points) {
-        // no value entered (TODO: adds 1 when 0 is entered)
-        points = 1;
+    if (pThreeScore < maxScore) {
+        lastPlayerTag = 3;
+        if (!points) {
+            // no value entered (TODO: adds 1 when 0 is entered)
+            points = 1;
+        }
+        
+        pThreeScore += points;
+        lastPoints = points;
     }
-    
-    pThreeScore += points;
-    lastPoints = points;
 }
 
 - (void)addToPlayerFour:(int)points
 {
-    lastPlayerTag = 4;
-    
-    if (!points) {
-        // no value entered (TODO: adds 1 when 0 is entered)
-        points = 1;
+    if (pFourScore < maxScore) {
+        lastPlayerTag = 4;
+        if (!points) {
+            // no value entered (TODO: adds 1 when 0 is entered)
+            points = 1;
+        }
+        
+        pFourScore += points;
+        lastPoints = points;
     }
-    
-    pFourScore += points;
-    lastPoints = points;
 }
 
 // Returns YES if undo was successful

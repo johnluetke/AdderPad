@@ -15,7 +15,6 @@
 {
     //__weak IBOutlet UITextField *addToScoreField;
     CBNumberpad *numberpad;
-    //CBScore *scores;
     __weak UITextField *addToScoreField;
     
     @private
@@ -58,10 +57,10 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 - (BOOL)writeScoresToPlist;
 - (void)initializeScoresFromPlist;
-- (void)winMatch:(NSString *)winner;
+- (void)winMatch;
 - (void)resetScores;
 - (void)updateProgress;
 - (void)updateScoreLabels;
-- (NSString *)lastPlayerColor:(int)playerTag;
+- (NSString *)getPlayerColor:(int)playerTag;
 
 @end

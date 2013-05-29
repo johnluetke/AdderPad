@@ -5,7 +5,6 @@
 //  Created by Tim Carlson on 5/23/13.
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
-//  TODO: Prevent user from entering more than five digits (99,999 is max play to value)
 //
 
 #import "CBNumberpad.h"

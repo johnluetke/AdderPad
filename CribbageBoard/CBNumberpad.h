@@ -5,7 +5,6 @@
 //  Created by Tim Carlson on 5/23/13.
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
-
 //
 // @class Calculator
 // This class implements a simulated numberpad to teft field engine.

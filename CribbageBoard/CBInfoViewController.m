@@ -20,6 +20,7 @@
 @implementation CBInfoViewController
 
 @synthesize maxScoreField;
+@synthesize maxScoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -72,10 +73,19 @@
             maxScoreField.text = nil;
             [numberpad input:@"C"];     // Clears the text field for new input
             [[CBScore sharedCBScore] resetScores];
+            [self updateLabels];
         } else {
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
         }
     }
+}
+
+#pragma mark - Helper Methods
+
+- (void)updateLabels
+{
+    maxScoreLabel.text = [NSString stringWithFormat:@"Playing to %d", [CBScore sharedCBScore].maxScore];
+    [maxScoreLabel setNeedsDisplay];
 }
 
 #pragma mark - Numberpad IBAction's
@@ -95,6 +105,7 @@
     // This prevents a keyboard from popping up, and still allows for typing in textfield
     UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     maxScoreField.inputView = hideKeyboardView; // Hide keyboard, but show blinking cursor
+    [self updateLabels];
 }
 
 - (void)viewDidLoad
