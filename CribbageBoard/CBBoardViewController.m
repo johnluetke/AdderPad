@@ -8,10 +8,6 @@
 //  TODO list:
 //      - Only have it write to the plist when the view goes into background.
 //          I have arrays (redData, etc...) that have all of the info I need.
-//      - Consider changing the text field to just a label.  Then users can't
-//          copy/paste into the field.
-//      - Let players continue to add scores to non-winning players
-//          (eg. everyone gets another turn after a player reaches the set amount)
 //
 
 #import "CBBoardViewController.h"
@@ -33,18 +29,24 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     // self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // iPhone 5
+        [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
+        NSLog(@"iPhone 5 xib file loaded");
+        
+    } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
         CGSize result = [[UIScreen mainScreen] bounds].size;
         if(result.height == 480)
         {
             // iPhone Classic
-            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController" owner:self options:nil];
+            [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
         }
         if(result.height == 568)
         {
             // iPhone 5
             [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
+            NSLog(@"iPhone 5 xib file loaded");
         }
     }
     if (self) {
@@ -76,7 +78,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
-    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+    [self writeScoresToPlist];
     
     if ([CBScore sharedCBScore].pOneScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch];
@@ -96,7 +98,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
-    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+    [self writeScoresToPlist]; 
     
     if ([CBScore sharedCBScore].pTwoScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch];
@@ -116,7 +118,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
-    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+    [self writeScoresToPlist];
     
     if ([CBScore sharedCBScore].pThreeScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch];
@@ -136,7 +138,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
-    [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+    [self writeScoresToPlist];
     
     if ([CBScore sharedCBScore].pFourScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch];
@@ -164,7 +166,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         [self updateProgress];
         
         // Add data to plist
-        [self writeScoresToPlist];        // TODO: Make this only happen when app is closed
+        [self writeScoresToPlist];
     }
 }
 
@@ -444,6 +446,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     // This prevents a keyboard from popping up, and still allows for typing in textfield
     UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     addToScoreField.inputView = hideKeyboardView; // Hide keyboard, but show blinking cursor
+    
+    [self writeScoresToPlist];  // In case max score was changed in other view
 }
 
 - (void)viewDidLoad

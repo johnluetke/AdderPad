@@ -66,8 +66,6 @@
 
 - (void) setProgress:(float)progress animated:(BOOL)animated
 {
-    
-    
     // Coerce the value
     if(progress < 0.0f)
         progress = 0.0f;
