@@ -106,6 +106,11 @@
     UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     maxScoreField.inputView = hideKeyboardView; // Hide keyboard, but show blinking cursor
     [self updateLabels];
+    
+    // Set the text labels to their respective colors
+    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
+    maxScoreLabel.textColor = labelColor;
+    maxScoreField.textColor = labelColor;
 }
 
 - (void)viewDidLoad

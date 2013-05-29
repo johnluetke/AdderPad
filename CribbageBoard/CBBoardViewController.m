@@ -260,7 +260,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (void)winMatch
 {
     NSString *lastPlayer = [self getPlayerColor:[CBScore sharedCBScore].lastPlayerTag];
-    NSString *winTitle = [NSString stringWithFormat:@"%@ has reached %d",
+    NSString *winTitle = [NSString stringWithFormat:@"%@ scored beyond %d",
                           lastPlayer,
                           [CBScore sharedCBScore].maxScore];
     NSString *winMessage = [NSString stringWithFormat:@"%@: %d\n%@: %d\n%@: %d\n%@: %d",
@@ -273,13 +273,26 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
                             [self getPlayerColor:4],
                             [CBScore sharedCBScore].pFourScore];
     
-    UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:winTitle
-                                                         message:winMessage
-                                                        delegate:self
-                                               cancelButtonTitle:@"Reset Scores"
-                                               otherButtonTitles:@"Continue Scoring", nil];
-    winAlert.tag = 2;
-    [winAlert show];
+    int max = [CBScore sharedCBScore].maxScore;
+    if ([CBScore sharedCBScore].pOneScore >= max && [CBScore sharedCBScore].pTwoScore >= max
+        && [CBScore sharedCBScore].pThreeScore >= max && [CBScore sharedCBScore].pFourScore >= max) {
+        NSString *resetTitle = [NSString stringWithFormat:@"All players over %d", [CBScore sharedCBScore].maxScore];
+        UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:resetTitle
+                                                           message:winMessage
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Reset Scores"
+                                                 otherButtonTitles:nil];
+        winAlert.tag = 2;
+        [winAlert show];
+    } else {
+        UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:winTitle
+                                                             message:winMessage
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Reset Scores"
+                                                   otherButtonTitles:@"Continue Scoring", nil];
+        winAlert.tag = 3;
+        [winAlert show];
+    }
 }
 
 - (void)resetScores
@@ -368,6 +381,10 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         } else {
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
         }
+    } else if (alertView.tag == 3) {
+        if (buttonIndex == 0) {
+            [self resetScores];
+        }
     }
 }
 
@@ -395,12 +412,14 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     blueScoreLabel.transform = CGAffineTransformMakeRotation (7*M_PI/4);
     yellowScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
     
-    // Set the text labels to their respective colors
-    UIColor *labelColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
+    // Set the text labels and fields to their respective colors
+    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
     redScoreLabel.textColor = labelColor;
     greenScoreLabel.textColor = labelColor;
     blueScoreLabel.textColor = labelColor;
     yellowScoreLabel.textColor = labelColor;
+    addToScoreField.textColor = labelColor;
+    lastActionLabel.textColor = labelColor;
     
     [self updateScoreLabels];
     /////////// End of label setting
