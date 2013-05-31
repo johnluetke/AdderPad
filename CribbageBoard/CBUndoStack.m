@@ -9,41 +9,46 @@
 #import "CBUndoStack.h"
 
 @implementation CBUndoStack
-@synthesize count;
 
 - (id)init
 {
-    if( self=[super init] )
-    {
-        m_array = [[NSMutableArray alloc] init];
-        count = 0;
+    if (self = [super init]) {
+        contents = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)push:(int)anInt
+- (void)push:(id)object
 {
-    NSNumber *anObject = [[NSNumber alloc] initWithInt:anInt];
-    [m_array addObject:anObject];
-    count = m_array.count;
+    [contents addObject:object];
 }
 
-- (int)pop
+- (id)pop
 {
-    id obj = nil;
-    if (m_array.count > 0) {
-        [m_array removeLastObject];
-        count = m_array.count;
+    NSUInteger count = [contents count];
+    if (count > 0) {
+        id returnObject = [contents objectAtIndex:count - 1];
+        [contents removeLastObject];
+        return returnObject;
     }
-    
-    int poppedNum = [obj integerValue];
-    return poppedNum;
+    else {
+        return nil;
+    }
 }
 
 - (void)clear
 {
-    [m_array removeAllObjects];
-    count = 0;
+    [contents removeAllObjects];
+}
+
+- (BOOL)canUndo
+{
+    return [contents count] ? YES : NO;
+}
+
+- (int)count
+{
+    return [contents count];
 }
 
 @end

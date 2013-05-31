@@ -12,14 +12,15 @@
 
 #import <Foundation/Foundation.h>
 #import "CWLSynthesizeSingleton.h"
+#import "CBUndoStack.h"
 
 @interface CBScore : NSObject
 {
     @private
         int pOneScore, pTwoScore, pThreeScore, pFourScore;
         int maxScore;
-        int lastPoints, lastPlayerTag;  // Used for the undo method
-        // lastPlayerTag returns the player number 
+        int lastPoints, lastPlayerTag;  // lastPlayerTag returns the player number
+        CBUndoStack *gameStateStack;
 }
 
 @property (nonatomic, readonly) int pOneScore;
@@ -45,5 +46,6 @@ CWL_DECLARE_SINGLETON_FOR_CLASS(CBScore);
 
 - (void)resetScores;
 - (BOOL)undoLastAdd;
+- (void)addStateToStack;
 
 @end

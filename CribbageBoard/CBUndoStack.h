@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface CBUndoStack : NSObject {
-    NSMutableArray* m_array;
-    int count;
+    @private
+    NSMutableArray *contents;   // This will be the stack
 }
 
-@property (nonatomic, readonly) int count;
-
-- (void)push:(int)anInt;
-- (int)pop;
+- (void)push:(id)object;
+- (id)pop;
 - (void)clear;
+- (BOOL)canUndo;    // Returns NO if stack is empty, avoiding external conflicts
+- (int)count;   // Returns the number of objects in stack
 
 @end

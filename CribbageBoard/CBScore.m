@@ -16,11 +16,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
 #pragma mark - Initializaton Methods
 
 - (void)initWithArray:(NSMutableArray *)scoreArray
-{
-//    lastPlayerTag = 0;
-//    lastPoints = 0;
-//    maxScore = 121;     // Default score is for Cribbage games
-    
+{    
     pOneScore = [[scoreArray objectAtIndex:0] integerValue];
     pTwoScore = [[scoreArray objectAtIndex:1] integerValue];
     pThreeScore = [[scoreArray objectAtIndex:2] integerValue];
@@ -28,6 +24,9 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     maxScore = [[scoreArray objectAtIndex:4] integerValue];
     lastPoints = [[scoreArray objectAtIndex:5] integerValue];
     lastPlayerTag = [[scoreArray objectAtIndex:6] integerValue];
+    
+    gameStateStack = [[CBUndoStack alloc] init];
+    [self addStateToStack];
 }
 
 #pragma mark - Value Change Mehods
@@ -43,6 +42,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         
         pOneScore += points;
         lastPoints = points;
+        
+        [self addStateToStack];
     }
 }
 
@@ -57,6 +58,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         
         pTwoScore += points;
         lastPoints = points;
+        
+        [self addStateToStack];
     }
 }
 
@@ -71,6 +74,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         
         pThreeScore += points;
         lastPoints = points;
+        
+        [self addStateToStack];
     }
 }
 
@@ -85,43 +90,30 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
         
         pFourScore += points;
         lastPoints = points;
+        
+        [self addStateToStack];
     }
 }
 
+// Reverts game state back to state prior to last add.
 // Returns YES if undo was successful
 - (BOOL)undoLastAdd
 {
-    if (lastPlayerTag == 1) {
-        // red
-        pOneScore = pOneScore - lastPoints;
-        lastPoints = 0;
-        lastPlayerTag = 0;
-        return YES;
-        
-    } else if (lastPlayerTag == 2) {
-        // green
-        pTwoScore = pTwoScore - lastPoints;
-        lastPoints = 0;
-        lastPlayerTag = 0;
-        return YES;
-        
-    } else if (lastPlayerTag == 3) {
-        // blue
-        pThreeScore = pThreeScore - lastPoints;
-        lastPoints = 0;
-        lastPlayerTag = 0;
-        return YES;
-        
-    } else if (lastPlayerTag == 4) {
-        // yellow
-        pFourScore = pFourScore - lastPoints;
-        lastPoints = 0;
-        lastPlayerTag = 0;
-        return YES;
+    // Nothing to Undo
+    if ([gameStateStack count] != 1) {
+        if ([gameStateStack canUndo]) {
+            [gameStateStack pop];
+            NSMutableArray *undoArray = [[NSMutableArray alloc] initWithArray:[gameStateStack pop]];
+            [self setAllValuesWithArray:undoArray];
+            [gameStateStack push:undoArray]; // So that next undo can occur
+            return YES;
+        }
     }
     return NO;
 }
 
+// This also resets |gameStateStack|
+// User should be warned of reset since it won't be possible to undo last add after reset.
 - (void)resetScores
 {
     pOneScore = 0;
@@ -130,6 +122,20 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     pFourScore = 0;
     lastPoints = 0;
     lastPlayerTag = 0;
+    
+    [gameStateStack clear];
+    [self addStateToStack];     // So stack is not empty.
+}
+
+- (void)addStateToStack
+{
+    // Of the form {0, 0, 0, 0, maxScore, lastPoints, lastPlayerTag}.  0's are player scores.
+    NSArray *currState = [[NSArray alloc] initWithObjects:[[NSNumber alloc] initWithInt:pOneScore],
+                          [[NSNumber alloc] initWithInt:pTwoScore], [[NSNumber alloc] initWithInt:pThreeScore],
+                          [[NSNumber alloc] initWithInt:pFourScore], [[NSNumber alloc] initWithInt:maxScore],
+                          [[NSNumber alloc] initWithInt:lastPoints], [[NSNumber alloc] initWithInt:lastPlayerTag], nil];
+    
+    [gameStateStack push:currState];
 }
 
 #pragma mark - Getter Methods
@@ -172,5 +178,18 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     maxScore = score;
 }
 
+#pragma mark - Private Methods
+
+// Helper method for under method
+- (void)setAllValuesWithArray:(NSMutableArray *)values
+{
+    pOneScore = [[values objectAtIndex:0] integerValue];
+    pTwoScore = [[values objectAtIndex:1] integerValue];
+    pThreeScore = [[values objectAtIndex:2] integerValue];
+    pFourScore = [[values objectAtIndex:3] integerValue];
+    maxScore = [[values objectAtIndex:4] integerValue];
+    lastPoints = [[values objectAtIndex:5] integerValue];
+    lastPlayerTag = [[values objectAtIndex:6] integerValue];
+}
 
 @end
