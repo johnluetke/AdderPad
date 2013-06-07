@@ -7,17 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "CERoundProgressView.h"
 #import "CBNumberpad.h"
 #import "CBScore.h"
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
-    CBNumberpad *numberpad;
-    __weak UITextField *addToScoreField;
+    CBNumberpad     *numberpad;
     
     @private
         int charMax;    // Max number of characters that can be entered in text fields
+        __weak UITextField *addToScoreField;
+        SystemSoundID   soundTap;
+        SystemSoundID   blipOne;
+        SystemSoundID   blipTwo;
+        SystemSoundID   blipThree;
+        SystemSoundID   blipFour;
 }
 
 @property (nonatomic, weak) IBOutlet id addToScoreField;

@@ -21,6 +21,7 @@
 
 @synthesize maxScoreField;
 @synthesize maxScoreLabel;
+@synthesize isSoundOn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,6 +72,16 @@
         changeMaxScoreAlert.tag = 2;
         [changeMaxScoreAlert show];
     }
+}
+
+- (IBAction)setSound:(id)sender
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isSoundOn"];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isSoundOn"];
+    }
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

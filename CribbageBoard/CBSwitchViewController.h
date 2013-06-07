@@ -17,6 +17,7 @@
     CBBoardViewController *boardVC;
     CBInfoViewController *infoVC;
 }
+
 @property (nonatomic) CBBoardViewController *boardVC;
 @property (nonatomic) CBInfoViewController *infoVC;
 

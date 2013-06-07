@@ -26,6 +26,13 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 @synthesize pOneProgress, pTwoProgress, pThreeProgress, pFourProgress;
 @synthesize pointsEntered;
 
++ (void)initialize
+{
+    
+    NSDictionary *defaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"isSoundOn"];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     // self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -61,13 +68,15 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         [self initializeScoresFromPlist];
         
         addToScoreField.delegate = self;
-
     }
     return self;
 }
 
-- (void)pOneAdd:(id)sender
+- (IBAction)pOneAdd:(id)sender
 {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
+        AudioServicesPlaySystemSound (blipOne);
+    }
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to player ONE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerOne:pointsEntered];
@@ -86,8 +95,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)pTwoAdd:(id)sender
+- (IBAction)pTwoAdd:(id)sender
 {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
+        AudioServicesPlaySystemSound (blipTwo);
+    }
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to player TWO score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerTwo:pointsEntered];
@@ -106,8 +118,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)pThreeAdd:(id)sender
+- (IBAction)pThreeAdd:(id)sender
 {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
+        AudioServicesPlaySystemSound (blipThree);
+    }
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to player THREE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerThree:pointsEntered];
@@ -126,8 +141,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)pFourAdd:(id)sender
+- (IBAction)pFourAdd:(id)sender
 {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
+        AudioServicesPlaySystemSound (blipFour);
+    }
     pointsEntered = [[addToScoreField text] integerValue];
     NSLog(@"Points to add to player FOUR score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerFour:pointsEntered];
@@ -146,7 +164,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
 }
 
-- (void)resetButton:(id)sender
+- (IBAction)resetButton:(id)sender
 {
     UIAlertView *resetAlert = [[UIAlertView alloc] initWithTitle:@"Reset Scores"
                                                          message:@"Are you sure?"
@@ -157,7 +175,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [resetAlert show];
 }
 
-- (void)undoButton:(id)sender
+- (IBAction)undoButton:(id)sender
 {
     if ([[CBScore sharedCBScore] undoLastAdd]) {
         // Refresh score labels...
@@ -449,6 +467,22 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     addToScoreField.inputView = hideKeyboardView; // Hide keyboard, but show blinking cursor
     
     [self writeScoresToPlist];  // In case max score was changed in other view
+    
+    // Load audio....
+    
+    // URL for audio file
+    NSURL *tapSoundURL   = [[NSBundle mainBundle] URLForResource: @"tap" withExtension: @"aif"];
+    NSURL *blip1URL   = [[NSBundle mainBundle] URLForResource: @"Blip1" withExtension: @"aif"];
+    NSURL *blip2URL   = [[NSBundle mainBundle] URLForResource: @"Blip2" withExtension: @"aif"];
+    NSURL *blip3URL   = [[NSBundle mainBundle] URLForResource: @"Blip3" withExtension: @"aif"];
+    NSURL *blip4URL   = [[NSBundle mainBundle] URLForResource: @"Blip4" withExtension: @"aif"];
+    
+    // Initialize SystemSoundID variable with file URL
+    AudioServicesCreateSystemSoundID (CFBridgingRetain(tapSoundURL), &soundTap);
+    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip1URL), &blipOne);
+    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip2URL), &blipTwo);
+    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip3URL), &blipThree);
+    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip4URL), &blipFour);
 }
 
 - (void)viewDidLoad
