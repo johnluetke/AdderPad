@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2894DA1762A2A400D56729 /* SoundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894D91762A2A400D56729 /* SoundOn.png */; };
+		2D2894DC1762A69500D56729 /* SoundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894DB1762A69500D56729 /* SoundOff.png */; };
 		2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */; };
 		2D362BFB174EC0B90066B7C5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF8174EC0B90066B7C5 /* info.png */; };
 		2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF9174EC0B90066B7C5 /* Reset.png */; };
@@ -61,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2894D91762A2A400D56729 /* SoundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn.png; sourceTree = "<group>"; };
+		2D2894DB1762A69500D56729 /* SoundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOff.png; sourceTree = "<group>"; };
 		2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2D362BF8174EC0B90066B7C5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2D362BF9174EC0B90066B7C5 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 		2DD5B9AD175288350095CA26 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				2D2894DB1762A69500D56729 /* SoundOff.png */,
+				2D2894D91762A2A400D56729 /* SoundOn.png */,
 				2DF918151755E0100087E299 /* pFour@2x.png */,
 				2DF918161755E0110087E299 /* pOne@2x.png */,
 				2DF918171755E0110087E299 /* pThree@2x.png */,
@@ -404,6 +410,8 @@
 				2D447B6217597827006D22D5 /* Blip2.aif in Resources */,
 				2D447B631759782A006D22D5 /* Blip3.aif in Resources */,
 				2D447B641759782D006D22D5 /* Blip4.aif in Resources */,
+				2D2894DA1762A2A400D56729 /* SoundOn.png in Resources */,
+				2D2894DC1762A69500D56729 /* SoundOff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

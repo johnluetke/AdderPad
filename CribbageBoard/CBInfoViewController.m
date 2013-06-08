@@ -78,8 +78,10 @@
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isSoundOn"];
+        [sender setImage: [UIImage imageNamed:@"SoundOff.png"] forState:UIControlStateNormal];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isSoundOn"];
+        [sender setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
     }
     
 }
@@ -138,6 +140,8 @@
     UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
     maxScoreLabel.textColor = labelColor;
     maxScoreField.textColor = labelColor;
+    
+    soundButtonStatus = [[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"];
 }
 
 - (void)viewDidLoad

@@ -16,6 +16,7 @@
     
     @private
         int charMax;
+        BOOL soundButtonStatus;
 }
 
 @property(nonatomic) BOOL *isSoundOn;
