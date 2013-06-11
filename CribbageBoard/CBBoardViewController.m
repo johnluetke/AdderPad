@@ -326,6 +326,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     float twoProgressPer = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
     float threeProgressPer = ((float)[CBScore sharedCBScore].pThreeScore / (float)[CBScore sharedCBScore].maxScore);
     float fourProgressPer = ((float)[CBScore sharedCBScore].pFourScore / (float)[CBScore sharedCBScore].maxScore);
+
     [pOneProgress setProgress:oneProgressPer animated:YES];
     [pTwoProgress setProgress:twoProgressPer animated:YES];
     [pThreeProgress setProgress:threeProgressPer animated:YES];

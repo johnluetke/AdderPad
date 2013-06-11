@@ -77,7 +77,7 @@
     if(animated)
     {
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"progress"];
-        animation.duration = 0.75;
+        animation.duration = 0.85;
         animation.fromValue = [NSNumber numberWithFloat:layer.progress];
         animation.toValue = [NSNumber numberWithFloat:progress];
         [layer addAnimation:animation forKey:@"progressAnimation"];
