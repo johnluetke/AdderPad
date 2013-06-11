@@ -277,15 +277,15 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     NSString *winTitle = [NSString stringWithFormat:@"%@ scored beyond %d",
                           lastPlayer,
                           [CBScore sharedCBScore].maxScore];
-    NSString *winMessage = [NSString stringWithFormat:@"%@: %d\n%@: %d\n%@: %d\n%@: %d",
+    NSString *winMessage = [NSString stringWithFormat:@"%@: %d  \t%@: %d\n%@: %d  \t%@: %d",
                             [self getPlayerColor:1],
                             [CBScore sharedCBScore].pOneScore,
                             [self getPlayerColor:2],
                             [CBScore sharedCBScore].pTwoScore,
-                            [self getPlayerColor:3],
-                            [CBScore sharedCBScore].pThreeScore,
                             [self getPlayerColor:4],
-                            [CBScore sharedCBScore].pFourScore];
+                            [CBScore sharedCBScore].pFourScore,
+                            [self getPlayerColor:3],
+                            [CBScore sharedCBScore].pThreeScore];
     
     int max = [CBScore sharedCBScore].maxScore;
     if ([CBScore sharedCBScore].pOneScore >= max && [CBScore sharedCBScore].pTwoScore >= max
@@ -303,7 +303,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
                                                              message:winMessage
                                                             delegate:self
                                                    cancelButtonTitle:@"Reset Scores"
-                                                   otherButtonTitles:@"Continue Scoring", nil];
+                                                   otherButtonTitles:@"Continue", nil];
         winAlert.tag = 3;
         [winAlert show];
     }
@@ -323,11 +323,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 {
     // Refresh progress bars
     float oneProgressPer = ((float)[CBScore sharedCBScore].pOneScore / (float)[CBScore sharedCBScore].maxScore);
-    float twpProgressPer = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
+    float twoProgressPer = ((float)[CBScore sharedCBScore].pTwoScore / (float)[CBScore sharedCBScore].maxScore);
     float threeProgressPer = ((float)[CBScore sharedCBScore].pThreeScore / (float)[CBScore sharedCBScore].maxScore);
     float fourProgressPer = ((float)[CBScore sharedCBScore].pFourScore / (float)[CBScore sharedCBScore].maxScore);
     [pOneProgress setProgress:oneProgressPer animated:YES];
-    [pTwoProgress setProgress:twpProgressPer animated:YES];
+    [pTwoProgress setProgress:twoProgressPer animated:YES];
     [pThreeProgress setProgress:threeProgressPer animated:YES];
     [pFourProgress setProgress:fourProgressPer animated:YES];
 }

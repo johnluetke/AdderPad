@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D2894DA1762A2A400D56729 /* SoundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894D91762A2A400D56729 /* SoundOn.png */; };
-		2D2894DC1762A69500D56729 /* SoundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894DB1762A69500D56729 /* SoundOff.png */; };
+		2D2894E51763B11E00D56729 /* BackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E11763B11E00D56729 /* BackArrow.png */; };
+		2D2894E61763B11E00D56729 /* SetScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E21763B11E00D56729 /* SetScore.png */; };
+		2D2894E71763B11E00D56729 /* SoundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E31763B11E00D56729 /* SoundOff.png */; };
+		2D2894E81763B11E00D56729 /* SoundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E41763B11E00D56729 /* SoundOn.png */; };
 		2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */; };
 		2D362BFB174EC0B90066B7C5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF8174EC0B90066B7C5 /* info.png */; };
 		2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF9174EC0B90066B7C5 /* Reset.png */; };
@@ -23,12 +25,11 @@
 		2D5D7F091746EC3A008B562E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F071746EC39008B562E /* Icon.png */; };
 		2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D7F081746EC3A008B562E /* Icon@2x.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
-		2D6A8F181754FAFA00495FA5 /* InfoViewBackground-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */; };
+		2D6A8F181754FAFA00495FA5 /* InfoViewBackground-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F161754FAFA00495FA5 /* InfoViewBackground-iPhone.png */; };
 		2D6A8F1D1754FF9700495FA5 /* pFour-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F191754FF9700495FA5 /* pFour-568h@2x.png */; };
 		2D6A8F1E1754FF9700495FA5 /* pOne-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1A1754FF9700495FA5 /* pOne-568h@2x.png */; };
 		2D6A8F1F1754FF9700495FA5 /* pThree-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1B1754FF9700495FA5 /* pThree-568h@2x.png */; };
 		2D6A8F201754FF9700495FA5 /* pTwo-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F1C1754FF9700495FA5 /* pTwo-568h@2x.png */; };
-		2D6A8F22175500DD00495FA5 /* BoardViewBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8F21175500DD00495FA5 /* BoardViewBackground-568h@2x.png */; };
 		2D6A8F28175510B500495FA5 /* CBUndoStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8F27175510B500495FA5 /* CBUndoStack.m */; };
 		2D70A52317500A900052877C /* CBScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A52217500A900052877C /* CBScore.m */; };
 		2D70A52517500B420052877C /* CBScoreList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D70A52417500B420052877C /* CBScoreList.plist */; };
@@ -49,6 +50,7 @@
 		2DE1C25E174AEBCD009DFAFA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25B174AEBCD009DFAFA /* CERoundProgressLayer.m */; };
 		2DE1C25F174AEBCD009DFAFA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */; };
 		2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */; };
+		2DEA641C1766DAD30096970C /* BoardViewBackground-iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF522601766D7AB001058A6 /* BoardViewBackground-iPhone5.png */; };
 		2DF918191755E0110087E299 /* pFour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF918151755E0100087E299 /* pFour@2x.png */; };
 		2DF9181A1755E0110087E299 /* pOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF918161755E0110087E299 /* pOne@2x.png */; };
 		2DF9181B1755E0110087E299 /* pThree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF918171755E0110087E299 /* pThree@2x.png */; };
@@ -63,8 +65,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D2894D91762A2A400D56729 /* SoundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn.png; sourceTree = "<group>"; };
-		2D2894DB1762A69500D56729 /* SoundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOff.png; sourceTree = "<group>"; };
+		2D2894E11763B11E00D56729 /* BackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackArrow.png; sourceTree = "<group>"; };
+		2D2894E21763B11E00D56729 /* SetScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetScore.png; sourceTree = "<group>"; };
+		2D2894E31763B11E00D56729 /* SoundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOff.png; sourceTree = "<group>"; };
+		2D2894E41763B11E00D56729 /* SoundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn.png; sourceTree = "<group>"; };
 		2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2D362BF8174EC0B90066B7C5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2D362BF9174EC0B90066B7C5 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
@@ -80,19 +84,18 @@
 		2D5D7F071746EC39008B562E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2D5D7F081746EC3A008B562E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-5.png"; sourceTree = "<group>"; };
+		2D6A8F161754FAFA00495FA5 /* InfoViewBackground-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-iPhone.png"; sourceTree = "<group>"; };
 		2D6A8F191754FF9700495FA5 /* pFour-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pFour-568h@2x.png"; sourceTree = "<group>"; };
 		2D6A8F1A1754FF9700495FA5 /* pOne-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pOne-568h@2x.png"; sourceTree = "<group>"; };
 		2D6A8F1B1754FF9700495FA5 /* pThree-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pThree-568h@2x.png"; sourceTree = "<group>"; };
 		2D6A8F1C1754FF9700495FA5 /* pTwo-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pTwo-568h@2x.png"; sourceTree = "<group>"; };
-		2D6A8F21175500DD00495FA5 /* BoardViewBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoardViewBackground-568h@2x.png"; path = "../BoardViewBackground-568h@2x.png"; sourceTree = "<group>"; };
 		2D6A8F26175510B500495FA5 /* CBUndoStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBUndoStack.h; sourceTree = "<group>"; };
 		2D6A8F27175510B500495FA5 /* CBUndoStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBUndoStack.m; sourceTree = "<group>"; };
 		2D70A52117500A900052877C /* CBScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBScore.h; sourceTree = "<group>"; };
 		2D70A52217500A900052877C /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
 		2D70A52417500B420052877C /* CBScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBScoreList.plist; sourceTree = "<group>"; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2DC22183173A0004008A1D02 /* CribbageBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CribbageBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC22183173A0004008A1D02 /* ScoreAdder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreAdder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2DC22188173A0004008A1D02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DC2218A173A0004008A1D02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +119,7 @@
 		2DE1C25C174AEBCD009DFAFA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
 		2DE1C25D174AEBCD009DFAFA /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		2DE6708017420BAE008C44DF /* CBInfoViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBInfoViewController-5.xib"; sourceTree = "<group>"; };
+		2DF522601766D7AB001058A6 /* BoardViewBackground-iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-iPhone5.png"; sourceTree = "<group>"; };
 		2DF918151755E0100087E299 /* pFour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pFour@2x.png"; sourceTree = "<group>"; };
 		2DF918161755E0110087E299 /* pOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pOne@2x.png"; sourceTree = "<group>"; };
 		2DF918171755E0110087E299 /* pThree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pThree@2x.png"; sourceTree = "<group>"; };
@@ -183,10 +187,10 @@
 		2D70A52617527E3C0052877C /* UI Version 4 */ = {
 			isa = PBXGroup;
 			children = (
+				2DF522601766D7AB001058A6 /* BoardViewBackground-iPhone5.png */,
 				2DF9182317567EE10087E299 /* InfoViewBackground.png */,
 				2DF9181D1755E0840087E299 /* BoardViewBackground@2x.png */,
-				2D6A8F21175500DD00495FA5 /* BoardViewBackground-568h@2x.png */,
-				2D6A8F161754FAFA00495FA5 /* InfoViewBackground-5.png */,
+				2D6A8F161754FAFA00495FA5 /* InfoViewBackground-iPhone.png */,
 				2DD5B9AD175288350095CA26 /* Buttons */,
 			);
 			name = "UI Version 4";
@@ -207,7 +211,7 @@
 		2DC22184173A0004008A1D02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2DC22183173A0004008A1D02 /* CribbageBoard.app */,
+				2DC22183173A0004008A1D02 /* ScoreAdder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,8 +268,10 @@
 		2DD5B9AD175288350095CA26 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				2D2894DB1762A69500D56729 /* SoundOff.png */,
-				2D2894D91762A2A400D56729 /* SoundOn.png */,
+				2D2894E11763B11E00D56729 /* BackArrow.png */,
+				2D2894E21763B11E00D56729 /* SetScore.png */,
+				2D2894E31763B11E00D56729 /* SoundOff.png */,
+				2D2894E41763B11E00D56729 /* SoundOn.png */,
 				2DF918151755E0100087E299 /* pFour@2x.png */,
 				2DF918161755E0110087E299 /* pOne@2x.png */,
 				2DF918171755E0110087E299 /* pThree@2x.png */,
@@ -341,7 +347,7 @@
 			);
 			name = CribbageBoard;
 			productName = CribbageBoard;
-			productReference = 2DC22183173A0004008A1D02 /* CribbageBoard.app */;
+			productReference = 2DC22183173A0004008A1D02 /* ScoreAdder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -392,12 +398,12 @@
 				2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */,
 				2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */,
 				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
-				2D6A8F181754FAFA00495FA5 /* InfoViewBackground-5.png in Resources */,
+				2D6A8F181754FAFA00495FA5 /* InfoViewBackground-iPhone.png in Resources */,
 				2D6A8F1D1754FF9700495FA5 /* pFour-568h@2x.png in Resources */,
+				2DEA641C1766DAD30096970C /* BoardViewBackground-iPhone5.png in Resources */,
 				2D6A8F1E1754FF9700495FA5 /* pOne-568h@2x.png in Resources */,
 				2D6A8F1F1754FF9700495FA5 /* pThree-568h@2x.png in Resources */,
 				2D6A8F201754FF9700495FA5 /* pTwo-568h@2x.png in Resources */,
-				2D6A8F22175500DD00495FA5 /* BoardViewBackground-568h@2x.png in Resources */,
 				2DF918191755E0110087E299 /* pFour@2x.png in Resources */,
 				2DF9181A1755E0110087E299 /* pOne@2x.png in Resources */,
 				2DF9181B1755E0110087E299 /* pThree@2x.png in Resources */,
@@ -410,8 +416,10 @@
 				2D447B6217597827006D22D5 /* Blip2.aif in Resources */,
 				2D447B631759782A006D22D5 /* Blip3.aif in Resources */,
 				2D447B641759782D006D22D5 /* Blip4.aif in Resources */,
-				2D2894DA1762A2A400D56729 /* SoundOn.png in Resources */,
-				2D2894DC1762A69500D56729 /* SoundOff.png in Resources */,
+				2D2894E51763B11E00D56729 /* BackArrow.png in Resources */,
+				2D2894E61763B11E00D56729 /* SetScore.png in Resources */,
+				2D2894E71763B11E00D56729 /* SoundOff.png in Resources */,
+				2D2894E81763B11E00D56729 /* SoundOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +470,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Timothy Carlson (WP986B4J78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Timothy Carlson (WP986B4J78)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -477,6 +486,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,7 +504,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Timothy Carlson (WP986B4J78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Timothy Carlson (WP986B4J78)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -502,6 +513,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -511,11 +523,15 @@
 		2DC221A6173A0004008A1D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Timothy Carlson (WP986B4J78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
 				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ScoreAdder;
+				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -524,11 +540,15 @@
 		2DC221A7173A0004008A1D02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Timothy Carlson (WP986B4J78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
 				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ScoreAdder;
+				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
