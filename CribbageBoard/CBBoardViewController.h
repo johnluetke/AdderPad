@@ -19,11 +19,12 @@
     @private
         int charMax;    // Max number of characters that can be entered in text fields
         __weak UITextField *addToScoreField;
-        SystemSoundID   soundTap;
-        SystemSoundID   blipOne;
-        SystemSoundID   blipTwo;
-        SystemSoundID   blipThree;
-        SystemSoundID   blipFour;
+// Custom sound effects
+//        SystemSoundID   soundTap;
+//        SystemSoundID   blipOne;
+//        SystemSoundID   blipTwo;
+//        SystemSoundID   blipThree;
+//        SystemSoundID   blipFour;
 }
 
 @property (nonatomic, weak) IBOutlet id addToScoreField;

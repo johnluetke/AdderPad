@@ -36,8 +36,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     if (pOneScore < maxScore) {
         lastPlayerTag = 1;
         if (!points) {
-            // no value entered (TODO: adds 1 when 0 is entered)
+            // User either left field blank or entered invalid input
             points = 1;
+        }
+        if (points == -999) {
+            // Sentinel value detected, user entered "0", "00", ..., or "000000"
+            points = 0;
         }
         
         pOneScore += points;
@@ -52,8 +56,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     if (pTwoScore < maxScore) {
         lastPlayerTag = 2;
         if (!points) {
-            // no value entered (TODO: adds 1 when 0 is entered)
+            // User either left field blank or entered invalid input
             points = 1;
+        }
+        if (points == -999) {
+            // Sentinel value detected, user entered "0", "00", ..., or "000000"
+            points = 0;
         }
         
         pTwoScore += points;
@@ -68,8 +76,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     if (pThreeScore < maxScore) {
         lastPlayerTag = 3;
         if (!points) {
-            // no value entered (TODO: adds 1 when 0 is entered)
+            // User either left field blank or entered invalid input
             points = 1;
+        }
+        if (points == -999) {
+            // Sentinel value detected, user entered "0", "00", ..., or "000000"
+            points = 0;
         }
         
         pThreeScore += points;
@@ -84,8 +96,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
     if (pFourScore < maxScore) {
         lastPlayerTag = 4;
         if (!points) {
-            // no value entered (TODO: adds 1 when 0 is entered)
+            // User either left field blank or entered invalid input
             points = 1;
+        }
+        if (points == -999) {
+            // Sentinel value detected, user entered "0", "00", ..., or "000000"
+            points = 0;
         }
         
         pFourScore += points;

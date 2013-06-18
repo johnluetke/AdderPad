@@ -75,9 +75,24 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (IBAction)pOneAdd:(id)sender
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
-        AudioServicesPlaySystemSound (blipOne);
+        AudioServicesPlaySystemSound(0x450);
     }
-    pointsEntered = [[addToScoreField text] integerValue];
+    // Check if value is null or zero
+    if (![[addToScoreField text] integerValue]) {
+        if ([[addToScoreField text] isEqualToString:@"0"]
+            || [[addToScoreField text] isEqualToString:@"00"]
+            || [[addToScoreField text] isEqualToString:@"000"]
+            || [[addToScoreField text] isEqualToString:@"0000"]
+            || [[addToScoreField text] isEqualToString:@"00000"]
+            || [[addToScoreField text] isEqualToString:@"000000"]) {
+            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
+        } else {
+            pointsEntered = 0;
+        }
+    } else {
+        pointsEntered = [[addToScoreField text] integerValue];
+    }
+    
     NSLog(@"Points to add to player ONE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerOne:pointsEntered];
     
@@ -98,9 +113,24 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (IBAction)pTwoAdd:(id)sender
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
-        AudioServicesPlaySystemSound (blipTwo);
+        AudioServicesPlaySystemSound(0x450);
     }
-    pointsEntered = [[addToScoreField text] integerValue];
+    // Check if value is null or zero
+    if (![[addToScoreField text] integerValue]) {
+        if ([[addToScoreField text] isEqualToString:@"0"]
+            || [[addToScoreField text] isEqualToString:@"00"]
+            || [[addToScoreField text] isEqualToString:@"000"]
+            || [[addToScoreField text] isEqualToString:@"0000"]
+            || [[addToScoreField text] isEqualToString:@"00000"]
+            || [[addToScoreField text] isEqualToString:@"000000"]) {
+            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
+        } else {
+            pointsEntered = 0;
+        }
+    } else {
+        pointsEntered = [[addToScoreField text] integerValue];
+    }
+    
     NSLog(@"Points to add to player TWO score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerTwo:pointsEntered];
     
@@ -111,7 +141,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     [numberpad input:@"C"];     // Clears the text field for new input
     
     // Add data to plist
-    [self writeScoresToPlist]; 
+    [self writeScoresToPlist];
     
     if ([CBScore sharedCBScore].pTwoScore >= [CBScore sharedCBScore].maxScore) {
         [self winMatch];
@@ -121,9 +151,24 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (IBAction)pThreeAdd:(id)sender
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
-        AudioServicesPlaySystemSound (blipThree);
+        AudioServicesPlaySystemSound(0x450);
     }
-    pointsEntered = [[addToScoreField text] integerValue];
+    // Check if value is null or zero
+    if (![[addToScoreField text] integerValue]) {
+        if ([[addToScoreField text] isEqualToString:@"0"]
+            || [[addToScoreField text] isEqualToString:@"00"]
+            || [[addToScoreField text] isEqualToString:@"000"]
+            || [[addToScoreField text] isEqualToString:@"0000"]
+            || [[addToScoreField text] isEqualToString:@"00000"]
+            || [[addToScoreField text] isEqualToString:@"000000"]) {
+            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
+        } else {
+            pointsEntered = 0;
+        }
+    } else {
+        pointsEntered = [[addToScoreField text] integerValue];
+    }
+    
     NSLog(@"Points to add to player THREE score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerThree:pointsEntered];
     
@@ -144,9 +189,23 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 - (IBAction)pFourAdd:(id)sender
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
-        AudioServicesPlaySystemSound (blipFour);
+        AudioServicesPlaySystemSound(0x450);
     }
-    pointsEntered = [[addToScoreField text] integerValue];
+    // Check if value is null or zero
+    if (![[addToScoreField text] integerValue]) {
+        if ([[addToScoreField text] isEqualToString:@"0"]
+                || [[addToScoreField text] isEqualToString:@"00"]
+                || [[addToScoreField text] isEqualToString:@"000"]
+                || [[addToScoreField text] isEqualToString:@"0000"]
+                || [[addToScoreField text] isEqualToString:@"00000"]
+                || [[addToScoreField text] isEqualToString:@"000000"]) {
+            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
+        } else {
+        pointsEntered = 0;
+        }
+    } else {
+        pointsEntered = [[addToScoreField text] integerValue];
+    }
     NSLog(@"Points to add to player FOUR score: %d", pointsEntered);
     [[CBScore sharedCBScore] addToPlayerFour:pointsEntered];
     
@@ -471,19 +530,30 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     
     // Load audio....
     
-    // URL for audio file
-    NSURL *tapSoundURL   = [[NSBundle mainBundle] URLForResource: @"tap" withExtension: @"aif"];
-    NSURL *blip1URL   = [[NSBundle mainBundle] URLForResource: @"Blip1" withExtension: @"aif"];
-    NSURL *blip2URL   = [[NSBundle mainBundle] URLForResource: @"Blip2" withExtension: @"aif"];
-    NSURL *blip3URL   = [[NSBundle mainBundle] URLForResource: @"Blip3" withExtension: @"aif"];
-    NSURL *blip4URL   = [[NSBundle mainBundle] URLForResource: @"Blip4" withExtension: @"aif"];
-    
-    // Initialize SystemSoundID variable with file URL
-    AudioServicesCreateSystemSoundID (CFBridgingRetain(tapSoundURL), &soundTap);
-    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip1URL), &blipOne);
-    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip2URL), &blipTwo);
-    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip3URL), &blipThree);
-    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip4URL), &blipFour);
+    // Impletmentation for custom sound effects...
+//    NSURL *tapSoundURL   = [[NSBundle mainBundle] URLForResource: @"tap" withExtension: @"aif"];
+////    NSURL *blip1URL   = [[NSBundle mainBundle] URLForResource: @"Blip1" withExtension: @"aif"];
+////    NSURL *blip2URL   = [[NSBundle mainBundle] URLForResource: @"Blip2" withExtension: @"aif"];
+////    NSURL *blip3URL   = [[NSBundle mainBundle] URLForResource: @"Blip3" withExtension: @"aif"];
+////    NSURL *blip4URL   = [[NSBundle mainBundle] URLForResource: @"Blip4" withExtension: @"aif"];
+//    
+//    NSURL *blip1URL   = [[NSBundle mainBundle] URLForResource: @"KeyOne" withExtension: @"aif"];
+//    NSURL *blip2URL   = [[NSBundle mainBundle] URLForResource: @"KeyTwo" withExtension: @"aif"];
+//    NSURL *blip3URL   = [[NSBundle mainBundle] URLForResource: @"KeyThree" withExtension: @"aif"];
+//    NSURL *blip4URL   = [[NSBundle mainBundle] URLForResource: @"KeyFour" withExtension: @"aif"];
+//    
+//    // Initialize SystemSoundID variable with file URL
+//    AudioServicesCreateSystemSoundID (CFBridgingRetain(tapSoundURL), &soundTap);
+//    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip1URL), &blipOne);
+//    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip2URL), &blipTwo);
+//    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip3URL), &blipThree);
+//    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip4URL), &blipFour);
+/////////////////////////////////////////////////////////////////////////////////
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self writeScoresToPlist];
 }
 
 - (void)viewDidLoad

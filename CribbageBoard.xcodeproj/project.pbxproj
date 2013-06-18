@@ -11,6 +11,10 @@
 		2D2894E61763B11E00D56729 /* SetScore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E21763B11E00D56729 /* SetScore.png */; };
 		2D2894E71763B11E00D56729 /* SoundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E31763B11E00D56729 /* SoundOff.png */; };
 		2D2894E81763B11E00D56729 /* SoundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D2894E41763B11E00D56729 /* SoundOn.png */; };
+		2D29A23D176E29E90016AD42 /* KeyFour.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2D29A239176E29E60016AD42 /* KeyFour.aif */; };
+		2D29A23E176E29EB0016AD42 /* KeyOne.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2D29A23A176E29E60016AD42 /* KeyOne.aif */; };
+		2D29A23F176E29EE0016AD42 /* KeyThree.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2D29A23B176E29E60016AD42 /* KeyThree.aif */; };
+		2D29A240176E29F10016AD42 /* KeyTwo.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2D29A23C176E29E60016AD42 /* KeyTwo.aif */; };
 		2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */; };
 		2D362BFB174EC0B90066B7C5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF8174EC0B90066B7C5 /* info.png */; };
 		2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D362BF9174EC0B90066B7C5 /* Reset.png */; };
@@ -69,6 +73,10 @@
 		2D2894E21763B11E00D56729 /* SetScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetScore.png; sourceTree = "<group>"; };
 		2D2894E31763B11E00D56729 /* SoundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOff.png; sourceTree = "<group>"; };
 		2D2894E41763B11E00D56729 /* SoundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn.png; sourceTree = "<group>"; };
+		2D29A239176E29E60016AD42 /* KeyFour.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeyFour.aif; sourceTree = "<group>"; };
+		2D29A23A176E29E60016AD42 /* KeyOne.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeyOne.aif; sourceTree = "<group>"; };
+		2D29A23B176E29E60016AD42 /* KeyThree.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeyThree.aif; sourceTree = "<group>"; };
+		2D29A23C176E29E60016AD42 /* KeyTwo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeyTwo.aif; sourceTree = "<group>"; };
 		2D362BF2174EBBA30066B7C5 /* CBBoardViewController-5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CBBoardViewController-5.xib"; sourceTree = "<group>"; };
 		2D362BF8174EC0B90066B7C5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2D362BF9174EC0B90066B7C5 /* Reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Reset.png; sourceTree = "<group>"; };
@@ -95,7 +103,7 @@
 		2D70A52217500A900052877C /* CBScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScore.m; sourceTree = "<group>"; };
 		2D70A52417500B420052877C /* CBScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CBScoreList.plist; sourceTree = "<group>"; };
 		2D941D6C17401F9C00D0426D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2DC22183173A0004008A1D02 /* ScoreAdder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreAdder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC22183173A0004008A1D02 /* AdderPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdderPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC22186173A0004008A1D02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2DC22188173A0004008A1D02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DC2218A173A0004008A1D02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +160,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D29A228176E1CD50016AD42 /* ElectricKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2D29A239176E29E60016AD42 /* KeyFour.aif */,
+				2D29A23A176E29E60016AD42 /* KeyOne.aif */,
+				2D29A23B176E29E60016AD42 /* KeyThree.aif */,
+				2D29A23C176E29E60016AD42 /* KeyTwo.aif */,
+			);
+			name = ElectricKeyboard;
+			sourceTree = "<group>";
+		};
 		2D362C0E174F40560066B7C5 /* Numberpad Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +183,7 @@
 		2D447B5117595152006D22D5 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2D29A228176E1CD50016AD42 /* ElectricKeyboard */,
 				2D447B5D1759781B006D22D5 /* Blip1.aif */,
 				2D447B5E1759781B006D22D5 /* Blip2.aif */,
 				2D447B5F1759781C006D22D5 /* Blip3.aif */,
@@ -211,7 +231,7 @@
 		2DC22184173A0004008A1D02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2DC22183173A0004008A1D02 /* ScoreAdder.app */,
+				2DC22183173A0004008A1D02 /* AdderPad.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,7 +367,7 @@
 			);
 			name = CribbageBoard;
 			productName = CribbageBoard;
-			productReference = 2DC22183173A0004008A1D02 /* ScoreAdder.app */;
+			productReference = 2DC22183173A0004008A1D02 /* AdderPad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -390,6 +410,8 @@
 				2D941D6D17401F9C00D0426D /* .gitignore in Resources */,
 				2DFC20BA1741C9B5009AE1FC /* CBBoardViewController.xib in Resources */,
 				2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */,
+				2D29A23D176E29E90016AD42 /* KeyFour.aif in Resources */,
+				2D29A240176E29F10016AD42 /* KeyTwo.aif in Resources */,
 				2DE6708117420BAE008C44DF /* CBInfoViewController-5.xib in Resources */,
 				2D5D7F091746EC3A008B562E /* Icon.png in Resources */,
 				2D5D7F0A1746EC3A008B562E /* Icon@2x.png in Resources */,
@@ -400,6 +422,7 @@
 				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
 				2D6A8F181754FAFA00495FA5 /* InfoViewBackground-iPhone.png in Resources */,
 				2D6A8F1D1754FF9700495FA5 /* pFour-568h@2x.png in Resources */,
+				2D29A23E176E29EB0016AD42 /* KeyOne.aif in Resources */,
 				2DEA641C1766DAD30096970C /* BoardViewBackground-iPhone5.png in Resources */,
 				2D6A8F1E1754FF9700495FA5 /* pOne-568h@2x.png in Resources */,
 				2D6A8F1F1754FF9700495FA5 /* pThree-568h@2x.png in Resources */,
@@ -412,6 +435,7 @@
 				2DF9182217567CFB0087E299 /* CBInfoViewController.xib in Resources */,
 				2DF9182417567EE10087E299 /* InfoViewBackground.png in Resources */,
 				2D447B5017595147006D22D5 /* tap.aif in Resources */,
+				2D29A23F176E29EE0016AD42 /* KeyThree.aif in Resources */,
 				2D447B6117597820006D22D5 /* Blip1.aif in Resources */,
 				2D447B6217597827006D22D5 /* Blip2.aif in Resources */,
 				2D447B631759782A006D22D5 /* Blip3.aif in Resources */,
@@ -529,9 +553,9 @@
 				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
 				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = ScoreAdder;
-				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
+				PRODUCT_NAME = AdderPad;
+				PROVISIONING_PROFILE = "33BD77F6-74C1-41D9-B1DF-3FB0005C4F93";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "33BD77F6-74C1-41D9-B1DF-3FB0005C4F93";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,9 +570,9 @@
 				GCC_PREFIX_HEADER = "CribbageBoard/CribbageBoard-Prefix.pch";
 				INFOPLIST_FILE = "CribbageBoard/CribbageBoard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = ScoreAdder;
-				PROVISIONING_PROFILE = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5D75631A-4B23-4C28-85D7-E0B78CF86689";
+				PRODUCT_NAME = AdderPad;
+				PROVISIONING_PROFILE = "33BD77F6-74C1-41D9-B1DF-3FB0005C4F93";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "33BD77F6-74C1-41D9-B1DF-3FB0005C4F93";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
