@@ -19,7 +19,6 @@
 @synthesize boardVC;
 @synthesize infoVC;
 
-
 static CBSwitchViewController *instance = NULL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -405,32 +405,4 @@
         <image name="pThree.png" width="63.602123260498047" height="40.081336975097656"/>
         <image name="pTwo.png" width="63.602123260498047" height="40.081336975097656"/>
     </resources>
-    <classes>
-        <class className="CBBoardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBBoardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pFourAdd:"/>
-                <relationship kind="action" name="pOneAdd:"/>
-                <relationship kind="action" name="pThreeAdd:"/>
-                <relationship kind="action" name="pTwoAdd:"/>
-                <relationship kind="action" name="press:"/>
-                <relationship kind="action" name="resetButton:"/>
-                <relationship kind="action" name="showInfoView:"/>
-                <relationship kind="action" name="undoButton:"/>
-                <relationship kind="outlet" name="addToScoreField"/>
-                <relationship kind="outlet" name="lastActionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pFourProgress" candidateClass="CERoundProgressView"/>
-                <relationship kind="outlet" name="pFourScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pOneProgress" candidateClass="CERoundProgressView"/>
-                <relationship kind="outlet" name="pOneScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pThreeProgress" candidateClass="CERoundProgressView"/>
-                <relationship kind="outlet" name="pThreeScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pTwoProgress" candidateClass="CERoundProgressView"/>
-                <relationship kind="outlet" name="pTwoScoreLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CERoundProgressView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CERoundProgressView.h"/>
-        </class>
-    </classes>
 </document>

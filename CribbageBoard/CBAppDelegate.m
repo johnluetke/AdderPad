@@ -21,9 +21,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    // Count the times the app is launched
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+    launchCount++;
+    NSLog(@"Application has been launched %d times", launchCount);
+    [prefs setInteger:launchCount  forKey:@"launchCount"];
+    
     CBSwitchViewController *svc = [[CBSwitchViewController alloc] initWithNibName:@"CBSwitchViewController" bundle:nil];
     self.window.rootViewController = svc;
     [self createEditableCopyOfPlistIfNeeded];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

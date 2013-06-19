@@ -57,6 +57,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
             NSLog(@"iPhone 5 xib file loaded");
         }
     }
+    
     if (self) {
         // Custom initialization
         
@@ -68,6 +69,12 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         [self initializeScoresFromPlist];
         
         addToScoreField.delegate = self;
+        
+        // On first ever startup, load an instruction subview
+//        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//        if (([[prefs objectForKey:@"launchCount"] integerValue] == 1) {
+//            
+//        }
     }
     return self;
 }
