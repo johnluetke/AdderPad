@@ -140,6 +140,8 @@
     UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
     maxScoreLabel.textColor = labelColor;
     maxScoreField.textColor = labelColor;
+    maxScoreLabel.textAlignment = NSTextAlignmentCenter;
+    maxScoreField.textAlignment = NSTextAlignmentCenter;
     
     soundButtonStatus = [[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"];
 }

@@ -406,6 +406,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     pTwoScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pTwoScore];
     pThreeScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pThreeScore];
     pFourScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pFourScore];
+    // Have to make sure the labels are centered in iOS 6
+    pOneScoreLabel.textAlignment = NSTextAlignmentCenter;
+    pTwoScoreLabel.textAlignment = NSTextAlignmentCenter;
+    pThreeScoreLabel.textAlignment = NSTextAlignmentCenter;
+    pFourScoreLabel.textAlignment = NSTextAlignmentCenter;
     [pOneScoreLabel setNeedsDisplay];
     [pTwoScoreLabel setNeedsDisplay];
     [pThreeScoreLabel setNeedsDisplay];
@@ -500,8 +505,13 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     pTwoScoreLabel.textColor = labelColor;
     pThreeScoreLabel.textColor = labelColor;
     pFourScoreLabel.textColor = labelColor;
+    
     addToScoreField.textColor = labelColor;
     lastActionLabel.textColor = labelColor;
+    addToScoreField.textAlignment = NSTextAlignmentCenter;
+    lastActionLabel.textAlignment = NSTextAlignmentCenter;
+    
+    
     
     [self updateScoreLabels];
     /////////// End of label setting
