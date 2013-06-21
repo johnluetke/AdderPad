@@ -83,6 +83,7 @@
 		2D46E2171774A9CF0045C6CF /* BackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackArrow.png; sourceTree = "<group>"; };
 		2D46E2191774ADAA0045C6CF /* InfoViewBackground-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-iPhone.png"; sourceTree = "<group>"; };
 		2D46E21C1774AFDA0045C6CF /* InfoViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoViewBackground.png; sourceTree = "<group>"; };
+		2D46E2231774F2820045C6CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2D5411B61772644900F39CC9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2D63FA481770CA1500E62A32 /* InstructionBoardViewBackground-iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InstructionBoardViewBackground-iPhone5.png"; sourceTree = "<group>"; };
@@ -239,6 +240,7 @@
 				2DC22188173A0004008A1D02 /* Foundation.framework */,
 				2DC2218A173A0004008A1D02 /* CoreGraphics.framework */,
 				2DC2218C173A0004008A1D02 /* CoreData.framework */,
+				2D46E2231774F2820045C6CF /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

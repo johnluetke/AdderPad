@@ -28,7 +28,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3">
-                    <rect key="frame" x="273" y="28" width="40" height="39"/>
+                    <rect key="frame" x="7" y="28" width="40" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                     <state key="normal" image="BackArrow.png">
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="79">
-                    <rect key="frame" x="263" y="244" width="50" height="50"/>
+                    <rect key="frame" x="263" y="245" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" image="SetScore.png">
@@ -58,7 +58,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="85">
-                    <rect key="frame" x="7" y="244" width="50" height="50"/>
+                    <rect key="frame" x="7" y="245" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" image="SoundOn.png">
@@ -311,17 +311,4 @@
         <image name="SetScore.png" width="19.200639724731445" height="19.200639724731445"/>
         <image name="SoundOn.png" width="19.200639724731445" height="19.200639724731445"/>
     </resources>
-    <classes>
-        <class className="CBInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToBoard:"/>
-                <relationship kind="action" name="press:"/>
-                <relationship kind="action" name="saveMaxScore:"/>
-                <relationship kind="action" name="setSound:"/>
-                <relationship kind="outlet" name="maxScoreField"/>
-                <relationship kind="outlet" name="maxScoreLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
