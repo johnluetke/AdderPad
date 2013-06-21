@@ -7,7 +7,7 @@
 //
 //
 // @class Calculator
-// This class implements a simulated numberpad to teft field engine.
+// This class implements a simulated numberpad.
 // @throws NSInvalidArgumentException
 //
 
@@ -29,7 +29,7 @@
  *
  * Valid characters:
  *
- *     Digits:      .0123456789
+ *     Digits:      0123456789
  *
  *     Commands:    D   Delete
  *                  C   Clear

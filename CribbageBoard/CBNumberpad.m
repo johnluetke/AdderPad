@@ -13,7 +13,6 @@
 const NSString *Digits = @"0123456789.";
 const NSString *Delete = @"D";
 const NSString *Clear = @"C";
-const NSString *Period    = @".";
 const int charMax = 6;  // max characters allowed in text field, will not add beyond this
 
 @implementation CBNumberpad
@@ -39,12 +38,10 @@ const int charMax = 6;  // max characters allowed in text field, will not add be
         
         // Is inputChar in Digits?
         if ([Digits rangeOfString: inputChar].length) {
-            if (![inputChar isEqualToString: (NSString *)Period] || [_display rangeOfString: (NSString *)Period].location == NSNotFound) {
-                // Add inputChar to _display.
-                if (charCounter < charMax) {
-                    [_display appendString:inputChar];
-                    charCounter++;
-                }
+            // Add inputChar to _display.
+            if (charCounter < charMax) {
+                [_display appendString:inputChar];
+                charCounter++;
             }
         }
 
