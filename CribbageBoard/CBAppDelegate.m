@@ -32,9 +32,10 @@
     self.window.rootViewController = svc;
     [self createEditableCopyOfPlistIfNeeded];
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
-        [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    }
+    // Checks for iOS version to for any OS specific features
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+//        
+//    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

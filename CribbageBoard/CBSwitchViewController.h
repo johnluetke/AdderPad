@@ -5,6 +5,8 @@
 //  Created by Tim Carlson on 5/13/13.
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
+//  Controller that handles the switching of views.
+//
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>

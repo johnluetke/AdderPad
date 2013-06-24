@@ -9,8 +9,7 @@
 
 #import "CBNumberpad.h"
 
-// These are the valid characters that can be accepted...
-const NSString *Digits = @"0123456789.";
+const NSString *Digits = @"0123456789.";    // These are the valid characters that can be accepted...
 const NSString *Delete = @"D";
 const NSString *Clear = @"C";
 const int charMax = 6;  // max characters allowed in text field, will not add beyond this

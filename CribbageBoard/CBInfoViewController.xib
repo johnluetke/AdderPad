@@ -42,11 +42,26 @@
                         <action selector="backToBoard:" destination="-1" eventType="touchUpInside" id="9"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zfr-rs-YhT">
+                    <rect key="frame" x="273" y="28" width="40" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                    <state key="normal" image="SetScore.png">
+                        <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveMaxScore:" destination="-1" eventType="touchUpInside" id="uCF-lm-QZG"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="79">
                     <rect key="frame" x="263" y="245" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="SetScore.png">
+                    <state key="normal" image="SleepOn.png">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -54,7 +69,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="saveMaxScore:" destination="-1" eventType="touchUpInside" id="80"/>
+                        <action selector="setIdleStatus:" destination="-1" eventType="touchUpInside" id="JF0-dR-pNg"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="85">
@@ -309,6 +324,7 @@
         <image name="BackArrow.png" width="14.400480270385742" height="14.640488624572754"/>
         <image name="InfoViewBackground.png" width="153.60511779785156" height="230.40768432617188"/>
         <image name="SetScore.png" width="19.200639724731445" height="19.200639724731445"/>
+        <image name="SleepOn.png" width="19.200639724731445" height="19.200639724731445"/>
         <image name="SoundOn.png" width="19.200639724731445" height="19.200639724731445"/>
     </resources>
 </document>

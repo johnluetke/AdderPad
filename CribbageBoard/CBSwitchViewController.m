@@ -26,6 +26,7 @@ static CBSwitchViewController *instance = NULL;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.wantsFullScreenLayout = YES;   // Ensures that status bar overlaps the view
     }
     return self;
 }

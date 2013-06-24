@@ -5,6 +5,8 @@
 //  Created by Tim Carlson on 5/28/13.
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
+//  A stack data class for managing the undo logic
+//
 
 #import <Foundation/Foundation.h>
 

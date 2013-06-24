@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
 //  TODO list:
-//      - Only have it write to the plist when the view goes into background.
-//          I have arrays (redData, etc...) that have all of the info I need.
 //
 
 #import "CBBoardViewController.h"
@@ -28,17 +26,22 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 
 + (void)initialize
 {
+    // Sound is ON and device can idle by default
+    NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], nil];
+    NSArray *keys = [NSArray arrayWithObjects:@"isSoundOn", @"isIdleDisabled", nil];
     
-    NSDictionary *defaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"isSoundOn"];
+    NSDictionary *defaults = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    // self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    // Check for iPad devices
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // iPhone 5
-        [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:@"CBBoardViewController-5" owner:self options:nil];
         NSLog(@"iPhone 5 xib file loaded");
         
     } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -59,8 +62,6 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
     
     if (self) {
-        // Custom initialization
-        
         //Numberpad init
         numberpad = [[CBNumberpad alloc] init];
         charMax = numberpad.maxCharAllowed;
@@ -69,11 +70,12 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         [self initializeScoresFromPlist];
         
         addToScoreField.delegate = self;
+        self.wantsFullScreenLayout = YES;   // Ensures that status bar overlaps the view
         
         // On first ever startup, load an instruction subview
 //        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-//        if (([[prefs objectForKey:@"launchCount"] integerValue] == 1) {
-//            
+//        if ([[prefs objectForKey:@"launchCount"] integerValue] == 1) {
+//
 //        }
     }
     return self;
@@ -252,6 +254,14 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         
         // Add data to plist
         [self writeScoresToPlist];
+    } else {
+        UIAlertView *resetAlert = [[UIAlertView alloc] initWithTitle:@"Nothing to undo!"
+                                                             message:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles:nil];
+        resetAlert.tag = 4;
+        [resetAlert show];
     }
 }
 
@@ -472,6 +482,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         if (buttonIndex == 0) {
             [self resetScores];
         }
+    } else if (alertView.tag == 4) {
+        [alertView dismissWithClickedButtonIndex:0 animated:YES];
     }
 }
 
@@ -485,7 +497,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     return (newLength > charMax ) ? NO : YES;
 }
 
-# pragma View handling
+# pragma mark - View handling
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -510,8 +522,6 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     lastActionLabel.textColor = labelColor;
     addToScoreField.textAlignment = NSTextAlignmentCenter;
     lastActionLabel.textAlignment = NSTextAlignmentCenter;
-    
-    
     
     [self updateScoreLabels];
     /////////// End of label setting
@@ -545,9 +555,9 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     
     [self writeScoresToPlist];  // In case max score was changed in other view
     
-    // Load audio....
+    // Load audio (if using custom sound effects)...
     
-    // Impletmentation for custom sound effects...
+    // Implementation for custom sound effects...
 //    NSURL *tapSoundURL   = [[NSBundle mainBundle] URLForResource: @"tap" withExtension: @"aif"];
 ////    NSURL *blip1URL   = [[NSBundle mainBundle] URLForResource: @"Blip1" withExtension: @"aif"];
 ////    NSURL *blip2URL   = [[NSBundle mainBundle] URLForResource: @"Blip2" withExtension: @"aif"];
@@ -566,6 +576,13 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 //    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip3URL), &blipThree);
 //    AudioServicesCreateSystemSoundID (CFBridgingRetain(blip4URL), &blipFour);
 /////////////////////////////////////////////////////////////////////////////////
+    
+    // Handle whether device can enter sleep mode or not
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"]) {
+        [UIApplication sharedApplication].idleTimerDisabled = YES;
+    } else {
+        [UIApplication sharedApplication].idleTimerDisabled = NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -577,6 +594,11 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                               target:self
+                                               action:@selector(dismissView:)];
 }
 
 - (void)didReceiveMemoryWarning

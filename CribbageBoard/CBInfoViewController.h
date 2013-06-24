@@ -17,9 +17,11 @@
     @private
         int charMax;
         BOOL soundButtonStatus;
+        BOOL idleDisabled;
 }
 
 @property(nonatomic) BOOL *isSoundOn;
+@property(nonatomic) BOOL *isIdleDisabled;
 @property (nonatomic) IBOutlet id maxScoreField;
 
 // Labels
@@ -28,6 +30,7 @@
 - (IBAction)backToBoard:(id)sender;
 - (IBAction)saveMaxScore:(id)sender;
 - (IBAction)setSound:(id)sender;
+- (IBAction)setIdleStatus:(id)sender;
 
 // Numberpad Input
 - (IBAction)press:(id)sender;

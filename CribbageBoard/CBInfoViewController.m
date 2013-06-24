@@ -25,25 +25,31 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    // Check for iPad devices
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"CBInfoViewController-5" owner:self options:nil];
+        NSLog(@"iPhone 5 xib file loaded");
+        
+    } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         CGSize result = [[UIScreen mainScreen] bounds].size;
-        if(result.height == 480)
-        {
+        if(result.height == 480) {
             // iPhone Classic
             [[NSBundle mainBundle] loadNibNamed:@"CBInfoViewController" owner:self options:nil];
         }
-        if(result.height == 568)
-        {
+        if(result.height == 568) {
             // iPhone 5
             [[NSBundle mainBundle] loadNibNamed:@"CBInfoViewController-5" owner:self options:nil];
         }
     }
+    
+    
     if (self) {
         // Custom initialization
         numberpad = [[CBNumberpad alloc] init];
         charMax = numberpad.maxCharAllowed;
         maxScoreField.delegate = self;
+        self.wantsFullScreenLayout = YES;  // Ensures that status bar overlaps the view
     }
     return self;
 }
@@ -74,6 +80,7 @@
     }
 }
 
+// Toggles the sound button
 - (IBAction)setSound:(id)sender
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
@@ -83,7 +90,20 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isSoundOn"];
         [sender setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
     }
-    
+}
+
+// Disables the device from going into sleep/idle mode
+// isIdleDisabled = YES ... Dont' go to sleep
+// isIdleDisabled = NO  ... Allow to sleep
+- (IBAction)setIdleStatus:(id)sender
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isIdleDisabled"];
+        [sender setImage: [UIImage imageNamed:@"SleepOn.png"] forState:UIControlStateNormal];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isIdleDisabled"];
+        [sender setImage: [UIImage imageNamed:@"SleepOff.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -144,6 +164,7 @@
     maxScoreField.textAlignment = NSTextAlignmentCenter;
     
     soundButtonStatus = [[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"];
+    idleDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"];
 }
 
 - (void)viewDidLoad

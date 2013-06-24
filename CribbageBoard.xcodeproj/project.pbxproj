@@ -19,6 +19,8 @@
 		2D46E2181774A9CF0045C6CF /* BackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D46E2171774A9CF0045C6CF /* BackArrow.png */; };
 		2D46E21A1774ADAA0045C6CF /* InfoViewBackground-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D46E2191774ADAA0045C6CF /* InfoViewBackground-iPhone.png */; };
 		2D46E21D1774AFDA0045C6CF /* InfoViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D46E21C1774AFDA0045C6CF /* InfoViewBackground.png */; };
+		2D49369B17764730005AD90B /* SleepOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D49369917764730005AD90B /* SleepOff.png */; };
+		2D49369C17764730005AD90B /* SleepOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D49369A17764730005AD90B /* SleepOn.png */; };
 		2D5411B71772644900F39CC9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5411B61772644900F39CC9 /* Default.png */; };
 		2D5D7F121746F145008B562E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D7F101746F132008B562E /* QuartzCore.framework */; };
 		2D63FA491770CA1900E62A32 /* InstructionBoardViewBackground-iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D63FA481770CA1500E62A32 /* InstructionBoardViewBackground-iPhone5.png */; };
@@ -84,6 +86,8 @@
 		2D46E2191774ADAA0045C6CF /* InfoViewBackground-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-iPhone.png"; sourceTree = "<group>"; };
 		2D46E21C1774AFDA0045C6CF /* InfoViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoViewBackground.png; sourceTree = "<group>"; };
 		2D46E2231774F2820045C6CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2D49369917764730005AD90B /* SleepOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SleepOff.png; sourceTree = "<group>"; };
+		2D49369A17764730005AD90B /* SleepOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SleepOn.png; sourceTree = "<group>"; };
 		2D5411B61772644900F39CC9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2D5D7F101746F132008B562E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2D63FA481770CA1500E62A32 /* InstructionBoardViewBackground-iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InstructionBoardViewBackground-iPhone5.png"; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 		2DD5B9AD175288350095CA26 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				2D49369917764730005AD90B /* SleepOff.png */,
+				2D49369A17764730005AD90B /* SleepOn.png */,
 				2D46E2171774A9CF0045C6CF /* BackArrow.png */,
 				2D46E2111774A7E40045C6CF /* SetScore.png */,
 				2D46E2121774A7E40045C6CF /* SoundOff.png */,
@@ -414,11 +420,13 @@
 				2D362BF3174EBBA30066B7C5 /* CBBoardViewController-5.xib in Resources */,
 				2D63FA6117714F6800E62A32 /* Icon-Small-50.png in Resources */,
 				2D362BFB174EC0B90066B7C5 /* info.png in Resources */,
+				2D49369C17764730005AD90B /* SleepOn.png in Resources */,
 				2D46E2141774A7E40045C6CF /* SetScore.png in Resources */,
 				2D362BFC174EC0B90066B7C5 /* Reset.png in Resources */,
 				2D46E2151774A7E40045C6CF /* SoundOff.png in Resources */,
 				2D362BFD174EC0B90066B7C5 /* Undo.png in Resources */,
 				2D70A52517500B420052877C /* CBScoreList.plist in Resources */,
+				2D49369B17764730005AD90B /* SleepOff.png in Resources */,
 				2D63FA6017714F6800E62A32 /* Icon-72@2x.png in Resources */,
 				2D6A8F1D1754FF9700495FA5 /* pFour-568h@2x.png in Resources */,
 				2D63FA6317714F6800E62A32 /* Icon-Small.png in Resources */,
