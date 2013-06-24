@@ -24,17 +24,6 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 @synthesize pOneProgress, pTwoProgress, pThreeProgress, pFourProgress;
 @synthesize pointsEntered;
 
-+ (void)initialize
-{
-    // Sound is ON and device can idle by default
-    NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], nil];
-    NSArray *keys = [NSArray arrayWithObjects:@"isSoundOn", @"isIdleDisabled", nil];
-    
-    NSDictionary *defaults = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-    
-    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -71,6 +60,14 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         
         addToScoreField.delegate = self;
         self.wantsFullScreenLayout = YES;   // Ensures that status bar overlaps the view
+        
+        // Set sound and auo-lock/idle defaults (sound ON, Auto-Lock ON)
+        NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"isSoundOn", @"isIdleDisabled", nil];
+        
+        NSDictionary *defaults = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+        
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
         
         // On first ever startup, load an instruction subview
 //        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];

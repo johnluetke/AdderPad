@@ -24,6 +24,8 @@
 @property (nonatomic) BOOL *isIdleDisabled;
 @property (nonatomic) IBOutlet id maxScoreField;
 @property (nonatomic, weak) IBOutlet UILabel *webLabel;
+@property (nonatomic, weak) IBOutlet UIButton *soundButton;
+@property (nonatomic, weak) IBOutlet UIButton *idleButton;
 
 // Labels
 @property (nonatomic, weak) IBOutlet UILabel *maxScoreLabel;

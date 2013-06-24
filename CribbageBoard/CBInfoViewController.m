@@ -24,6 +24,8 @@
 @synthesize maxScoreLabel;
 @synthesize isSoundOn;
 @synthesize webLabel;
+@synthesize soundButton;
+@synthesize idleButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -194,6 +196,19 @@
     
     soundButtonStatus = [[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"];
     idleDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"];
+    
+    // Set button images depending on their respective setting
+    if (soundButtonStatus) {
+        [soundButton setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
+    } else {
+        [soundButton setImage: [UIImage imageNamed:@"SoundOff.png"] forState:UIControlStateNormal];
+    }
+    
+    if (idleDisabled) {
+        [idleButton setImage: [UIImage imageNamed:@"SleepOff.png"] forState:UIControlStateNormal];
+    } else {
+        [idleButton setImage: [UIImage imageNamed:@"SleepOn.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidLoad
