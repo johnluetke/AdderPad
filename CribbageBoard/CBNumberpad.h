@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
 //
-// @class Calculator
+// @class CBNumberpad
 // This class implements a simulated numberpad.
 // @throws NSInvalidArgumentException
 //

@@ -12,6 +12,7 @@
 #import "CBInfoViewController.h"
 #import "CBSwitchViewController.h"
 #import "CBScore.h"
+#import "CBPopup.h"
 
 @interface CBInfoViewController ()
 
@@ -86,9 +87,11 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isSoundOn"];
         [sender setImage: [UIImage imageNamed:@"SoundOff.png"] forState:UIControlStateNormal];
+        [self.view addSubview: [[CBPopup alloc] initWithText: @"Sound off"]];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isSoundOn"];
         [sender setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
+        [self.view addSubview: [[CBPopup alloc] initWithText: @"Sound on"]];
     }
 }
 
@@ -100,9 +103,11 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"]) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isIdleDisabled"];
         [sender setImage: [UIImage imageNamed:@"SleepOn.png"] forState:UIControlStateNormal];
+        [self.view addSubview: [[CBPopup alloc] initWithText: @"Auto-lock on"]];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isIdleDisabled"];
         [sender setImage: [UIImage imageNamed:@"SleepOff.png"] forState:UIControlStateNormal];
+        [self.view addSubview: [[CBPopup alloc] initWithText: @"Auto-lock off"]];
     }
 }
 
