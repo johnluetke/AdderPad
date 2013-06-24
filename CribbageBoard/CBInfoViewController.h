@@ -20,9 +20,10 @@
         BOOL idleDisabled;
 }
 
-@property(nonatomic) BOOL *isSoundOn;
-@property(nonatomic) BOOL *isIdleDisabled;
+@property (nonatomic) BOOL *isSoundOn;
+@property (nonatomic) BOOL *isIdleDisabled;
 @property (nonatomic) IBOutlet id maxScoreField;
+@property (nonatomic, weak) IBOutlet UILabel *webLabel;
 
 // Labels
 @property (nonatomic, weak) IBOutlet UILabel *maxScoreLabel;

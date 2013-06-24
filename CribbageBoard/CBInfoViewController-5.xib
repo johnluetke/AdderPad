@@ -10,6 +10,7 @@
                 <outlet property="maxScoreField" destination="59" id="75"/>
                 <outlet property="maxScoreLabel" destination="81" id="82"/>
                 <outlet property="view" destination="2" id="8"/>
+                <outlet property="webLabel" destination="89" id="dQK-Uh-SV4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -23,6 +23,7 @@
 @synthesize maxScoreField;
 @synthesize maxScoreLabel;
 @synthesize isSoundOn;
+@synthesize webLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -131,7 +132,30 @@
             maxScoreField.text = nil;
             [numberpad input:@"C"];     // Clears the text field for new input
         }
+    } else if (alertView.tag == 3) {
+        if (buttonIndex == 0) {
+            //Open webpage
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.timgcarlson.com"]];
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        } else {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
     }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	//See if touch was inside the website label
+	if (CGRectContainsPoint(webLabel.frame, [[[event allTouches] anyObject] locationInView:self.view]))
+	{
+        UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Open www.timgcarlson.com in Safari?"
+                                                                      message:@"This will leave AdderPad"
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Yes"
+                                                            otherButtonTitles:@"No", nil];
+        changeMaxScoreAlert.tag = 3;
+        [changeMaxScoreAlert show];
+	}
 }
 
 #pragma mark - Helper Methods
@@ -144,7 +168,7 @@
 
 #pragma mark - Numberpad IBAction's
 
-- (IBAction) press:(id)sender {
+- (IBAction)press:(id)sender {
     [numberpad input:[sender titleForState:UIControlStateNormal]];
     [maxScoreField setText:[numberpad displayValue]];
 }
