@@ -89,11 +89,11 @@
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"]) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isSoundOn"];
-        [sender setImage: [UIImage imageNamed:@"SoundOff.png"] forState:UIControlStateNormal];
+        [sender setImage: [UIImage imageNamed:@"SoundOff1_1.png"] forState:UIControlStateNormal];
         [self.view addSubview: [[CBPopup alloc] initWithText: @"Sound off"]];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isSoundOn"];
-        [sender setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
+        [sender setImage: [UIImage imageNamed:@"SoundOn1_1.png"] forState:UIControlStateNormal];
         [self.view addSubview: [[CBPopup alloc] initWithText: @"Sound on"]];
     }
 }
@@ -105,11 +105,11 @@
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isIdleDisabled"]) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isIdleDisabled"];
-        [sender setImage: [UIImage imageNamed:@"SleepOn.png"] forState:UIControlStateNormal];
+        [sender setImage: [UIImage imageNamed:@"IdleOn1_1.png"] forState:UIControlStateNormal];
         [self.view addSubview: [[CBPopup alloc] initWithText: @"Auto-lock on"]];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isIdleDisabled"];
-        [sender setImage: [UIImage imageNamed:@"SleepOff.png"] forState:UIControlStateNormal];
+        [sender setImage: [UIImage imageNamed:@"IdleOff1_1.png"] forState:UIControlStateNormal];
         [self.view addSubview: [[CBPopup alloc] initWithText: @"Auto-lock off"]];
     }
 }
@@ -199,15 +199,15 @@
     
     // Set button images depending on their respective setting
     if (soundButtonStatus) {
-        [soundButton setImage: [UIImage imageNamed:@"SoundOn.png"] forState:UIControlStateNormal];
+        [soundButton setImage: [UIImage imageNamed:@"SoundOn1_1.png"] forState:UIControlStateNormal];
     } else {
-        [soundButton setImage: [UIImage imageNamed:@"SoundOff.png"] forState:UIControlStateNormal];
+        [soundButton setImage: [UIImage imageNamed:@"SoundOff1_1.png"] forState:UIControlStateNormal];
     }
     
     if (idleDisabled) {
-        [idleButton setImage: [UIImage imageNamed:@"SleepOff.png"] forState:UIControlStateNormal];
+        [idleButton setImage: [UIImage imageNamed:@"IdleOff1_1.png"] forState:UIControlStateNormal];
     } else {
-        [idleButton setImage: [UIImage imageNamed:@"SleepOn.png"] forState:UIControlStateNormal];
+        [idleButton setImage: [UIImage imageNamed:@"IdleOn1_1.png"] forState:UIControlStateNormal];
     }
 }
 
