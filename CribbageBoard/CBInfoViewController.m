@@ -188,9 +188,9 @@
     [self updateLabels];
     
     // Set the text labels to their respective colors
-    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
-    maxScoreLabel.textColor = labelColor;
-    maxScoreField.textColor = labelColor;
+//    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
+    maxScoreLabel.textColor = [UIColor whiteColor];
+    maxScoreField.textColor = [UIColor colorWithRed:188.0/255.0 green:188.0/255.0 blue:142.0/255.0 alpha:1.0];
     maxScoreLabel.textAlignment = NSTextAlignmentCenter;
     maxScoreField.textAlignment = NSTextAlignmentCenter;
     

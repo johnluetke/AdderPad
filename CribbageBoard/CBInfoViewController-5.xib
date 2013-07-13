@@ -419,7 +419,6 @@
 						<string key="NSFrame">{{208, 502}, {89, 50}}</string>
 						<reference key="NSSuperview" ref="592275104"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -508,7 +507,7 @@
 						<reference key="NSNextResponder" ref="592275104"/>
 						<int key="NSvFlags">1325</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{76, 229}, {169, 26}}</string>
+						<string key="NSFrame">{{76, 217}, {169, 50}}</string>
 						<reference key="NSSuperview" ref="592275104"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="774018516"/>
@@ -527,11 +526,11 @@
 							<string key="name">TrebuchetMS</string>
 							<string key="family">Trebuchet MS</string>
 							<int key="traits">0</int>
-							<double key="pointSize">17</double>
+							<double key="pointSize">28</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">TrebuchetMS</string>
-							<double key="NSSize">17</double>
+							<double key="NSSize">28</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
@@ -805,9 +804,9 @@
 							<reference ref="426039536"/>
 							<reference ref="903522535"/>
 							<reference ref="556208930"/>
-							<reference ref="560659602"/>
 							<reference ref="774018516"/>
 							<reference ref="196977589"/>
+							<reference ref="560659602"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

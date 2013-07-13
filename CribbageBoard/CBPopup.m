@@ -18,7 +18,8 @@
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:0.9];
-        self.textColor = [UIColor colorWithRed:198.0/255.0 green:202.0/255.0 blue:168.0/255.0 alpha:1.0];
+//        self.textColor = [UIColor colorWithRed:198.0/255.0 green:202.0/255.0 blue:168.0/255.0 alpha:1.0];
+        self.textColor = [UIColor whiteColor];
         self.font = [UIFont fontWithName: @"Trebuchet-MS" size: 13];
         self.text = msg;
         self.numberOfLines = 0;
@@ -40,7 +41,7 @@
         expectedLabelSize = CGSizeMake(expectedLabelSize.width + 20, expectedLabelSize.height + 10);
         
         self.frame = CGRectMake(parent.center.x - expectedLabelSize.width/2,
-                                (parent.bounds.size.height / 2)-expectedLabelSize.height - 10,
+                                (parent.bounds.size.height / 2)-expectedLabelSize.height + 0,
                                 expectedLabelSize.width,
                                 expectedLabelSize.height);
         

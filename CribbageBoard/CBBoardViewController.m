@@ -509,13 +509,14 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     pFourScoreLabel.transform = CGAffineTransformMakeRotation (M_PI/4);
     
     // Set the text labels and fields to their respective colors
-    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
+    //UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
+    UIColor *labelColor = [UIColor whiteColor];
     pOneScoreLabel.textColor = labelColor;
     pTwoScoreLabel.textColor = labelColor;
     pThreeScoreLabel.textColor = labelColor;
     pFourScoreLabel.textColor = labelColor;
     
-    addToScoreField.textColor = labelColor;
+    addToScoreField.textColor = [UIColor colorWithRed:188.0/255.0 green:188.0/255.0 blue:142.0/255.0 alpha:1.0];
     lastActionLabel.textColor = labelColor;
     addToScoreField.textAlignment = NSTextAlignmentCenter;
     lastActionLabel.textAlignment = NSTextAlignmentCenter;
