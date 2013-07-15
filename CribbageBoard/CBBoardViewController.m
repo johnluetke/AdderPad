@@ -408,11 +408,14 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 
 - (void)updateScoreLabels
 {
+    NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    [format setNumberStyle:NSNumberFormatterDecimalStyle];  // This will include commas in the numbers
+    
     // Refresh score labels...
-    pOneScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pOneScore];
-    pTwoScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pTwoScore];
-    pThreeScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pThreeScore];
-    pFourScoreLabel.text = [NSString stringWithFormat:@"%d", [CBScore sharedCBScore].pFourScore];
+    pOneScoreLabel.text = [NSString stringWithFormat:@"%@", [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].pOneScore]]];
+    pTwoScoreLabel.text = [NSString stringWithFormat:@"%@", [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].pTwoScore]]];
+    pThreeScoreLabel.text = [NSString stringWithFormat:@"%@", [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].pThreeScore]]];
+    pFourScoreLabel.text = [NSString stringWithFormat:@"%@", [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].pFourScore]]];
     // Have to make sure the labels are centered in iOS 6
     pOneScoreLabel.textAlignment = NSTextAlignmentCenter;
     pTwoScoreLabel.textAlignment = NSTextAlignmentCenter;
@@ -429,8 +432,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     if (!playerTag) {
         lastActionLabel.text = [NSString stringWithFormat:@"--"];
     } else {
-        lastActionLabel.text = [NSString stringWithFormat:@"%d to %@",
-                                [CBScore sharedCBScore].lastPoints,
+        lastActionLabel.text = [NSString stringWithFormat:@"%@ to %@",
+                                [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].lastPoints]],
                                 [self getPlayerColor:playerTag]];
     }    
 }

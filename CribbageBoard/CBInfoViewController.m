@@ -164,7 +164,10 @@
 
 - (void)updateLabels
 {
-    maxScoreLabel.text = [NSString stringWithFormat:@"Playing to %d", [CBScore sharedCBScore].maxScore];
+    NSNumberFormatter *format = [[NSNumberFormatter alloc] init];
+    [format setNumberStyle:NSNumberFormatterDecimalStyle];  // This will include commas in the numbers
+    
+    maxScoreLabel.text = [NSString stringWithFormat:@"Playing to %@", [format stringFromNumber:[NSNumber numberWithInt:[CBScore sharedCBScore].maxScore]]];
     [maxScoreLabel setNeedsDisplay];
 }
 
