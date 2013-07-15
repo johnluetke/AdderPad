@@ -16,6 +16,8 @@
 
 @interface CBNumberpad : NSObject
 {
+    BOOL negSign;   // YES if negative, NO if positive
+
     @private
         NSMutableString *_display;  // The "add to score field" display
         int charCounter;    // for limiting the number of characters entered
@@ -33,6 +35,7 @@
  *
  *     Commands:    D   Delete
  *                  C   Clear
+ *                  S   Sign (positive/negative)
  */
 - (void)input:(NSString *)inputChar;
 

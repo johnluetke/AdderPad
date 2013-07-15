@@ -12,6 +12,7 @@
 const NSString *Digits = @"0123456789.";    // These are the valid characters that can be accepted...
 const NSString *Delete = @"D";
 const NSString *Clear = @"C";
+const NSString *Sign = @"S";
 const int charMax = 6;  // max characters allowed in text field, will not add beyond this
 
 @implementation CBNumberpad
@@ -22,6 +23,7 @@ const int charMax = 6;  // max characters allowed in text field, will not add be
     if ((self = [super init])) {
         _display = [NSMutableString stringWithCapacity:10];
         charCounter = 0;
+        negSign = NO;   // Default is to add, not subtract
     }
     return self;
 }
@@ -60,6 +62,11 @@ const int charMax = 6;  // max characters allowed in text field, will not add be
                 [_display setString:[NSString string]];
                 charCounter = 0;
             }
+        }
+        // Is inputChar Sign?
+        else if ([inputChar isEqualToString:(NSString *)Sign]) {
+            // Input a negative sign (should this be able to exceed max char length?)
+
         }
         else {
             // inputChar is an unexpected (invalid) character.

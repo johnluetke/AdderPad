@@ -68,5 +68,6 @@
 - (void)updateProgress;
 - (void)updateScoreLabels;
 - (NSString *)getPlayerColor:(int)playerTag;    // Needs to reflect the colors in the XIB file
+- (int)didUserEnterZero:(NSString *)value;
 
 @end

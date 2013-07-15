@@ -5,7 +5,7 @@
 //  Created by Tim Carlson on 5/7/13.
 //  Copyright (c) 2013 Tim G Carlson. All rights reserved.
 //
-//  TODO list:
+//  TODO list: Should non-integer input add 0 or 1 (eg copy and paste misc chars)
 //
 
 #import "CBBoardViewController.h"
@@ -85,16 +85,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
     // Check if value is null or zero
     if (![[addToScoreField text] integerValue]) {
-        if ([[addToScoreField text] isEqualToString:@"0"]
-            || [[addToScoreField text] isEqualToString:@"00"]
-            || [[addToScoreField text] isEqualToString:@"000"]
-            || [[addToScoreField text] isEqualToString:@"0000"]
-            || [[addToScoreField text] isEqualToString:@"00000"]
-            || [[addToScoreField text] isEqualToString:@"000000"]) {
-            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
-        } else {
-            pointsEntered = 0;
-        }
+        pointsEntered = [self didUserEnterZero:[addToScoreField text]];
     } else {
         pointsEntered = [[addToScoreField text] integerValue];
     }
@@ -123,16 +114,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
     // Check if value is null or zero
     if (![[addToScoreField text] integerValue]) {
-        if ([[addToScoreField text] isEqualToString:@"0"]
-            || [[addToScoreField text] isEqualToString:@"00"]
-            || [[addToScoreField text] isEqualToString:@"000"]
-            || [[addToScoreField text] isEqualToString:@"0000"]
-            || [[addToScoreField text] isEqualToString:@"00000"]
-            || [[addToScoreField text] isEqualToString:@"000000"]) {
-            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
-        } else {
-            pointsEntered = 0;
-        }
+        pointsEntered = [self didUserEnterZero:[addToScoreField text]];
     } else {
         pointsEntered = [[addToScoreField text] integerValue];
     }
@@ -161,16 +143,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
     // Check if value is null or zero
     if (![[addToScoreField text] integerValue]) {
-        if ([[addToScoreField text] isEqualToString:@"0"]
-            || [[addToScoreField text] isEqualToString:@"00"]
-            || [[addToScoreField text] isEqualToString:@"000"]
-            || [[addToScoreField text] isEqualToString:@"0000"]
-            || [[addToScoreField text] isEqualToString:@"00000"]
-            || [[addToScoreField text] isEqualToString:@"000000"]) {
-            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
-        } else {
-            pointsEntered = 0;
-        }
+        pointsEntered = [self didUserEnterZero:[addToScoreField text]];
     } else {
         pointsEntered = [[addToScoreField text] integerValue];
     }
@@ -199,16 +172,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     }
     // Check if value is null or zero
     if (![[addToScoreField text] integerValue]) {
-        if ([[addToScoreField text] isEqualToString:@"0"]
-                || [[addToScoreField text] isEqualToString:@"00"]
-                || [[addToScoreField text] isEqualToString:@"000"]
-                || [[addToScoreField text] isEqualToString:@"0000"]
-                || [[addToScoreField text] isEqualToString:@"00000"]
-                || [[addToScoreField text] isEqualToString:@"000000"]) {
-            pointsEntered = -999;   // sentinel value to detect user intending to enter only zeros
-        } else {
-        pointsEntered = 0;
-        }
+        pointsEntered = [self didUserEnterZero:[addToScoreField text]];
     } else {
         pointsEntered = [[addToScoreField text] integerValue];
     }
@@ -449,6 +413,25 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         return @"Blue";
     }
     return nil;
+}
+
+- (int)didUserEnterZero:(NSString *)value
+{
+    if ([[addToScoreField text] isEqualToString:@"0"]
+        || [[addToScoreField text] isEqualToString:@"00"]
+        || [[addToScoreField text] isEqualToString:@"000"]
+        || [[addToScoreField text] isEqualToString:@"0000"]
+        || [[addToScoreField text] isEqualToString:@"00000"]
+        || [[addToScoreField text] isEqualToString:@"000000"]
+        || [[addToScoreField text] isEqualToString:@"-0"]
+        || [[addToScoreField text] isEqualToString:@"-00"]
+        || [[addToScoreField text] isEqualToString:@"-000"]
+        || [[addToScoreField text] isEqualToString:@"-0000"]
+        || [[addToScoreField text] isEqualToString:@"-00000"]) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
 #pragma mark - Numberpad IBAction's

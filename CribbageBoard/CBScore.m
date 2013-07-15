@@ -33,82 +33,58 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS(CBScore);
 
 - (void)addToPlayerOne:(int)points
 {
-    if (pOneScore < maxScore) {
-        lastPlayerTag = 1;
-        if (!points) {
-            // User either left field blank or entered invalid input
-            points = 1;
+    if (pOneScore > -999999) {
+        if (pOneScore < maxScore) {
+            lastPlayerTag = 1;
+            pOneScore += points;
+            lastPoints = points;
+            
+            [self addStateToStack];
         }
-        if (points == -999) {
-            // Sentinel value detected, user entered "0", "00", ..., or "000000"
-            points = 0;
-        }
-        
-        pOneScore += points;
-        lastPoints = points;
-        
-        [self addStateToStack];
     }
+    // TODO: Inform user that score can't go any more negative
 }
 
 - (void)addToPlayerTwo:(int)points
 {
-    if (pTwoScore < maxScore) {
-        lastPlayerTag = 2;
-        if (!points) {
-            // User either left field blank or entered invalid input
-            points = 1;
+    if (pOneScore > -999999) {
+        if (pTwoScore < maxScore) {
+            lastPlayerTag = 2;
+            pTwoScore += points;
+            lastPoints = points;
+            
+            [self addStateToStack];
         }
-        if (points == -999) {
-            // Sentinel value detected, user entered "0", "00", ..., or "000000"
-            points = 0;
-        }
-        
-        pTwoScore += points;
-        lastPoints = points;
-        
-        [self addStateToStack];
     }
+    // TODO: Inform user that score can't go any more negative
 }
 
 - (void)addToPlayerThree:(int)points
 {
-    if (pThreeScore < maxScore) {
-        lastPlayerTag = 3;
-        if (!points) {
-            // User either left field blank or entered invalid input
-            points = 1;
+    if (pOneScore > -999999) {
+        if (pThreeScore < maxScore) {
+            lastPlayerTag = 3;
+            pThreeScore += points;
+            lastPoints = points;
+            
+            [self addStateToStack];
         }
-        if (points == -999) {
-            // Sentinel value detected, user entered "0", "00", ..., or "000000"
-            points = 0;
-        }
-        
-        pThreeScore += points;
-        lastPoints = points;
-        
-        [self addStateToStack];
     }
+    // TODO: Inform user that score can't go any more negative
 }
 
 - (void)addToPlayerFour:(int)points
 {
-    if (pFourScore < maxScore) {
-        lastPlayerTag = 4;
-        if (!points) {
-            // User either left field blank or entered invalid input
-            points = 1;
+    if (pOneScore > -999999) {
+        if (pFourScore < maxScore) {
+            lastPlayerTag = 4;
+            pFourScore += points;
+            lastPoints = points;
+            
+            [self addStateToStack];
         }
-        if (points == -999) {
-            // Sentinel value detected, user entered "0", "00", ..., or "000000"
-            points = 0;
-        }
-        
-        pFourScore += points;
-        lastPoints = points;
-        
-        [self addStateToStack];
     }
+    // TODO: Inform user that score can't go any more negative
 }
 
 // Reverts game state back to state prior to last add.
