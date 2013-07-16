@@ -66,6 +66,10 @@ const int charMax = 6;  // max characters allowed in text field, will not add be
         // Is inputChar Sign?
         else if ([inputChar isEqualToString:(NSString *)Sign]) {
             // Input a negative sign (should this be able to exceed max char length?)
+            if (!charCounter && ![_display isEqualToString:@"-"]) {
+                [_display appendString:@"-"];
+                //charCounter++;
+            }
 
         }
         else {

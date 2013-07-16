@@ -83,6 +83,7 @@
 		2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */; };
 		2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */; };
 		2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */; };
+		FC245B9D17950BE900581D3F /* BoardViewBackground-5_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC245B9C17950BE900581D3F /* BoardViewBackground-5_1_1.png */; };
 		FC949DC0178B1042003158D1 /* Back1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB7178B1041003158D1 /* Back1_1.png */; };
 		FC949DC1178B1042003158D1 /* IdleOff1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB8178B1041003158D1 /* IdleOff1_1.png */; };
 		FC949DC2178B1042003158D1 /* IdleOn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB9178B1041003158D1 /* IdleOn1_1.png */; };
@@ -93,7 +94,6 @@
 		FC949DC7178B1042003158D1 /* SoundOn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DBE178B1041003158D1 /* SoundOn1_1.png */; };
 		FC949DC8178B1042003158D1 /* Undo1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DBF178B1041003158D1 /* Undo1_1.png */; };
 		FC949DCC178B1070003158D1 /* InfoViewBackground-5_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DCA178B1070003158D1 /* InfoViewBackground-5_1_1.png */; };
-		FC949DD0178B133F003158D1 /* BoardViewBackground-5_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DCF178B133F003158D1 /* BoardViewBackground-5_1_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +188,7 @@
 		2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSwitchViewController.xib; sourceTree = "<group>"; };
 		2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInfoViewController.h; sourceTree = "<group>"; };
 		2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBInfoViewController.m; sourceTree = "<group>"; };
+		FC245B9C17950BE900581D3F /* BoardViewBackground-5_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5_1_1.png"; sourceTree = "<group>"; };
 		FC949DB7178B1041003158D1 /* Back1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back1_1.png; sourceTree = "<group>"; };
 		FC949DB8178B1041003158D1 /* IdleOff1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdleOff1_1.png; sourceTree = "<group>"; };
 		FC949DB9178B1041003158D1 /* IdleOn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdleOn1_1.png; sourceTree = "<group>"; };
@@ -198,7 +199,6 @@
 		FC949DBE178B1041003158D1 /* SoundOn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn1_1.png; sourceTree = "<group>"; };
 		FC949DBF178B1041003158D1 /* Undo1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Undo1_1.png; sourceTree = "<group>"; };
 		FC949DCA178B1070003158D1 /* InfoViewBackground-5_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InfoViewBackground-5_1_1.png"; sourceTree = "<group>"; };
-		FC949DCF178B133F003158D1 /* BoardViewBackground-5_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardViewBackground-5_1_1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,7 +464,7 @@
 		FC949DB6178B0FC2003158D1 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				FC949DCF178B133F003158D1 /* BoardViewBackground-5_1_1.png */,
+				FC245B9C17950BE900581D3F /* BoardViewBackground-5_1_1.png */,
 				FC949DCA178B1070003158D1 /* InfoViewBackground-5_1_1.png */,
 			);
 			name = Backgrounds;
@@ -590,7 +590,7 @@
 				FC949DC7178B1042003158D1 /* SoundOn1_1.png in Resources */,
 				FC949DC8178B1042003158D1 /* Undo1_1.png in Resources */,
 				FC949DCC178B1070003158D1 /* InfoViewBackground-5_1_1.png in Resources */,
-				FC949DD0178B133F003158D1 /* BoardViewBackground-5_1_1.png in Resources */,
+				FC245B9D17950BE900581D3F /* BoardViewBackground-5_1_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
