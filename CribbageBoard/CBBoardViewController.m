@@ -427,7 +427,8 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
         || [[addToScoreField text] isEqualToString:@"-00"]
         || [[addToScoreField text] isEqualToString:@"-000"]
         || [[addToScoreField text] isEqualToString:@"-0000"]
-        || [[addToScoreField text] isEqualToString:@"-00000"]) {
+        || [[addToScoreField text] isEqualToString:@"-00000"]
+        || [[addToScoreField text] isEqualToString:@"-000000"]) {
         return 0;
     } else {
         return 1;
