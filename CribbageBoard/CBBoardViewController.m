@@ -393,10 +393,21 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
     if (!playerTag) {
         lastActionLabel.text = [NSString stringWithFormat:@"--"];
     } else {
-        lastActionLabel.text = [NSString stringWithFormat:@"%d to %@",
-                                [CBScore sharedCBScore].lastPoints,
-                                [self getPlayerColor:playerTag]];
-    }    
+        NSString *temp = [[NSString stringWithFormat:@"%d to %@",
+                           [CBScore sharedCBScore].lastPoints,
+                           [self getPlayerColor:playerTag]] uppercaseString];
+        
+        NSMutableArray *buffer = [NSMutableArray arrayWithCapacity:[temp length]];
+        for (int i = 0; i < [temp length]; i++) {
+            [buffer addObject:[NSString stringWithFormat:@"%C", [temp characterAtIndex:i]]];
+        }
+        lastActionLabel.text = [buffer componentsJoinedByString:@" "];
+        
+        
+//        lastActionLabel.text = [[NSString stringWithFormat:@"%d  t o  %@",
+//                                [CBScore sharedCBScore].lastPoints,
+//                                [self getPlayerColor:playerTag]] uppercaseString];
+    }
 }
 
 // Returns the NSString of the player's corresponding color

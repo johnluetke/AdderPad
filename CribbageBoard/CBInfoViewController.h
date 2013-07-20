@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CBNumberpad.h"
+#import "DGTextField.h"
 
 @interface CBInfoViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {

@@ -65,7 +65,7 @@
 
 - (IBAction)saveMaxScore:(id)sender
 {
-    if ([[maxScoreField text] integerValue] != 0) {
+    if ([[maxScoreField text] integerValue] > 0) {
         UIAlertView *changeMaxScoreAlert = [[UIAlertView alloc] initWithTitle:@"Change Winning Score?"
                                                                       message:@"This will reset scores.\nAre you sure?"
                                                                      delegate:self
@@ -164,7 +164,7 @@
 
 - (void)updateLabels
 {
-    maxScoreLabel.text = [NSString stringWithFormat:@"Playing to %d", [CBScore sharedCBScore].maxScore];
+    maxScoreLabel.text = [[NSString stringWithFormat:@"playing to %d", [CBScore sharedCBScore].maxScore] uppercaseString];
     [maxScoreLabel setNeedsDisplay];
 }
 
@@ -191,7 +191,7 @@
 //    UIColor *labelColor = [UIColor colorWithRed:100.0/255.0 green:106.0/255.0 blue:67.0/255.0 alpha:1.0];
     maxScoreLabel.textColor = [UIColor whiteColor];
     maxScoreField.textColor = [UIColor colorWithRed:188.0/255.0 green:188.0/255.0 blue:142.0/255.0 alpha:1.0];
-    maxScoreLabel.textAlignment = NSTextAlignmentCenter;
+//    maxScoreLabel.textAlignment = NSTextAlignmentCenter;
     maxScoreField.textAlignment = NSTextAlignmentCenter;
     
     soundButtonStatus = [[NSUserDefaults standardUserDefaults] boolForKey:@"isSoundOn"];

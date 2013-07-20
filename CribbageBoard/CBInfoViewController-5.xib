@@ -57,7 +57,7 @@
 						<reference key="NSNextResponder" ref="592275104"/>
 						<int key="NSvFlags">1316</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{53, 111}, {214, 37}}</string>
+						<string key="NSFrame">{{25, 104}, {263, 40}}</string>
 						<reference key="NSSuperview" ref="592275104"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="560659602"/>
@@ -173,7 +173,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">idle</string>
 						<reference key="IBUIHighlightedTitleColor" ref="978791535"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -465,6 +464,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
+						<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
 						<reference key="IBUIHighlightedTitleColor" ref="978791535"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -490,6 +490,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
+						<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
 						<reference key="IBUIHighlightedTitleColor" ref="978791535"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -507,7 +508,7 @@
 						<reference key="NSNextResponder" ref="592275104"/>
 						<int key="NSvFlags">1325</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{76, 217}, {169, 50}}</string>
+						<string key="NSFrame">{{25, 217}, {230, 50}}</string>
 						<reference key="NSSuperview" ref="592275104"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="774018516"/>
@@ -521,7 +522,7 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<int key="IBUITextAlignment">1</int>
+						<int key="IBUITextAlignment">2</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<string key="name">TrebuchetMS</string>
 							<string key="family">Trebuchet MS</string>
@@ -803,10 +804,10 @@
 							<reference ref="341953874"/>
 							<reference ref="426039536"/>
 							<reference ref="903522535"/>
-							<reference ref="556208930"/>
 							<reference ref="774018516"/>
 							<reference ref="196977589"/>
 							<reference ref="560659602"/>
+							<reference ref="556208930"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
