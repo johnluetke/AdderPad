@@ -13,7 +13,7 @@
 @interface CBInfoViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
     CBNumberpad *numberpad;
-    UITextField *maxScoreField;
+    DGTextField *maxScoreField;
     
     @private
         int charMax;

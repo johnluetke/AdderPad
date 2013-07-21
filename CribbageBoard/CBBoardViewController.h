@@ -11,6 +11,7 @@
 #import "CERoundProgressView.h"
 #import "CBNumberpad.h"
 #import "CBScore.h"
+#import "DGTextField.h"     // For changing cursor color
 
 @interface CBBoardViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
@@ -18,7 +19,7 @@
     
     @private
         int charMax;    // Max number of characters that can be entered in text fields
-        __weak UITextField *addToScoreField;
+        __weak DGTextField *addToScoreField;
 // Custom sound effects
 //        SystemSoundID   soundTap;
 //        SystemSoundID   blipOne;

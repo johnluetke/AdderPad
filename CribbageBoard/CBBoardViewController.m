@@ -495,6 +495,7 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 {
     [super viewWillAppear:animated];
     // Display a blinking cursor in the text field
+    addToScoreField.cursorColor = [UIColor colorWithRed:188.0/255.0 green:188.0/255.0 blue:142.0/255.0 alpha:1.0];
     [addToScoreField becomeFirstResponder];
     
     // Rotate the text labels to conform with the corresponding buttons

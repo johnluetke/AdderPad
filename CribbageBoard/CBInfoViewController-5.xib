@@ -418,6 +418,7 @@
 						<string key="NSFrame">{{208, 502}, {89, 50}}</string>
 						<reference key="NSSuperview" ref="592275104"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -965,6 +966,7 @@
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="58.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="58.showNotes"/>
+				<string key="59.CustomClassName">DGTextField</string>
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="59.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="59.showNotes"/>
@@ -1055,6 +1057,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CBInfoViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DGTextField</string>
+					<string key="superclassName">UITextField</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DGTextField.h</string>
 					</object>
 				</object>
 			</array>

@@ -181,6 +181,7 @@
 {
     [super viewWillAppear:animated];
     // Display a blinking cursor in the text field
+    maxScoreField.cursorColor = [UIColor colorWithRed:188.0/255.0 green:188.0/255.0 blue:142.0/255.0 alpha:1.0];
     [maxScoreField becomeFirstResponder];
     // This prevents a keyboard from popping up, and still allows for typing in textfield
     UIView *hideKeyboardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
