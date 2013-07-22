@@ -83,6 +83,7 @@
 		2DFC20BF1741F1D1009AE1FC /* CBSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20BD1741F1D1009AE1FC /* CBSwitchViewController.m */; };
 		2DFC20C01741F1D1009AE1FC /* CBSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */; };
 		2DFC20CD1741F66C009AE1FC /* CBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */; };
+		FC2C9D57179D85E300E56E80 /* InfoViewBackground_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2C9D56179D85E300E56E80 /* InfoViewBackground_1_1.png */; };
 		FC949DC0178B1042003158D1 /* Back1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB7178B1041003158D1 /* Back1_1.png */; };
 		FC949DC1178B1042003158D1 /* IdleOff1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB8178B1041003158D1 /* IdleOff1_1.png */; };
 		FC949DC2178B1042003158D1 /* IdleOn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC949DB9178B1041003158D1 /* IdleOn1_1.png */; };
@@ -95,6 +96,7 @@
 		FC994D4A179B52B100BF2458 /* SoundOff1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC994D48179B52B100BF2458 /* SoundOff1_1.png */; };
 		FC994D4B179B52B100BF2458 /* SoundOn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC994D49179B52B100BF2458 /* SoundOn1_1.png */; };
 		FC994D4F179B588D00BF2458 /* DGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FC994D4E179B588D00BF2458 /* DGTextField.m */; };
+		FC994D51179B63CC00BF2458 /* BoardViewBackground_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC994D50179B63CC00BF2458 /* BoardViewBackground_1_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +191,7 @@
 		2DFC20BE1741F1D1009AE1FC /* CBSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSwitchViewController.xib; sourceTree = "<group>"; };
 		2DFC20CA1741F66C009AE1FC /* CBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBInfoViewController.h; sourceTree = "<group>"; };
 		2DFC20CB1741F66C009AE1FC /* CBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBInfoViewController.m; sourceTree = "<group>"; };
+		FC2C9D56179D85E300E56E80 /* InfoViewBackground_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoViewBackground_1_1.png; sourceTree = "<group>"; };
 		FC949DB7178B1041003158D1 /* Back1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back1_1.png; sourceTree = "<group>"; };
 		FC949DB8178B1041003158D1 /* IdleOff1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdleOff1_1.png; sourceTree = "<group>"; };
 		FC949DB9178B1041003158D1 /* IdleOn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdleOn1_1.png; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 		FC994D49179B52B100BF2458 /* SoundOn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOn1_1.png; sourceTree = "<group>"; };
 		FC994D4D179B588D00BF2458 /* DGTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGTextField.h; sourceTree = "<group>"; };
 		FC994D4E179B588D00BF2458 /* DGTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGTextField.m; sourceTree = "<group>"; };
+		FC994D50179B63CC00BF2458 /* BoardViewBackground_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardViewBackground_1_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,6 +472,8 @@
 		FC949DB6178B0FC2003158D1 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				FC2C9D56179D85E300E56E80 /* InfoViewBackground_1_1.png */,
+				FC994D50179B63CC00BF2458 /* BoardViewBackground_1_1.png */,
 				FC994D46179B1D8700BF2458 /* InfoViewBackground-5_1_1.png */,
 				FC994D42179B0A3500BF2458 /* BoardViewBackground-5_1_1.png */,
 			);
@@ -604,6 +610,8 @@
 				FC994D47179B1D8700BF2458 /* InfoViewBackground-5_1_1.png in Resources */,
 				FC994D4A179B52B100BF2458 /* SoundOff1_1.png in Resources */,
 				FC994D4B179B52B100BF2458 /* SoundOn1_1.png in Resources */,
+				FC994D51179B63CC00BF2458 /* BoardViewBackground_1_1.png in Resources */,
+				FC2C9D57179D85E300E56E80 /* InfoViewBackground_1_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
