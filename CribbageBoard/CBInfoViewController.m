@@ -54,6 +54,16 @@
         charMax = numberpad.maxCharAllowed;
         maxScoreField.delegate = self;
         self.wantsFullScreenLayout = YES;  // Ensures that status bar overlaps the view
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(becomeActive)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(enterBackground)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -216,6 +226,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+# pragma mark - Notification methods
+
+- (void)becomeActive
+{
+    [maxScoreField becomeFirstResponder];
+}
+
+- (void)enterBackground
+{
+    [maxScoreField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

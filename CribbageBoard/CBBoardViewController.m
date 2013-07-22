@@ -74,6 +74,16 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
 //        if ([[prefs objectForKey:@"launchCount"] integerValue] == 1) {
 //
 //        }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(becomeActive)
+                                                     name:UIApplicationWillEnterForegroundNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(enterBackground)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -593,6 +603,19 @@ const int DEFAULT_GAME_SCORE = 121;     // The default score of the app (Cribbag
                                                initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                target:self
                                                action:@selector(dismissView:)];
+}
+
+# pragma mark - Notification methods
+
+- (void)becomeActive
+{
+    [addToScoreField becomeFirstResponder];
+}
+
+- (void)enterBackground
+{
+    [addToScoreField resignFirstResponder];
+    [self writeScoresToPlist];
 }
 
 - (void)didReceiveMemoryWarning
